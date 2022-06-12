@@ -21,9 +21,6 @@ export default function Layout({ children }) {
         <meta name="twitter:site" content="@STr3292" />
         <meta name="theme-color" content="#008899" />
       </Head>
-      <main>
-        {children}
-      </main>
     </div>
   )
 }

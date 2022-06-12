@@ -18,3 +18,39 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+:root {
+  --theme-color: #008899;
+  --theme-color-2: #BA160C;
+  --text-color: #FFFFFF;
+
+  /* splash専用 */
+  --splash-back-color: #050D28;
+  --splash-color: #FFFFFF;
+  --splash-transition-time: 600ms;
+}
+
+
+#uebitLogoLine {
+  position: absolute;
+  transition: var(--splash-transition-time);
+  stroke: var(--splash-color);
+  stroke-width: 16;
+  fill-opacity: 0;
+}
+
+#uebitLogoFace {
+  position: absolute;
+  transition: var(--splash-transition-time);
+  stroke-width: 0;
+  fill: var(--splash-color);
+  fill-opacity: 0;
+}
