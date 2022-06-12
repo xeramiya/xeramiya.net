@@ -73,7 +73,7 @@ export default function Home() {
             <h1 className="text-xl font-bold">
               ようこそ、
               <span className="italic">
-                UEBIT STRING
+                UEBIT STRINGs
               </span>
               へ
             </h1>
