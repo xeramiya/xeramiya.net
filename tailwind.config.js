@@ -24,7 +24,8 @@ module.exports = {
         lighter: "#52B8CA",
         default: "#008899",
         dark: "#005B6B"
-      }
+      },
+      ired: "#BA160C"
     }
   },
   extend: {},
