@@ -15,18 +15,19 @@ export default function Home() {
 
       <Layout>
         <article className="pt-4 pb-8">
-          <h1 className="text-xl font-bold">
-            ようこそ、
-            <span className="italic">
-              UEBIT STRINGs
-            </span>
-            へ
-          </h1>
-          <p className="text-gray">
-            武蔵野新首都圏憂愁<br />
-            <span className="text-xs">ムサシノ・Nキャピタル・ブルース</span>
-          </p>
-          <section id="social" className="py-4 mt-2">
+          <section className="">
+            <h1 className="text-xl font-bold">
+              ようこそ、
+              <span className="italic">
+                UEBIT STRINGs
+              </span>
+              へ
+            </h1>
+            <p className="text-gray font">
+              これからも変わらず変わり続ける
+            </p>
+          </section>
+          <section id="social" className="py-4">
             <h1 className="text-xl font-bold">
               STr3292
             </h1>
@@ -36,42 +37,42 @@ export default function Home() {
             <ul className="mt-2 space-y-1 text-nand-lighter">
               <li>
                 <Link href="https://twitter.com/STr3292">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     Twitter
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://www.instagram.com/str3292u">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     Instagram
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://steamcommunity.com/id/str3292">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     Steam
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://www.youtube.com/channel/UCKpHbYt5VuQZ6ePTgjVvhfQ">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     YouTube
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://soundcloud.com/6esqihtayvem">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     SoundCloud
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://scrapbox.io/uebit/">
-                  <a className="underline">
+                  <a className="underline active:bg-nand-default active:text-white">
                     UEBIT ARCHIVEs
                   </a>
                 </Link>
@@ -81,7 +82,18 @@ export default function Home() {
               </li>
             </ul>
           </section>
-          <section></section>
+          <section className="py-4">
+            <h1 className="text-xl font-bold">
+              <ruby>
+                <rb>武蔵野新首都圏憂愁</rb>
+                <rt>ムサシノ ニューキャピタル ブルース</rt>
+              </ruby>
+            </h1>
+            <p className="text-gray font">
+              港の空の色は、空きチャンネルに合わせたTVの色だった。
+              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </p>
+          </section>
         </article>
       </Layout>
     </div>

@@ -25,7 +25,10 @@ module.exports = {
         default: "#008899",
         dark: "#005B6B"
       },
-      ired: "#BA160C"
+      ired: "#BA160C",
+      test: "#FF4F00",
+    },
+    fontFamily: {
     }
   },
   extend: {},

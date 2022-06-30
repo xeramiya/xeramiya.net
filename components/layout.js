@@ -23,13 +23,13 @@ export default function Layout({ children }) {
         <meta name="theme-color" content="#008899" />
       </Head>
 
-      <header className="fixed w-full h-11 py-3 bg-nand-default">
+      <header className="fixed w-full h-11 py-3 backdrop-blur-md bg-gray/20 hover:backdrop-blur-xl active:bg-ired">
         <div className="mx-auto max-w-screen-md">
           <h1 id="uebitLogo">
             <Link href="./">
               <a>
                 <svg id="uebitLogoFace" width="100%" height="100%" viewBox="0 0 1967 492" version="1.1"
-                  className="h-5 w-20 mx-4 fill-white hover:fill-ired">
+                  className="h-5 w-20 mx-4 fill-white hover:fill-ired active:fill-white">
                   <path id="U2" d="M590.792,8.703l-90.096,-0l-236.385,474.114l90.096,0l236.385,-474.114Z" />
                   <path id="U1"
                     d="M200.602,8.703l-164.819,330.574l88.999,143.54l117.017,0l40.2,-80.63l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0Z" />
