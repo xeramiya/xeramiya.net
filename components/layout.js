@@ -20,7 +20,7 @@ export default function Layout({ children }) {
         <meta name="og:image" content="https://i.gyazo.com/9f43b2ec371503a7fc2836d43249e1a5.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@STr3292" />
-        <meta name="theme-color" content="#008899" />
+        <meta name="theme-color" content="#050D28" />
       </Head>
 
       <header className="fixed w-full h-11 py-3 backdrop-blur-md bg-gray/20 hover:backdrop-blur-xl active:bg-ired">
