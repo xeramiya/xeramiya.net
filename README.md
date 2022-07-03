@@ -9,6 +9,7 @@ Access: [UEBIT-STRINGs](https://uebit.tk)
 ## 更新履歴
 |Version|変更点|
 |:-:|:-|
+|0.1.7|TailwindCSSの不具合修正|
 |0.1.6|Google Search Consle関連の不具合修正|
 |0.1.5|サイトマップ追加 & ヘッダーに項目追加|
 |0.1.4|ヘッダーをガラスっぽく、おしゃれ(当社比)にした|
