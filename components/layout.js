@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 import packageJson from "../package.json"
 
 export default function Layout({ children }) {
@@ -16,7 +17,7 @@ export default function Layout({ children }) {
         <meta name="og:url" content="uebit.tk" />
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content="UEBIT STRINGs" />
-        <meta name="og:title" content="STr3292 | UEBIT STRINGs" />
+        <meta name="og:title" content="STr3292 - UEBIT STRINGs" />
         <meta name="og:image" content="https://i.gyazo.com/9f43b2ec371503a7fc2836d43249e1a5.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@STr3292" />
@@ -50,24 +51,24 @@ export default function Layout({ children }) {
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm md:w-auto font-mono">
             <li>
-              <a href="/about" className="block w-20 mx-1 rounded hover:bg-white/20">
+              <Link href="/about" className="block w-20 mx-1 rounded hover:bg-white/20">
                 ABOUT
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
+              <Link href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
                 WEBLOG
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/app" className="block w-20 mx-1 rounded hover:bg-white/20">
+              <Link href="/app" className="block w-20 mx-1 rounded hover:bg-white/20">
                 APP
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/login" className="block w-20 mx-1 rounded bg-nand-default hover:bg-nand-lighter">
+              <Link href="/login" className="block w-20 mx-1 rounded bg-nand-default hover:bg-nand-lighter">
                 LOGIN
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
