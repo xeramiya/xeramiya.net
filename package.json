@@ -2,6 +2,7 @@
   "name": "uebit-strings",
   "version": "0.1.7",
   "homepage": "https://www.uebit.tk",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",

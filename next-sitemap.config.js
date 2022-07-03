@@ -1,8 +1,6 @@
-const config = {
+module.exports = {
   siteUrl: 'https://www.uebit.tk',
   generateRobotsTxt: true,
   outDir: './public/sitemap/',
 
 }
-
-export default config
