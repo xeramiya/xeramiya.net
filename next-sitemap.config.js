@@ -3,4 +3,9 @@ module.exports = {
   generateRobotsTxt: true,
   outDir: './public/sitemap/',
   exclude: ['/sitemap.xml'],
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      'https://uebit.tk/sitemap.xml', // <==== Add here
+    ],
+  },
 }
