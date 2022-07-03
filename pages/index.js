@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>STr3292 | UEBIT STRINGs</title>
+        <title>STr3292 - UEBIT STRINGs</title>
         <meta name="description" content="DAWN PAGE" />
       </Head>
 
@@ -81,18 +81,6 @@ export default function Home() {
                 </span>
               </li>
             </ul>
-          </section>
-          <section className="py-4">
-            <h1 className="text-xl font-bold">
-              <ruby>
-                <rb>武蔵野新首都圏憂愁</rb>
-                <rt>ムサシノ ニューキャピタル ブルース</rt>
-              </ruby>
-            </h1>
-            <p className="text-gray font">
-              港の空の色は、空きチャンネルに合わせたTVの色だった。
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            </p>
           </section>
         </article>
       </Layout>

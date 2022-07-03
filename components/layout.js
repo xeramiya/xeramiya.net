@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <meta charset="UTF-8" />
         <link rel="icon" href="./favicons/favicon.ico" />
         <link rel="icon" href="./favicons/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./favicons/apple-favicon.png" />
+        <link rel="apple-touch-icon" href="./favicons/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="STr3292" />
         <meta name="keywords" content="STr3292,UEBIT" />
@@ -24,12 +24,12 @@ export default function Layout({ children }) {
       </Head>
 
       <header className="fixed w-full h-11 py-3 backdrop-blur-md bg-gray/20 hover:backdrop-blur-xl active:bg-ired">
-        <div className="mx-auto max-w-screen-md">
-          <h1 id="uebitLogo">
+        <nav className="mx-auto max-w-screen-md">
+          <h1 id="uebitLogo" className="mx-2">
             <Link href="./">
               <a>
                 <svg id="uebitLogoFace" width="100%" height="100%" viewBox="0 0 1967 492" version="1.1"
-                  className="h-5 w-20 mx-4 fill-white hover:fill-ired active:fill-white">
+                  className="h-5 w-20 fill-white hover:fill-ired active:fill-white">
                   <path id="U2" d="M590.792,8.703l-90.096,-0l-236.385,474.114l90.096,0l236.385,-474.114Z" />
                   <path id="U1"
                     d="M200.602,8.703l-164.819,330.574l88.999,143.54l117.017,0l40.2,-80.63l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0Z" />
@@ -48,7 +48,29 @@ export default function Layout({ children }) {
               </a>
             </Link>
           </h1>
-        </div>
+          <ul className="flex justify-end mx-1 text-center text-sm md:w-auto font-mono">
+            <li>
+              <a href="/about" className="block w-20 mx-1 rounded hover:bg-white/20">
+                ABOUT
+              </a>
+            </li>
+            <li>
+              <a href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
+                WEBLOG
+              </a>
+            </li>
+            <li>
+              <a href="/app" className="block w-20 mx-1 rounded hover:bg-white/20">
+                APP
+              </a>
+            </li>
+            <li>
+              <a href="/login" className="block w-20 mx-1 rounded bg-nand-default hover:bg-nand-lighter">
+                LOGIN
+              </a>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main className="mx-auto max-w-screen-md pt-11 text-base">{children}</main>
       <footer className="mx-auto max-w-screen-md text-right py-8">

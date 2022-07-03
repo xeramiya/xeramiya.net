@@ -1,10 +1,11 @@
 {
   "name": "uebit-strings",
-  "version": "0.1.4",
+  "version": "0.1.5",
+  "homepage": "https://www.uebit.tk",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "jett": "npx tailwindcss -i ./src/styles_dev.css -o ./dist/styles.css"
@@ -19,6 +20,8 @@
     "autoprefixer": "^10.4.7",
     "eslint": "8.18.0",
     "eslint-config-next": "12.2.0",
+    "feed": "^4.2.2",
+    "next-sitemap": "^3.1.7",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.11",

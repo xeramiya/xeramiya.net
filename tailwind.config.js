@@ -28,10 +28,11 @@ module.exports = {
       ired: "#BA160C",
       test: "#FF4F00",
     },
+  },
+  extend: {
     fontFamily: {
     }
   },
-  extend: {},
   plugins: [
     require('prettier-plugin-tailwindcss')
   ],

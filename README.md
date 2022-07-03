@@ -1,11 +1,19 @@
-# UEBIT-STRINGs
-https://uebit.tk
-
-## Description
+# About UEBIT-STRINGs
+Access: [UEBIT-STRINGs](https://uebit.tk)
+## なにこれ
+実質個人サイト
+## 詳細情報
 インターネットのみなさま、こんばんは
-
-## Status
-Vercelにて稼働中、たぶん好調
-
-## License
-??????????
+### 稼働状況
+[Vercel](https://vercel.com)にて稼働中、たぶん好調
+## 更新履歴
+|Version|変更点|
+|:-:|:-|
+|0.0.5|サイトマップ追加 & ヘッダーに項目追加|
+|0.0.4|ヘッダーをガラスっぽく、おしゃれ(当社比)にした|
+|0.0.3|サイトのフッターにバージョン情報を表示した、など|
+|0.0.2|前環境とほぼ同じ表示内容を表示できるようにした|
+|0.0.1|DAWN VERSION|
+### 直近のデプロイ履歴
+[Deployment/History](https://github.com/STr3292/UEBIT-STRINGs/deployments/activity_log?environment=Production)
+### 更新通知
