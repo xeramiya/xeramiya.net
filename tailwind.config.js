@@ -2,19 +2,15 @@
 module.exports = {
   mode: 'jit',
   darkMode: "media",
-  purge: {
-    content: [
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}'
-    ],
-    options: {
-      safelist: {
-        standard: [/^bg-/, /^text-/],
-      },
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}'
+  ],
+  options: {
+    safelist: {
+      standard: [/^bg-/, /^text-/],
     },
   },
-  content: [
-  ],
   theme: {
     colors: {
       white: "#FFFFFF",
