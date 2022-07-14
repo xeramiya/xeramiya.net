@@ -23,9 +23,7 @@ export default function About() {
               とは
             </h1>
             <p className="text-gray font">
-              STr3292のためだけの、ただの個人サイト。<br />
-              最初はJavaScriptでSVGアニメーションをさせるためだけのサイトだった。<br />
-              構成がつまらなすぎるのは...なんでやろなぁ。<br />
+              STr3292のためだけの、ただの個人サイト。不定期に進化します。<br />
               ヘッダーにいろいろ項目を追加したが、内容がないよう。
             </p>
           </section>

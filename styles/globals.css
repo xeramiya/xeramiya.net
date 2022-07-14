@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-xl font-bold;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+@layer components {
+  .hamburger {
+    
+  }
+  .string {
+    @apply inline-flex items-center justify-center h-8 w-8 mx-1 rounded-lg hover:rounded-full
+  }
+}
+
+@layer utilities {
+}
+
 
 html,
 body {
@@ -21,18 +42,38 @@ a {
 }
 
 
-:root {
-  --theme-color: #008899;
-  --theme-color-2: #BA160C;
-  --text-color: #FFFFFF;
 
-  --splash-transition-time: 200ms;
+
+
+
+
+
+
+
+.c-nav-btn {
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  background: none;
+  border: none;
 }
 
-
-#uebitLogoFace {
+.c-nav-btn::after,
+.c-nav-btn::before {
   position: absolute;
-  transition: var(--splash-transition-time);
-  stroke-width: 0;
-  fill-opacity: 1;
+  top: calc(50% - 1px);
+  content: '';
+  width: 30px;
+  height: 2px;
+  display: block;
+  background: #333;
+}
+
+.c-nav-btn::before {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 0 #333;
+}
+
+.c-nav-btn::after {
+  transform: translateY(8px)
 }

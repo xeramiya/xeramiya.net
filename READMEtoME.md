@@ -18,4 +18,5 @@ CMD + K → V
 |作業内容|関連ディレクトリ|関連サイト|
 |:-:|:--|:--|
 |RSS Feed関連|./scripts/feed.js|https://fwywd.com/tech/next-feed-rss-atom<br>https://github.com/haxibami/haxibami.net/blob/main/haxibami.net/hooks/scripts/feed.mjs|
-|||
+|ハンバーガーメニュー|いろいろ|特になし|
+||||
