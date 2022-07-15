@@ -14,7 +14,7 @@ export default function About() {
       </Head>
 
       <Layout>
-        <article className="pt-4 pb-8">
+        <article className="pt-2 pb-16 mx-1">
           <section className="py-4">
             <h1 className="text-xl font-bold">
               <ruby>

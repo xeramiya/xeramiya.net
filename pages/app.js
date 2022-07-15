@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <article className="pt-4 pb-8">
+        <article className="pt-2 pb-16 mx-1">
           <section className="">
             <h1 className="text-xl font-bold">
               作ってきたものを集めたにょ

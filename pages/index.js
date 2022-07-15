@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <article className="pt-4 pb-8 mx-1">
-          <section>
+        <article className="pt-2 pb-16 mx-1">
+          <section className="pt-4">
             <h1>
               ようこそ、
               <span className="italic">
@@ -27,14 +27,14 @@ export default function Home() {
               これからも変わらず変わり続ける...かも
             </p>
           </section>
-          <section id="social" className="py-4">
+          <section id="social" className="pt-4">
             <h1>
               STr3292
             </h1>
             <p className="text-gray">
-              MIDNIGHT BLUE
+              四季折々
             </p>
-            <ul className="flex flex-row">
+            <ul className="flex flex-row py-1">
               <li>
                 <Link href="https://twitter.com/STr3292">
                   <a className="string bg-Twitter">
