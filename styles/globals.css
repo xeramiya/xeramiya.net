@@ -18,9 +18,14 @@
   .string {
     @apply inline-flex items-center justify-center h-8 w-8 mx-1 rounded-lg hover:rounded-full
   }
+  .stroke-round {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
 
 @layer utilities {
+
 }
 
 
@@ -41,12 +46,19 @@ a {
   box-sizing: border-box;
 }
 
+#uebitLogoLine {
+  position: absolute;
+  transition: 800ms;
+  stroke-width: 16;
+  fill-opacity: 0;
+}
 
-
-
-
-
-
+#uebitLogoFace {
+  position: absolute;
+  transition: 800ms;
+  stroke-width: 0;
+  fill-opacity: 0;
+}
 
 
 

@@ -2,8 +2,23 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import packageJson from "../package.json"
+import Vivus from "vivus";
+import { useEffect } from "react";
 
 export default function Layout({ children }) {
+  useEffect(() => {
+    var logo = new Vivus('uebitLogoLine', {
+      duration: 20,
+      type: "delayed",
+      start: "autostart",
+    }, function () {
+      var fill = document.getElementById("uebitLogoFace");
+      var stroke = document.getElementById("uebitLogoLine");
+      fill.style.fillOpacity = "1";
+      stroke.style.strokeWidth = "0";
+    });
+  });
+
   return (
     <div>
       <Head>
@@ -29,8 +44,31 @@ export default function Layout({ children }) {
           <h1 id="uebitLogo" className="mx-2">
             <Link href="./">
               <a>
-                <svg id="uebitLogoFace" width="100%" height="100%" viewBox="0 0 1967 492" version="1.1"
-                  className="absolute h-5 w-20 fill-white hover:fill-iRed active:fill-white">
+                <svg id="uebitLogoLine" width="100%" height="100%" viewBox="0 0 1967 492"
+                  className="h-5 w-20 stroke-white stroke-round">
+                  <path id="U2l" d="M309.359,482.817l-45.048,0l236.385,-474.114l90.096,-0" />
+                  <path id="U2r" d="M309.359,482.817l45.048,0l236.385,-474.114l-90.096,-0" />
+                  <path id="U1r" d="M281.999,402.187l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0" />
+                  <path id="U1l" d="M281.999,402.187l-40.2,80.63l-117.017,0l-88.999,-143.54l164.819,-330.574" />
+                  <path id="E1t" d="M573.103,89.333l40.201,-80.63l277.582,-0" />
+                  <path id="E1b" d="M573.103,89.333l277.582,-0l40.201,-80.63" />
+                  <path id="E2t" d="M480.033,276.002l40.201,-80.63l277.582,-0" />
+                  <path id="E2b" d="M480.033,276.002l277.582,-0l40.201,-80.63" />
+                  <path id="E3t" d="M376.919,482.817l40.2,-80.63l277.582,0" />
+                  <path id="E3b" d="M376.919,482.817l277.582,0l40.2,-80.63" />
+                  <path id="B1t" d="M690.933,482.817l236.385,-474.114l390.189,-0" />
+                  <path id="B1b"
+                    d="M690.933,482.817l90.096,0l103.114,-206.815l187.486,-0l40.201,-80.63l-187.486,-0l52.869,-106.039l300.094,-0l40.2,-80.63" />
+                  <path id="B2t" d="M803.541,482.817l40.2,-80.63l187.486,0l145.939,-292.708l90.096,0" />
+                  <path id="B2b" d="M803.541,482.817l277.582,0l186.139,-373.338" />
+                  <path id="It" d="M1103.63,482.817l40.2,-80.63l43.631,0l196.184,-393.484l133.727,-0" />
+                  <path id="Ib" d="M1103.63,482.817l133.726,0l196.184,-393.484l43.631,-0l40.201,-80.63" />
+                  <path id="Tt" d="M1499.91,89.333l40.201,-80.63l390.19,-0" />
+                  <path id="Tb"
+                    d="M1499.91,89.333l150.047,-0l-196.184,393.484l90.096,0l196.184,-393.484l150.047,-0l40.201,-80.63" />
+                </svg>
+                <svg id="uebitLogoFace" width="100%" height="100%" viewBox="0 0 1967 492"
+                  className="h-5 w-20 fill-white">
                   <path id="U2" d="M590.792,8.703l-90.096,-0l-236.385,474.114l90.096,0l236.385,-474.114Z" />
                   <path id="U1"
                     d="M200.602,8.703l-164.819,330.574l88.999,143.54l117.017,0l40.2,-80.63l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0Z" />
@@ -79,7 +117,7 @@ export default function Layout({ children }) {
       </header>
       <main className="mx-auto max-w-screen-md pt-11 text-base">{children}</main>
       <footer className="mx-auto max-w-screen-md text-right py-8">
-        <p className="text-gray">
+        <p className="text-gray mx-1">
           <Link href="https://github.com/STr3292/UEBIT-STRINGs">
             <a>
               UEBIT STRINGs v{packageJson.version}

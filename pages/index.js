@@ -28,9 +28,13 @@ export default function Home() {
             </p>
           </section>
           <section id="social" className="pt-4">
-            <h1>
-              STr3292
-            </h1>
+            <Link href="./signature">
+              <a>
+                <h1>
+                  STr3292
+                </h1>
+              </a>
+            </Link>
             <p className="text-gray">
               四季折々
             </p>
