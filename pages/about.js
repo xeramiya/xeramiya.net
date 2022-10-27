@@ -10,7 +10,7 @@ export default function About() {
     <div>
       <Head>
         <title>About UEBIT STRINGs</title>
-        <meta name="description" content="About this page" />
+        <meta name="description" content="About this site" />
       </Head>
 
       <Layout>

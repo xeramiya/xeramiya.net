@@ -7,13 +7,13 @@ import { useEffect } from "react";
 
 export default function Layout({ children }) {
   useEffect(() => {
-    var logo = new Vivus('uebitLogoLine', {
+    let logo = new Vivus('uebitLogoLine', {
       duration: 20,
       type: "delayed",
       start: "autostart",
-    }, function () {
-      var fill = document.getElementById("uebitLogoFace");
-      var stroke = document.getElementById("uebitLogoLine");
+    }, async function () {
+      let fill = await document.getElementById("uebitLogoFace");
+      let stroke = await document.getElementById("uebitLogoLine");
       fill.style.fillOpacity = "1";
       stroke.style.strokeWidth = "0";
     });
@@ -87,7 +87,7 @@ export default function Layout({ children }) {
               </a>
             </Link>
           </h1>
-          <ul className="hidden justify-end mx-1 text-center text-sm font-mono md:flex">
+          <ul className="flex justify-end mx-1 text-center text-sm font-mono">
             <li className="block w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/about">
                 ABOUT
@@ -101,11 +101,6 @@ export default function Layout({ children }) {
             <li className="block w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/app">
                 APP
-              </Link>
-            </li>
-            <li className="block w-20 mx-1 rounded bg-nand-default hover:bg-nand-lighter">
-              <Link href="/login">
-                LOGIN
               </Link>
             </li>
           </ul>

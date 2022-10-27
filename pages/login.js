@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div>
       <Head>
-        <title>About UEBIT STRINGs</title>
+        <title>Fake Login Page - UEBIT STRINGs</title>
         <meta name="description" content="About this page" />
       </Head>
 
