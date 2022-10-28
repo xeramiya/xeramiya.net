@@ -11,15 +11,10 @@ export default function Home() {
   const audioCtx = useRef(null);
   const [audioBuffer, setAudioBuffer] = useState(null);
   let sourceNode;
+  let streamChannel = useRef(false);
 
-  let streamingChannel = false;
-  function streamingControl(order) {
-    if (order) {
-      streamingChannel = true;
-    } else {
-      streamingChannel = false;
-    }
-
+  function streamControl(order) {
+    streamChannel.current = order;
   }
 
   useEffect(() => {
@@ -51,9 +46,8 @@ export default function Home() {
   useEffect(() => {
     const playbutton = document.getElementById("playbutton");
     playbutton.addEventListener("click", async () => {
-      console.log("streamingChannel: " + streamingChannel);
-      if (!streamingChannel) {
-        await streamingControl(true);
+      if (!streamChannel.current) {
+        await streamControl(true);
         const disc = await fetch("./assets/audio/Nelax2Dream/Nelax-Tentacling/Nelax-Tentacling.wav");
         await setDisc(disc);
         await console.log("enjoy!");
@@ -65,7 +59,7 @@ export default function Home() {
     const stopbutton = document.getElementById("stopbutton");
     stopbutton.addEventListener("click", async () => {
       sourceNode?.stop();
-      streamingControl(false);
+      streamControl(false);
     });
   });
 
@@ -78,12 +72,12 @@ export default function Home() {
 
       <Layout>
         <article className="pt-2 pb-16 mx-1">
-          <section className="">
-            <h1 className="text-3xl font-bold">
+          <section className="pb-4">
+            <h1 className="">
               Nelax2Dream
             </h1>
             <p className="text-gray">
-              ノイズをお耳に詰め込んで
+              ノイズを耳に詰め込んで
             </p>
           </section>
           <section className="py-4">

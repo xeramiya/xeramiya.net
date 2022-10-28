@@ -16,15 +16,16 @@ export default function About() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="">
-            <h1 className="text-3xl font-bold">
+            <h1 className="">
               <span className="italic">
                 UEBIT STRINGs
               </span>
               とは
             </h1>
             <p className="text-gray font">
-              STr3292のためだけの、ただの個人サイト。不定期に進化します。<br />
-              ヘッダーにいろいろ項目を追加したが、内容がないよう。
+              組織のサイトのような面をしているが只の個人サイトで、不定期に進化する。<br/>
+              ドメイン名は個人名で取ればよかったかもしれないわね。<br/>
+              ヘッダーにいろいろ項目を追加したけど、内容がないよう。
             </p>
           </section>
         </article>

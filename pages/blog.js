@@ -16,7 +16,7 @@ export default function About() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="py-4">
-            <h1 className="text-3xl font-bold font-serif">
+            <h1 className="font-serif">
               <ruby>
                 <rb>武蔵野新首都圏憂愁</rb>
                 <rt>ムサシノ ニューキャピタル ブルース</rt>

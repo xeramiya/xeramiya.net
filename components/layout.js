@@ -20,7 +20,7 @@ export default function Layout({ children }) {
   });
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen justify-between">
       <Head>
         <meta charset="UTF-8" />
         <link rel="icon" href="./favicons/favicon.ico" />
@@ -88,17 +88,17 @@ export default function Layout({ children }) {
             </Link>
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
-            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
-              <Link href="/about">
-                ABOUT
+            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+              <Link href="/STr3292">
+                STr3292
               </Link>
             </li>
-            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
+            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
                 WEBLOG
               </Link>
             </li>
-            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
+            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/app">
                 APP
               </Link>
@@ -110,16 +110,21 @@ export default function Layout({ children }) {
           */}
         </nav>
       </header>
-      <main className="mx-auto max-w-screen-md pt-11 text-base">{children}</main>
-      <footer className="mx-auto max-w-screen-md text-right py-8">
-        <p className="text-gray mx-1">
+      <main className="w-full mx-auto max-w-screen-md pt-11 text-base">
+        {children}
+      </main>
+      <footer className="w-full mx-auto text-right mt-8 pt-1 pb-2">
+        <p className="text-gray mx-2">
           <Link href="https://github.com/STr3292/UEBIT-STRINGs">
             <a>
-              UEBIT STRINGs v{packageJson.version}
+              Now Running&nbsp;
+              <span className="italic">
+                UEBIT STRINGs v{packageJson.version}
+              </span>
             </a>
           </Link>
         </p>
       </footer>
-    </div >
+    </div>
   )
 }
