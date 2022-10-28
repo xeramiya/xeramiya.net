@@ -16,7 +16,7 @@ export default function Home() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="pt-4">
-            <h1>
+            <h1 className="text-3xl">
               ようこそ、
               <span className="italic">
                 UEBIT STRINGs

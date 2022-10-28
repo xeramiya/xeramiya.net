@@ -88,17 +88,17 @@ export default function Layout({ children }) {
             </Link>
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
-            <li className="block w-20 mx-1 rounded hover:bg-white/20">
+            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/about">
                 ABOUT
               </Link>
             </li>
-            <li className="block w-20 mx-1 rounded hover:bg-white/20">
+            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
                 WEBLOG
               </Link>
             </li>
-            <li className="block w-20 mx-1 rounded hover:bg-white/20">
+            <li className="block w-14 sm:w-20 mx-1 rounded hover:bg-white/20">
               <Link href="/app">
                 APP
               </Link>

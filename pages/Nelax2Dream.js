@@ -12,20 +12,22 @@ export default function Home() {
   const [audioBuffer, setAudioBuffer] = useState(null);
   let sourceNode;
 
-  let streamingChannel = 0;
+  let streamingChannel = false;
   function streamingControl(order) {
-    if (order === 0) {
-      streamingChannel = 0;
+    if (order) {
+      streamingChannel = true;
     } else {
-      streamingChannel += 1;
+      streamingChannel = false;
     }
+
   }
 
   useEffect(() => {
     audioCtx.current = new AudioContext();
   });
 
-  async function setDisc(disc) {
+  // 指定音源を再生
+  async function playDisc(disc) {
     const audioBuffer = await audioCtx.current.decodeAudioData(
       await disc.arrayBuffer()
     );
@@ -34,27 +36,36 @@ export default function Home() {
     sourceNode.buffer = audioBuffer;
     sourceNode.connect(audioCtx.current.destination);
     sourceNode.loop = true;
+    await sourceNode.start();
+  }
+
+  // 指定音源をセット
+  function setDisc(disc) {
+    // 一筋縄では音声を再生できないブラウザ用
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx.current = new AudioContext();
+    audioCtx.current.createBufferSource().start(0);
+    playDisc(disc);
   }
 
   useEffect(() => {
     const playbutton = document.getElementById("playbutton");
     playbutton.addEventListener("click", async () => {
       console.log("streamingChannel: " + streamingChannel);
-      if (streamingChannel === 0) {
-        await streamingControl(1);
-
+      if (!streamingChannel) {
+        await streamingControl(true);
         const disc = await fetch("./assets/audio/Nelax2Dream/Nelax-Tentacling/Nelax-Tentacling.wav");
         await setDisc(disc);
-        await console.log(sourceNode);
-
-        await sourceNode.start();
-        await console.log("playing!");
+        await console.log("enjoy!");
+      } else {
+        return;
       }
     });
 
     const stopbutton = document.getElementById("stopbutton");
     stopbutton.addEventListener("click", async () => {
       sourceNode?.stop();
+      streamingControl(false);
     });
   });
 
@@ -68,11 +79,11 @@ export default function Home() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="">
-            <h1 className="text-xl font-bold">
+            <h1 className="text-3xl font-bold">
               Nelax2Dream
             </h1>
             <p className="text-gray">
-              Sound Looper
+              ノイズをお耳に詰め込んで
             </p>
           </section>
           <section className="py-4">
@@ -87,7 +98,7 @@ export default function Home() {
                 <div className="float-left pointer-events-none">
                 </div>
               </div>
-              <button id="stopbutton" className="bg-iRed/70 hover:bg-iRed text-align flot h-12 text-mono px-4 float-right rounded-r-lg my-1">
+              <button id="stopbutton" className="bg-iRed/70 hover:bg-iRed text-align flot h-12 text-mono px-4 float-right rounded-r-lg my-1 font-mono">
                 EJECT
               </button>
             </div>

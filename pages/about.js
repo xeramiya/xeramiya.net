@@ -16,7 +16,7 @@ export default function About() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="">
-            <h1 className="text-xl font-bold">
+            <h1 className="text-3xl font-bold">
               <span className="italic">
                 UEBIT STRINGs
               </span>
