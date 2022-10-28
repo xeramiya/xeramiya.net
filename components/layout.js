@@ -89,7 +89,7 @@ export default function Layout({ children }) {
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
             <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
-              <Link href="/STr3292">
+              <Link href="/str3292">
                 STr3292
               </Link>
             </li>
@@ -117,7 +117,7 @@ export default function Layout({ children }) {
         <p className="text-gray mx-2">
           <Link href="https://github.com/STr3292/UEBIT-STRINGs">
             <a>
-              Now Running&nbsp;
+              Now running&nbsp;
               <span className="italic">
                 UEBIT STRINGs v{packageJson.version}
               </span>

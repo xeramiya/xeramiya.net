@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>UEBIT STRINGs</title>
+        <title>STr3292 - UEBIT STRINGs</title>
         <meta name="description" content="DAWN PAGE" />
       </Head>
 

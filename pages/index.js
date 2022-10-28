@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>STr3292 - UEBIT STRINGs</title>
+        <title>UEBIT STRINGs</title>
         <meta name="description" content="DAWN PAGE" />
       </Head>
 
@@ -35,7 +35,7 @@ export default function Home() {
             </div>
             <ul>
               <li className="pl-2">
-                <Link href="/STr3292">
+                <Link href="/str3292">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     STr3292
                   </a>
@@ -45,7 +45,7 @@ export default function Home() {
                 </p>
               </li>
               <li className="pl-2">
-                <Link href="/weblog">
+                <Link href="/blog">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     WEBLOG
                   </a>
