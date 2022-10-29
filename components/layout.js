@@ -39,13 +39,13 @@ export default function Layout({ children }) {
         <meta name="theme-color" content="#050D28" />
       </Head>
 
-      <header className="fixed w-full h-11 py-3 backdrop-blur-md bg-gray/20 hover:backdrop-blur-xl active:bg-iRed">
+      <header className="fixed w-full h-11 py-3 backdrop-blur-md bg-gray/20 hover:backdrop-blur-xl active:bg-iRed text-zWhite">
         <nav className="mx-auto max-w-screen-md">
           <h1 id="uebitLogo" className="mx-2">
             <Link href="./">
               <a>
                 <svg id="uebitLogoLine" width="100%" height="100%" viewBox="0 0 1967 492"
-                  className="h-5 w-20 stroke-white stroke-round">
+                  className="h-5 w-20 stroke-zWhite stroke-round hover:stroke-white">
                   <path id="U2l" d="M309.359,482.817l-45.048,0l236.385,-474.114l90.096,-0" />
                   <path id="U2r" d="M309.359,482.817l45.048,0l236.385,-474.114l-90.096,-0" />
                   <path id="U1r" d="M281.999,402.187l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0" />
@@ -68,7 +68,7 @@ export default function Layout({ children }) {
                     d="M1499.91,89.333l150.047,-0l-196.184,393.484l90.096,0l196.184,-393.484l150.047,-0l40.201,-80.63" />
                 </svg>
                 <svg id="uebitLogoFace" width="100%" height="100%" viewBox="0 0 1967 492"
-                  className="h-5 w-20 fill-white">
+                  className="h-5 w-20 fill-zWhite hover:fill-white">
                   <path id="U2" d="M590.792,8.703l-90.096,-0l-236.385,474.114l90.096,0l236.385,-474.114Z" />
                   <path id="U1"
                     d="M200.602,8.703l-164.819,330.574l88.999,143.54l117.017,0l40.2,-80.63l-117.114,0l-39.006,-62.91l164.819,-330.574l-90.096,-0Z" />
@@ -88,19 +88,25 @@ export default function Layout({ children }) {
             </Link>
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
-            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+            <li>
               <Link href="/str3292">
-                STr3292
+                <a className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+                  STr3292
+                </a>
               </Link>
             </li>
-            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
-              <Link href="/blog" className="block w-20 mx-1 rounded hover:bg-white/20">
-                WEBLOG
+            <li>
+              <Link href="/blog">
+                <a className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+                  WEBLOG
+                </a>
               </Link>
             </li>
-            <li className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+            <li>
               <Link href="/app">
-                APP
+                <a className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
+                  APP
+                </a>
               </Link>
             </li>
           </ul>

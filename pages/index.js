@@ -33,8 +33,8 @@ export default function Home() {
                 CONTENTs
               </h2>
             </div>
-            <ul>
-              <li className="pl-2">
+            <ul className="pl-2">
+              <li className="">
                 <Link href="/str3292">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     STr3292
@@ -44,7 +44,7 @@ export default function Home() {
                   私がメインコンテンツに!?
                 </p>
               </li>
-              <li className="pl-2">
+              <li className="">
                 <Link href="/blog">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     WEBLOG
@@ -54,7 +54,7 @@ export default function Home() {
                   当然のように何も書かれていない
                 </p>
               </li>
-              <li className="pl-2">
+              <li className="">
                 <Link href="/app">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     APP
@@ -64,7 +64,7 @@ export default function Home() {
                   アップップとは読みません
                 </p>
               </li>
-              <li className="pl-2">
+              <li className="">
                 <Link href="/about">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     ABOUT

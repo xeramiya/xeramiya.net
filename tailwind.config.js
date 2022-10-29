@@ -14,6 +14,7 @@ module.exports = {
   theme: {
     colors: {
       white: "#FFFFFF",
+      zWhite: "#F9F7DC",
       gray: "#999999",
       darkblue: "#050D28",
       nand: {
