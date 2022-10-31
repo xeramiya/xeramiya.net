@@ -96,7 +96,7 @@ export default function Layout({ children }) {
               </Link>
             </li>
             <li>
-              <Link href="/blog">
+              <Link href="/weblog">
                 <a className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20">
                   WEBLOG
                 </a>

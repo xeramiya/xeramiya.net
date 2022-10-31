@@ -41,17 +41,17 @@ export default function Home() {
                   </a>
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
-                  私がメインコンテンツに!?
+                  私がメインコンテンツだ
                 </p>
               </li>
               <li className="">
-                <Link href="/blog">
+                <Link href="/weblog">
                   <a className="text-lg font-mono underline hover:text-iRed">
                     WEBLOG
                   </a>
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
-                  当然のように何も書かれていない
+                  ブログってweblogの略らしいっすよ
                 </p>
               </li>
               <li className="">
@@ -61,7 +61,7 @@ export default function Home() {
                   </a>
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
-                  アップップとは読みません
+                  アップップとは読みませんよ
                 </p>
               </li>
               <li className="">
