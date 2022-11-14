@@ -119,7 +119,7 @@ export default function Layout({ children }) {
       <main className="w-full mx-auto max-w-screen-md pt-11 text-base">
         {children}
       </main>
-      <footer className="w-full mx-auto text-right mt-8 pt-1 pb-2">
+      <footer className="w-full mx-auto text-right mt-8 pt-1 pb-2 select-none">
         <p className="text-gray mx-2">
           <Link href="https://github.com/STr3292/UEBIT-STRINGs">
             <a>
