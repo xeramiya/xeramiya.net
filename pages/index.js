@@ -24,7 +24,7 @@ export default function Home() {
               へ
             </h1>
             <p className="text-gray font">
-              これからも変わらず変わり続ける...かも
+              シンプルでわかりやすくって、それでいてセクシーでノイズィーなサイトを目指して
             </p>
           </section>
           <section id="social" className="pt-4">
@@ -41,7 +41,7 @@ export default function Home() {
                   </a>
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
-                  私がメインコンテンツだ
+                  これは誰。これは私。私は何。
                 </p>
               </li>
               <li className="">
