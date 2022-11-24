@@ -7,4 +7,3 @@ Host: https://www.uebit.tk
 
 # Sitemaps
 Sitemap: https://www.uebit.tk/sitemap.xml
-Sitemap: https://uebit.tk/sitemap.xml
