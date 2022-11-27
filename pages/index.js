@@ -4,8 +4,24 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Script from 'next/script'
 import Layout from '../components/layout'
+import { useState } from "react";
 
 export default function Home() {
+  const messageList = [
+    "これからも変わらず変わり続ける...かも",
+    "春はパン、てことで秋はあけぼの",
+    "「もちもち」も「モチモチ」も「MOCHIMOCHI」も、もちもち感が伝わってくるけど、「餅々」だと餅がいくつか並んでいる様子しか想像できない",
+    "信じられないかもしれませんが、ここは日本です。",
+    "日光に紅葉を見に行っこうよう",
+    "「ここすき」",
+    "たまには法律を守ろう",
+    "鳥居の象形文字「円」をお金の単位にしている国民だと外国人から見られている可能性はある",
+    "「例の〇〇」というよりも「件の〇〇」と言う方がかっこいいよね",
+    "計算機の性能も馬力で表現して欲しい",
+    "♪醤油の発注 多い 多い"
+  ];
+  const [message, setMessage] = useState(messageList[Math.floor(Math.random() * messageList.length)]);
+
   return (
     <div>
       <Head>
@@ -23,8 +39,8 @@ export default function Home() {
               </span>
               へ
             </h1>
-            <p className="text-gray font">
-              シンプルでわかりやすくって、それでいてセクシーでノイズィーなサイトを目指して
+            <p className="text-gray font" id="random-message" suppressHydrationWarning={true}>
+              {message}
             </p>
           </section>
           <section id="social" className="pt-4">
