@@ -21,10 +21,8 @@ export default function About() {
           <p className="font-medium text-ls">
             あなたのアカウントを保護する技術力はありません
           </p>
-          <Link href="./">
-            <a className="text-nand-lighter underline">
-              &gt;&gt; Home &lt;&lt;
-            </a>
+          <Link href="./" className="text-nand-lighter underline">
+            &gt;&gt; Home &lt;&lt;
           </Link>
         </div>
       </Layout>

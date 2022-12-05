@@ -13,9 +13,14 @@ module.exports = {
   },
   theme: {
     colors: {
+      theme: {
+        main: "#008899",
+        sub: "#BA160C",
+      },
+
       white: "#FFFFFF",
       zWhite: "#F9F7DC",
-      gray: "#999999",
+      gray: "#B9B9B9",
       darkblue: "#050D28",
       nand: {
         lighter: "#52B8CA",
@@ -24,6 +29,10 @@ module.exports = {
       },
       ReD: "#950008",
       iRed: "#BA160C",
+      cyberYellow: "#F3E600",
+      cyberBlue: "#04DAF6",
+      cyberRed: "#FF003C",
+
       Twitter: "#1B9DF0",
       YouTube: "#FF0000",
       Facebook: "#1877F2",

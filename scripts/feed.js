@@ -42,7 +42,7 @@ function genFeed() {
   
 
   // ローカルファイルや API 経由などでファイルのデータを取得する関数を書く
-  const posts = getPosts(...);
+  const posts = getPosts();
 
   // feed で定義した情報から各記事での変更点を宣言
   posts.forEach((post) => {

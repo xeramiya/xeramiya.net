@@ -51,40 +51,32 @@ export default function Home() {
             </div>
             <ul className="pl-2">
               <li className="">
-                <Link href="/str3292">
-                  <a className="text-lg font-mono underline hover:text-iRed">
-                    STr3292
-                  </a>
+                <Link href="/str3292" className="text-lg font-mono underline hover:text-cyberRed">
+                  STr3292
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
                   これは誰。これは私。私は何。
                 </p>
               </li>
               <li className="">
-                <Link href="/weblog">
-                  <a className="text-lg font-mono underline hover:text-iRed">
-                    WEBLOG
-                  </a>
+                <Link href="/weblog" className="text-lg font-mono underline hover:text-cyberRed">
+                  WEBLOG
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
                   ブログってweblogの略らしいっすよ
                 </p>
               </li>
               <li className="">
-                <Link href="/app">
-                  <a className="text-lg font-mono underline hover:text-iRed">
-                    APP
-                  </a>
+                <Link href="/app" className="text-lg font-mono underline hover:text-cyberRed">
+                  APP
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
                   アップップとは読みませんよ
                 </p>
               </li>
               <li className="">
-                <Link href="/about">
-                  <a className="text-lg font-mono underline hover:text-iRed">
-                    ABOUT
-                  </a>
+                <Link href="/about" className="text-lg font-mono underline hover:text-cyberRed">
+                  ABOUT
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
                   これ要る？

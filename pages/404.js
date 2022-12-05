@@ -16,10 +16,8 @@ export default function Custom404() {
         <p className="font-medium text-2xl">
           PAGE NOT FOUND
         </p>
-        <Link href="./">
-          <a className="text-nand-lighter underline">
-            &gt;&gt; Wake Up &lt;&lt;
-          </a>
+        <Link href="./" className="text-cyberBlue underline">
+          &gt;&gt; Wake Up &lt;&lt;
         </Link>
       </div>
     </div>

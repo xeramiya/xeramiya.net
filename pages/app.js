@@ -34,10 +34,8 @@ export default function Home() {
                     <div className="inline-block font-bold text-lg">
                       Nelax2Dream
                     </div>
-                    <Link href="/Nelax2Dream">
-                      <a className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white">
-                        移動
-                      </a>
+                    <Link href="/Nelax2Dream" className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white">
+                      移動
                     </Link>
                     <p className="text-gray text-sm">
                       音楽をそれはそれはループしつづけるだけ
@@ -54,10 +52,8 @@ export default function Home() {
                     <div className="inline-block font-bold text-lg">
                       BUCKWHEAT
                     </div>
-                    <Link href="https://buckwheat.glitch.me/">
-                      <a className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white">
-                        起動
-                      </a>
+                    <Link href="https://buckwheat.glitch.me/" className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white">
+                      起動
                     </Link>
                     <p className="text-gray text-sm">
                       そこそこかっこいい時計<br />
