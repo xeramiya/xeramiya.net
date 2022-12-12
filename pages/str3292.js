@@ -16,11 +16,11 @@ export default function Home() {
       <Layout>
         <article className="pt-2 pb-16 mx-1">
           <section className="">
-            <Link href="./signature">
-              <h1 className="">
+            <h1 className="">
+              <Link href="./signature">
                 STr3292
-              </h1>
-            </Link>
+              </Link>
+            </h1>
           </section>
           <section className="pl-1">
             <p className="text-gray">
