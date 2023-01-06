@@ -51,8 +51,8 @@ export default function Home() {
             </div>
             <ul className="pl-2">
               <li className="">
-                <Link href="/str3292" className="text-lg font-mono underline hover:text-cyberRed">
-                  STr3292
+                <Link href="/xeramiya" className="text-lg font-mono underline hover:text-cyberRed">
+                  Xeramiya
                 </Link>
                 <p className="text-gray text-xs font-mono align-text-bottom">
                   これは誰。これは私。私は何。

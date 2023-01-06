@@ -27,15 +27,15 @@ export default function Layout({ children }) {
         <link rel="icon" href="./favicons/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="./favicons/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="STr3292" />
-        <meta name="keywords" content="UEBIT,STr3292" />
+        <meta name="author" content="Xeramiya" />
+        <meta name="keywords" content="UEBIT,Xeramiya" />
         <meta name="og:url" content="www.uebit.tk" />
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content="UEBIT" />
         <meta name="og:title" content="UEBIT" />
         <meta name="og:image" content="https://i.gyazo.com/9f43b2ec371503a7fc2836d43249e1a5.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@STr3292" />
+        <meta name="twitter:site" content="@xeramiya" />
         <meta name="theme-color" content="#050D28" />
       </Head>
 
@@ -87,8 +87,8 @@ export default function Layout({ children }) {
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
             <li>
-              <Link href="/str3292" className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
-                STr3292
+              <Link href="/xeramiya" className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
+                Xeramiya
               </Link>
             </li>
             <li>
@@ -113,10 +113,10 @@ export default function Layout({ children }) {
       </main>
       <footer className="w-full mx-auto text-right mt-8 pt-1 pb-2 select-none">
         <p className="text-gray mx-2">
-          <Link href="https://github.com/STr3292/UEBIT-STRINGs" className="italic font-mono">
+          <Link href="https://github.com/xeramiya/uebit-strings" className="italic font-mono">
             Now running&nbsp;
             <span className="">
-              UEBIT-STRINGs v{packageJson.version}
+              UEBIT-STRINGs_v{packageJson.version}
             </span>
           </Link>
         </p>
