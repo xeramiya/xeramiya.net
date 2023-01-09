@@ -86,13 +86,13 @@ export default function Home() {
                 <div className="float-left text-lg font-mono pl-4 h-16 text-align">
                   Nelax-Tentacling
                   <div className="text-xs text-gray">
-                    STr3292
+                    Xeramiya
                   </div>
                 </div>
                 <div className="float-left pointer-events-none">
                 </div>
               </div>
-              <button id="stopbutton" className="bg-iRed/70 hover:bg-iRed text-align flot h-12 text-mono px-4 float-right rounded-r-lg my-1 font-mono">
+              <button id="stopbutton" className="bg-iRed/70 hover:bg-iRed text-align float h-12 text-mono px-4 float-right rounded-r-lg my-1 font-mono">
                 EJECT
               </button>
             </div>

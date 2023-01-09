@@ -52,7 +52,7 @@ export default function Home() {
                     <div className="inline-block font-bold text-lg">
                       BUCKWHEAT
                     </div>
-                    <Link href="https://buckwheat.glitch.me/" className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white">
+                    <Link href="https://buckwheat.glitch.me/" className="inline-block rounded-full mx-2 px-2 text-sm font-semibold bg-nand-default text-white mr-2 mb-2 hover:bg-nand-lighter active:bg-iRed active:text-white" target="_blank" rel="noopener noreferrer">
                       起動
                     </Link>
                     <p className="text-gray text-sm">

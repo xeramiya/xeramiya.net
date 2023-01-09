@@ -31,8 +31,8 @@ export default function Layout({ children }) {
         <meta name="keywords" content="UEBIT,Xeramiya" />
         <meta name="og:url" content="www.uebit.tk" />
         <meta name="og:type" content="website" />
-        <meta name="og:site_name" content="UEBIT" />
-        <meta name="og:title" content="UEBIT" />
+        <meta name="og:site_name" content="UEBIT-STRINGs" />
+        <meta name="og:title" content="UEBIT-STRINGs" />
         <meta name="og:image" content="https://i.gyazo.com/9f43b2ec371503a7fc2836d43249e1a5.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@xeramiya" />
@@ -87,17 +87,17 @@ export default function Layout({ children }) {
           </h1>
           <ul className="flex justify-end mx-1 text-center text-sm font-mono">
             <li>
-              <Link href="/xeramiya" className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
+              <Link href="/xeramiya" className="block w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
                 Xeramiya
               </Link>
             </li>
             <li>
-              <Link href="/weblog" className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
+              <Link href="/weblog" className="block w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
                 WEBLOG
               </Link>
             </li>
             <li>
-              <Link href="/app" className="block w-16 sm:w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
+              <Link href="/app" className="block w-20 mx-1 rounded hover:bg-white/20 hover:text-white">
                 APP
               </Link>
             </li>
@@ -113,10 +113,10 @@ export default function Layout({ children }) {
       </main>
       <footer className="w-full mx-auto text-right mt-8 pt-1 pb-2 select-none">
         <p className="text-gray mx-2">
-          <Link href="https://github.com/xeramiya/uebit-strings" className="italic font-mono">
-            Now running&nbsp;
+          <Link href="https://github.com/xeramiya/uebit-strings" className="italic font-mono" target="_blank" rel="noopener noreferrer">
+            NOW RUNNING&nbsp;
             <span className="">
-              UEBIT-STRINGs_v{packageJson.version}
+              uebit-strings_v{packageJson.version}
             </span>
           </Link>
         </p>

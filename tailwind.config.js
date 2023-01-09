@@ -40,7 +40,7 @@ module.exports = {
       Steam: '#2A475E',
       SoundCloud: '#FF4400',
       Spotify: '#1DB954',
-      Github: '#424242',
+      GitHub: '#424242',
       Discord: '#5865F2',
 
       test: "#FF4F00",

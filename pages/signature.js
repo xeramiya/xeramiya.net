@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    var sign = new Vivus('signature', {
+    let sign = new Vivus('signature', {
       duration: 90,
       type: "oneByOne",
       start: "autostart",
