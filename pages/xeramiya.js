@@ -7,21 +7,6 @@ import Layout from '../components/layout'
 import { useState, useEffect } from "react"
 
 export default function Home() {
-  const weightList = [
-    "font-thin",
-    "font-light",
-    "font-medium",
-    "font-bold"
-  ];
-  const fontList = [
-    "font-sans",
-    "font-serif",
-    "font-mono"
-  ];
-  const styleList = [
-    "italic",
-    "not-italic"
-  ];
   const [stringName, setStringName] = useState("");
   const stringList = {
     Twitter: "/Twitter",
@@ -32,11 +17,9 @@ export default function Home() {
     Spotify: "/Spotify",
     GitHub: "/GitHub"
   };
-
-  const callig = weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)] + " " + styleList[Math.floor(Math.random() * styleList.length)];
   
   useEffect(() => {
-    
+
   });
 
   return (
@@ -48,33 +31,12 @@ export default function Home() {
 
       <Layout>
         <article className="pt-2 pb-16 mx-1">
-          <section className="">
+          <section className=" font-medium font-sans italic tracking-widest">
             <div alt="Xeramiya">
               <span className="text-5xl" suppressHydrationWarning={true}>
                 <Link href="./signature">
-                  <span className={callig} aria-hidden="true">
-                    X
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    e
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    r
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    a
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    m
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    i
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    y
-                  </span>
-                  <span className={weightList[Math.floor(Math.random() * weightList.length)] + " " + fontList[Math.floor(Math.random() * fontList.length)]} aria-hidden="true">
-                    a
+                  <span className="" aria-hidden="true">
+                    Xeramiya
                   </span>
                 </Link>
               </span>
