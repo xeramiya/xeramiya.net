@@ -47,7 +47,7 @@ export default function Home() {
           </section>
           <section className="">
             <p className="text-gray text-lg">
-              I&apos;m fucking STill here!!
+              I&apos;m STill here!!
             </p>
           </section>
           <section className="pt-2">
