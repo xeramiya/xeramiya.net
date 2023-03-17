@@ -1,13 +1,23 @@
-# About UEBIT-STRINGs
-Access: [UEBIT-STRINGs](https://uebit.tk)
+---
+title: about xeramiya.net
+---
+
+# xeramiya.net
+Access: [xeramiya.net](https://www.xeramiya.net)
+
 ## なにこれ
-実質個人サイト
+名刺・あそび場
+
 ## 詳細情報
-インターネットのみなさま、こんばんは
+インターネットのみなさま、こんちゃっちゃ
+
 ### 稼働状況
 [Vercel](https://vercel.com)にて稼働中、たぶん好調
+
 ## 更新履歴
-### 直近のデプロイ履歴
-[Deployment/History](https://github.com/xeramiya/UEBIT-STRINGs/deployments/activity_log?environment=Production)
-### 更新通知
+
+### デプロイ履歴
+[Deployment/History](https://github.com/xeramiya/xeramiya.net/deployments/activity_log?environment=Production)
+
+### RSS更新通知
 受け取れるようになったらいいね
