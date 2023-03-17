@@ -1,0 +1,1 @@
+// NOTE: ファイル移動時にはtsconfig.jsonのincludeの修正を忘れずに！

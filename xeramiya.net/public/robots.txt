@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.xeramiya.net
+
+# Sitemaps
+Sitemap: https://www.xeramiya.net/sitemap.xml
