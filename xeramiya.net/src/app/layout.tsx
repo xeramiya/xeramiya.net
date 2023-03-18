@@ -42,8 +42,8 @@ export const metadata = {
     },
   },
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#16191B" },
-    { media: "(prefers-color-scheme: dark)", color: "#E9E6E1" },
+    { media: "(prefers-color-scheme: light)", color: "#E9E6E1" },
+    { color: "#16191B" },
   ],
   viewport: {
     width: "device-width",
@@ -65,9 +65,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body className="bg-[color:var(--background)]">
         <Header />
-        <main className="-full mx-auto max-w-screen-md pt-11 text-base text-[color:var(--char-main)]">{children}</main>
+        <main className="-full mx-auto max-w-screen-md pt-11 text-[color:var(--char-main)]">{children}</main>
         <footer className="mx-auto mt-8 w-full select-none pt-1 pb-2 text-right">
-          <div className="inline-block bg-[color:var(--error)] text-[color:var(--char-main)] px-2">
+          <div className="inline-block bg-[color:var(--error)] text-[color:var(--on-error)] px-2">
             大規模改装中: 各機能へのアクセス不可
           </div>
           <p className="mx-2 text-[color:var(--char-note)]">

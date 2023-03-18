@@ -34,20 +34,24 @@
   --background: #16191B;
   --primary: #008899;
   --error: #ba160c;
-  --glass: #ffffff39;
+  --on-error: #ffffff;
+  --glass: #00000047;
+  --on-glass: #ffffff;
   --char-main: #fffaf0;
-  --char-note: #868175;
+  --char-note: #888277;
   --char-link: #f33968;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #E9E6E1;
+    --background: #F7F6F4;
     --primary: #008899;
     --error: #ba160c;
-    --glass: #00000039;
+    --on-error: #ffffff;
+    --glass: #FFFFFF47;
+    --on-glass: #000000;
     --char-main: #252b2c;
-    --char-note: #868074;
+    --char-note: #888277;
     --char-link: #f33968;
   }
 }

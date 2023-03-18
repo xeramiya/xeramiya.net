@@ -1,7 +1,3 @@
----
-title: about xeramiya.net
----
-
 # xeramiya.net
 Access: [xeramiya.net](https://www.xeramiya.net)
 

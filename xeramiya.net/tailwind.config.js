@@ -36,6 +36,12 @@ module.exports = {
         GitHub: "#424242",
         Discord: "#5865F2",
       },
+      fontFamily: {
+        sans: [""],
+        serif: [""],
+        mono: [""],
+        exserif: [""],
+      },
       keyframes: {},
     },
   },
