@@ -3,19 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  article {
-    @apply mt-8 mb-16 mx-2;
-  }
-
-  section {
-    @apply mb-4
-  }
-
   h1 {
-    @apply text-3xl font-bold;
+    @apply font-serif text-4xl;
   }
   h2 {
-    @apply text-2xl font-semibold;
+    @apply mt-8 font-serif text-3xl;
+  }
+  h3 {
+    @apply mt-4 font-serif text-2xl;
+  }
+  h4 {
+    @apply mt-4 font-serif text-xl;
+  }
+  h5 {
+    @apply mt-4 font-serif text-lg;
+  }
+
+  p {
+    @apply mt-2 mb-6;
   }
 }
 
@@ -31,7 +36,7 @@
 }
 
 :root {
-  --background: #16191B;
+  --background: #16191b;
   --primary: #008899;
   --error: #ba160c;
   --on-error: #ffffff;
@@ -44,11 +49,11 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #F7F6F4;
+    --background: #f7f6f4;
     --primary: #008899;
     --error: #ba160c;
     --on-error: #ffffff;
-    --glass: #FFFFFF47;
+    --glass: #ffffff47;
     --on-glass: #000000;
     --char-main: #252b2c;
     --char-note: #888277;

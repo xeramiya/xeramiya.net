@@ -37,7 +37,7 @@ export default function Home() {
       <article>
         <section>
           <h1 className="italic">ようこそ、xeramiya.netへ</h1>
-          <p className="font text-gray" id="random-message" suppressHydrationWarning={true}>
+          <p className="font font-sans text-gray" id="random-message" suppressHydrationWarning={true}>
             {message}
           </p>
         </section>
@@ -65,52 +65,13 @@ export default function Home() {
               <p className="align-text-bottom font-mono text-xs text-gray">アップップとは読みませんよ</p>
             </li>
             <li className="">
-              <Link href="/about" className="font-mono text-lg underline hover:text-cyberRed">
-                ABOUT
+              <Link href="/debug" className="font-mono text-lg underline hover:text-cyberRed">
+                Debug
               </Link>
               <p className="align-text-bottom font-mono text-xs text-gray">これ要る？</p>
             </li>
           </ul>
         </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </article>
     </div>
   );

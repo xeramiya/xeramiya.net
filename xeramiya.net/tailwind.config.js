@@ -10,7 +10,24 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        "lect": "1024px",
+        "book": "700px",
+        "bmark": "300px",
+      },
       colors: {
+        background: "var(--background)",
+        primary: "var(--primary)",
+        error: "var(--error)",
+        glass: "var(--glass)",
+        char: {
+          main: "var(--char-main)",
+          note: "var(--char-note)",
+          link: "var(--char-link)",
+          error: "var(--on-error)",
+          glass: "var(--on-glass)",
+        },
+
         white: "#FFFFFF",
         zWhite: "#F9F7DC",
         gray: "#B9B9B9",
@@ -37,10 +54,18 @@ module.exports = {
         Discord: "#5865F2",
       },
       fontFamily: {
-        sans: [""],
-        serif: [""],
-        mono: [""],
-        exserif: [""],
+        sans: [
+          "M Plus 1p",
+          "var(--font-mplus1p)",
+          "Helvetica Neue",
+          "Arial",
+          "Hiragino Kaku Gothic ProN",
+          "Hiragino Sans",
+          "Meiryo",
+          "sans-serif",
+        ],
+        serif: ["Zen Antique", "var(--font-zen-antique)", "serif"],
+        mono: ["SF Mono", "Menlo", "Cascadia Code", "monospace"],
       },
       keyframes: {},
     },

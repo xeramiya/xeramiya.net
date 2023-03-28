@@ -1,7 +1,23 @@
 import Link from "next/link";
-import packageJson from "../../package.json";
-import "../styles/globals.css";
 import Header from "./header";
+import { M_PLUS_1p, Zen_Antique } from "next/font/google";
+
+import "../styles/globals.css";
+import packageJson from "../../package.json";
+
+const MPlus1p = M_PLUS_1p({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-mplus1p",
+  display: "swap",
+});
+
+const ZenAntique = Zen_Antique({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-zen-antique",
+  display: "swap",
+});
 
 export const metadata = {
   title: {
@@ -41,10 +57,7 @@ export const metadata = {
       url: "/favicons/favicon.png",
     },
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#E9E6E1" },
-    { color: "#16191B" },
-  ],
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#F7F6F4" }, { color: "#16191B" }],
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -62,15 +75,15 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
-      <body className="bg-[color:var(--background)]">
+    <html lang="ja" className="scroll-smooth">
+      <body className={"overflow-y-scroll" + " " + `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`}>
         <Header />
-        <main className="-full mx-auto max-w-screen-md pt-11 text-[color:var(--char-main)]">{children}</main>
-        <footer className="mx-auto mt-8 w-full select-none pt-1 pb-2 text-right">
-          <div className="inline-block bg-[color:var(--error)] text-[color:var(--on-error)] px-2">
-            大規模改装中: 各機能へのアクセス不可
+        <main className="mx-auto max-w-screen-lect px-4 pt-16 leading-8 text-char-main">{children}</main>
+        <footer className="mx-auto w-full select-none pt-1 pb-2 text-right mt-24">
+          <div className="inline-block rounded-l-md bg-error px-2 font-serif text-char-error">
+            大規模改装作業中: 大部分へのアクセス不可
           </div>
-          <p className="mx-2 text-[color:var(--char-note)]">
+          <div className="mx-2 text-char-note">
             <Link
               href="https://github.com/xeramiya/xeramiya.net"
               className="font-mono italic"
@@ -81,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {packageJson.name} v{packageJson.version}
               </span>
             </Link>
-          </p>
+          </div>
         </footer>
       </body>
     </html>

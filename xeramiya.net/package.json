@@ -1,6 +1,6 @@
 {
   "name": "xeramiya.net",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://www.xeramiya.net",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "jett": "npx tailwindcss -i ./src/styles_dev.css -o ./dst/styles.css"
   },
   "dependencies": {
+    "@next/font": "^13.2.4",
     "@rive-app/canvas": "^1.0.102",
     "@rive-app/react-canvas": "^3.0.38",
     "@types/node": "18.15.0",
