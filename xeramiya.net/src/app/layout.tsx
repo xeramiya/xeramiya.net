@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Header from "./header";
 import { M_PLUS_1p, Zen_Antique } from "next/font/google";
 
+import Header from "components/header";
+import Footer from "components/footer";
 import "../styles/globals.css";
-import packageJson from "../../package.json";
 
 const MPlus1p = M_PLUS_1p({
   weight: "400",
@@ -75,27 +75,15 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className="scroll-smooth">
-      <body className={"overflow-y-scroll" + " " + `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`}>
+    <html lang="ja" className="h-full scroll-smooth">
+      <body
+        className={
+          "h-full overflow-y-scroll" + " " + `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`
+        }
+      >
         <Header />
         <main className="mx-auto max-w-screen-lect px-4 pt-16 leading-8 text-char-main">{children}</main>
-        <footer className="mx-auto w-full select-none pt-1 pb-2 text-right mt-24">
-          <div className="inline-block rounded-l-md bg-error px-2 font-serif text-char-error">
-            大規模改装作業中: 大部分へのアクセス不可
-          </div>
-          <div className="mx-2 text-char-note">
-            <Link
-              href="https://github.com/xeramiya/xeramiya.net"
-              className="font-mono italic"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="">
-                {packageJson.name} v{packageJson.version}
-              </span>
-            </Link>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

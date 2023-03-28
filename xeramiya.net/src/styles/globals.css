@@ -26,8 +26,12 @@
 
 @layer components {
   .string {
-    @apply mx-1 mb-2 inline-flex h-11 items-center justify-center rounded-xl hover:w-11;
+    @apply mx-1 mb-2 inline-flex items-center justify-center rounded-xl w-12 h-12 hover:rounded-3xl;
   }
+
+   .note {
+    @apply text-char-note;
+   }
 
   .stroke-round {
     stroke-linecap: round;

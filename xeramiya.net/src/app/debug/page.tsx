@@ -12,7 +12,7 @@ export default async function Debug() {
     <div>
       <section>
         <h1>いつものやつを、いつもの量で</h1>
-        <div className="text-char-note">良い子は入っちゃダメだよん</div>
+        <div className="note">良い子は入っちゃダメだよん</div>
       </section>
       <section className="flex justify-between">
         <div className="max-w-2xl bg-primary">

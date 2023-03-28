@@ -1,5 +1,3 @@
-"use client";
-
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,7 +8,6 @@ export default function Home() {
   const messageList = [
     "これからも変わらず変わり続ける...かも",
     "春はパン、てことで秋はあけぼの",
-    "「もちもち」も「モチモチ」も「MOCHIMOCHI」も、もちもち感が伝わってくるけど、「餅々」だと餅がいくつか並んでいる様子しか想像できない",
     "信じられないかもしれませんが、ここは日本です。",
     "日光に紅葉を見に行っこうよう",
     "「ここすき」",
@@ -22,11 +19,7 @@ export default function Home() {
     "きつつきとともにとっととかたたたきしてきて",
   ];
 
-  let [message, setMessage] = useState<string>("");
-
-  useEffect(() => {
-    setMessage(messageList[Math.floor(Math.random() * messageList.length)]);
-  }, []);
+  const message = messageList[Math.floor(Math.random() * messageList.length)];
 
   return (
     <div>
@@ -36,41 +29,10 @@ export default function Home() {
       </Head>
       <article>
         <section>
-          <h1 className="italic">ようこそ、xeramiya.netへ</h1>
-          <p className="font font-sans text-gray" id="random-message" suppressHydrationWarning={true}>
+          <h1 className="italic">セラミヤ・ネットへようこそ</h1>
+          <p className="note" id="random-message" suppressHydrationWarning={true}>
             {message}
           </p>
-        </section>
-        <section id="social" className="pt-4">
-          <div className="">
-            <h2 className="text-2xl">CONTENTs</h2>
-          </div>
-          <ul className="pl-2">
-            <li className="">
-              <Link href="/xeramiya" className="font-mono text-lg underline hover:text-[color:var(--char-link)]">
-                Xeramiya
-              </Link>
-              <p className="align-text-bottom font-mono text-xs text-gray">これは誰。これは私。私は何。</p>
-            </li>
-            <li className="">
-              <Link href="/weblog" className="font-mono text-lg underline hover:text-cyberRed">
-                WEBLOG
-              </Link>
-              <p className="align-text-bottom font-mono text-xs text-gray">ブログってweblogの略らしいっすよ</p>
-            </li>
-            <li className="">
-              <Link href="/app" className="font-mono text-lg underline hover:text-cyberRed">
-                APP
-              </Link>
-              <p className="align-text-bottom font-mono text-xs text-gray">アップップとは読みませんよ</p>
-            </li>
-            <li className="">
-              <Link href="/debug" className="font-mono text-lg underline hover:text-cyberRed">
-                Debug
-              </Link>
-              <p className="align-text-bottom font-mono text-xs text-gray">これ要る？</p>
-            </li>
-          </ul>
         </section>
       </article>
     </div>
