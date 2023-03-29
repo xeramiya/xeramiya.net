@@ -33,13 +33,11 @@ export default function Home() {
   return (
     <div>
       <article>
-        <div className="text-center invert dark:invert-0 mt-48">
-          <div className="h-32">
+        <div className="mt-48 text-center">
+          <div className="h-32 invert dark:invert-0">
             <RiveComponent className="" />
-            <div className="font-serif text-char-glass">
-              トップページは現在準備中だにょ
-            </div>
           </div>
+          <div className="font-serif text-char-glass">トップページは現在準備中ザラシ</div>
         </div>
         {/*
         <section>

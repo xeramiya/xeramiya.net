@@ -24,8 +24,8 @@ module.exports = {
           main: "var(--char-main)",
           note: "var(--char-note)",
           link: "var(--char-link)",
-          error: "var(--on-error)",
-          glass: "var(--on-glass)",
+          error: "var(--char-error)",
+          glass: "var(--char-glass)",
         },
 
         white: "#FFFFFF",

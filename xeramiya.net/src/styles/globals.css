@@ -43,12 +43,12 @@
   --background: #16191b;
   --primary: #008899;
   --error: #ba160c;
-  --on-error: #ffffff;
   --glass: #00000047;
-  --on-glass: #ffffff;
   --char-main: #fffaf0;
   --char-note: #AAA59D;
   --char-link: #f33968;
+  --char-glass: #ffffff;
+  --char-error: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,11 +56,11 @@
     --background: #f7f6f4;
     --primary: #008899;
     --error: #ba160c;
-    --on-error: #ffffff;
     --glass: #ffffff47;
-    --on-glass: #000000;
     --char-main: #252b2c;
     --char-note: #AAA59D;
     --char-link: #f33968;
+    --char-error: #ffffff;
+    --char-glass: #000000;
   }
 }
