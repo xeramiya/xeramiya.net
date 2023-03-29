@@ -1,8 +1,11 @@
+"use client";
+
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { useRive } from "rive-react";
 
 export default function Home() {
   const messageList = [
@@ -21,19 +24,34 @@ export default function Home() {
 
   const message = messageList[Math.floor(Math.random() * messageList.length)];
 
+  const { rive, RiveComponent } = useRive({
+    src: "./assets/logos/xeramiya-logomotion.riv",
+    animations: "Loading",
+    autoplay: true,
+  });
+
   return (
     <div>
-      <Head>
-        <title>Xeramiya</title>
-        <meta name="description" content="DAWN PAGE" />
-      </Head>
       <article>
+        <div className="text-center invert dark:invert-0 mt-48">
+          <div className="h-32">
+            <RiveComponent className="" />
+            <div className="font-serif text-char-glass">
+              トップページは現在準備中だにょ
+            </div>
+          </div>
+        </div>
+        {/*
         <section>
-          <h1 className="italic">セラミヤ・ネットへようこそ</h1>
+          <h1 className="italic">
+            <span className="inline-block">セラミヤ・ネットへ</span>
+            <span className="inline-block">ようこそ</span>
+          </h1>
           <p className="note" id="random-message" suppressHydrationWarning={true}>
             {message}
           </p>
         </section>
+        */}
       </article>
     </div>
   );

@@ -1,9 +1,14 @@
-import Head from "next/head";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
 import { useState, useEffect } from "react";
+
+export const metadata: Metadata = {
+  title: "おまえは誰だ",
+  description: "Xeramiyaという",
+};
 
 export default function about() {
   return (

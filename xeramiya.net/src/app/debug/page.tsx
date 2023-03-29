@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: "私について",
+  description: "プロフィール",
+};
 
 export default async function Debug() {
   const lorem =
@@ -11,7 +14,10 @@ export default async function Debug() {
   return (
     <div>
       <section>
-        <h1>いつものやつを、いつもの量で</h1>
+        <h1>
+          <span className="inline-block">いつものやつを、</span>
+          <span className="inline-block">いつもの量で</span>
+        </h1>
         <div className="note">良い子は入っちゃダメだよん</div>
       </section>
       <section className="flex justify-between">

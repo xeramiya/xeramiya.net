@@ -47,7 +47,7 @@
   --glass: #00000047;
   --on-glass: #ffffff;
   --char-main: #fffaf0;
-  --char-note: #888277;
+  --char-note: #AAA59D;
   --char-link: #f33968;
 }
 
@@ -60,7 +60,7 @@
     --glass: #ffffff47;
     --on-glass: #000000;
     --char-main: #252b2c;
-    --char-note: #888277;
+    --char-note: #AAA59D;
     --char-link: #f33968;
   }
 }

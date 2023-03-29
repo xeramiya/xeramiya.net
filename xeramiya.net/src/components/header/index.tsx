@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRive, Layout, Fit, Alignment } from "rive-react";
+import { useRive } from "rive-react";
 
 const header = () => {
   const { rive, RiveComponent } = useRive({
     src: "./assets/logos/xeramiya-logomotion.riv",
+    animations: "Enter",
     autoplay: true,
   });
 
