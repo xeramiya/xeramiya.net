@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "私について",
-  description: "プロフィール",
+  title: "デバッグ",
+  description: "デバッグ用ページ",
 };
 
 export default async function Debug() {

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export const metadata: Metadata = {
   title: "おまえは誰だ",
-  description: "Xeramiyaという",
+  description: "Xeramiyaと申します",
 };
 
 export default function about() {

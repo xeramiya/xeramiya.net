@@ -26,7 +26,7 @@ export default function Home() {
 
   const { rive, RiveComponent } = useRive({
     src: "./assets/logos/xeramiya-logomotion.riv",
-    animations: "Loading",
+    animations: "Looper",
     autoplay: true,
   });
 

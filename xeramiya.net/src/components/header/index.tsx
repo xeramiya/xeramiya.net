@@ -20,17 +20,17 @@ const header = () => {
         </div>
         <ul className="mx-1 flex justify-end text-center font-mono text-sm">
           <li>
-            <Link href="/about" className="mx-1 block px-3 py-2 hover:text-[color:var(--char-link)]">
+            <Link href="/about" className="mx-1 block px-3 py-2 hover:text-char-link">
               About
             </Link>
           </li>
           <li>
-            <Link href="/weblog" className="mx-1 block px-3 py-2 hover:text-[color:var(--char-link)]">
+            <Link href="/weblog" className="mx-1 block px-3 py-2 hover:text-char-link">
               Weblog
             </Link>
           </li>
           <li>
-            <Link href="/archive" className="mx-1 block px-3 py-2 hover:text-[color:var(--char-link)]">
+            <Link href="/archive" className="mx-1 block px-3 py-2 hover:text-char-link">
               Archive
             </Link>
           </li>
