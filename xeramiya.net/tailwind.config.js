@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "lect": "1024px",
-        "book": "700px",
-        "bmark": "300px",
+        lect: "1024px",
+        book: "700px",
+        bmark: "300px",
       },
       colors: {
         background: "var(--background)",
@@ -55,7 +55,6 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "M Plus 1p",
           "var(--font-mplus1p)",
           "Helvetica Neue",
           "Arial",
@@ -64,8 +63,17 @@ module.exports = {
           "Meiryo",
           "sans-serif",
         ],
-        serif: ["Zen Antique", "var(--font-zen-antique)", "serif"],
-        mono: ["SF Mono", "Menlo", "Cascadia Code", "monospace"],
+        serif: ["var(--font-zen-antique)", "serif"],
+        mono: [
+          "SF Mono",
+          "Menlo",
+          "Roboto Mono",
+          "Droid Sans Mono",
+          "Lucida Sans Typewriter",
+          "Courier New",
+          "Courier",
+          "monospace",
+        ],
       },
       keyframes: {},
     },

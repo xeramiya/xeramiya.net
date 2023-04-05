@@ -13,7 +13,7 @@ const header = () => {
   return (
     <header className="fixed h-11 w-full select-none bg-glass py-1 text-char-glass backdrop-blur-sm hover:backdrop-blur-md">
       <nav className="mx-auto max-w-screen-lect">
-        <div id="x-logo" className="float-left mx-2 h-9 w-9 invert dark:invert-0">
+        <div id="x-logo" className="float-left mx-2 h-9 w-12 invert dark:invert-0">
           <Link href="./">
             <RiveComponent className="" />
           </Link>

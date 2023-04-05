@@ -78,7 +78,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja" className="h-full scroll-smooth">
       <body
         className={
-          "h-full overflow-y-scroll" + " " + `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`
+          "h-full overflow-y-scroll font-sans" +
+          " " +
+          `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`
         }
       >
         <Header />
