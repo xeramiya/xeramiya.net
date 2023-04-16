@@ -25,7 +25,7 @@ export default function Home() {
   const message = messageList[Math.floor(Math.random() * messageList.length)];
 
   const { rive, RiveComponent } = useRive({
-    src: "./assets/logos/xeramiya-logomotion.riv",
+    src: "./asset/logo/xeramiya-logomotion.riv",
     animations: "Looper",
     autoplay: true,
   });
@@ -54,3 +54,8 @@ export default function Home() {
     </div>
   );
 }
+
+/*
+  \/ eramiya
+  /\.net
+*/

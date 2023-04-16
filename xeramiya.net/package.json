@@ -1,6 +1,6 @@
 {
   "name": "xeramiya.net",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "homepage": "https://www.xeramiya.net",
   "private": true,
   "scripts": {
@@ -14,16 +14,20 @@
     "jett": "npx tailwindcss -i ./src/styles_dev.css -o ./dst/styles.css"
   },
   "dependencies": {
-    "@next/font": "^13.2.4",
     "@rive-app/canvas": "^1.0.102",
     "@rive-app/react-canvas": "^3.0.38",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "gray-matter": "^4.0.3",
     "next": "13.2.4",
     "next-sitemap": "^4.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remark": "^14.0.2",
+    "remark-gemoji": "^7.0.1",
+    "remark-gfm": "^3.0.1",
+    "remark-html": "^15.0.2",
     "rive-react": "^3.0.38",
     "typescript": "4.9.5"
   },
@@ -34,7 +38,6 @@
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.7.0",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
     "tailwindcss": "^3.2.7"
   }

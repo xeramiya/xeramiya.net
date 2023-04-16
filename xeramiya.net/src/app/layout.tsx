@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { M_PLUS_1p, Zen_Antique } from "next/font/google";
 
-import Header from "components/header";
-import Footer from "components/footer";
-import "../styles/globals.css";
+import Header from "components/Header";
+import Footer from "components/Footer";
+import "styles/globals.css";
 
 const MPlus1p = M_PLUS_1p({
   weight: "400",
@@ -49,12 +49,12 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicons/favicon.ico",
-    shortcut: "/favicons/favicon.png",
-    apple: "/favicons/favicon.png",
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon.png",
+    apple: "/favicon/favicon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/favicons/favicon.png",
+      url: "/favicon/favicon.png",
     },
   },
   themeColor: [{ media: "(prefers-color-scheme: light)", color: "#F7F6F4" }, { color: "#16191B" }],
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }
       >
         <Header />
-        <main className="mx-auto max-w-screen-lect px-4 pt-16 leading-8 text-char-main">{children}</main>
+        <main className="mx-auto max-w-screen-lect pt-11 text-char-main">{children}</main>
         <Footer />
       </body>
     </html>

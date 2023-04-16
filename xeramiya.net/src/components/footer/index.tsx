@@ -3,7 +3,7 @@ import { useRive, Layout, Fit, Alignment } from "rive-react";
 
 import packageJson from "../../../package.json";
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer className="sticky top-full mx-auto mt-24 w-full select-none pt-1 pb-2 text-right">
       <Link href="/debug" className="inline-block rounded-l-md bg-error px-2 font-serif text-char-error">
@@ -25,4 +25,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

@@ -13,29 +13,31 @@ export default async function Debug() {
 
   return (
     <div className="bg-nand-dark">
-      <section>
-        <h1>
-          <span className="inline-block">いつものやつを、</span>
-          <span className="inline-block">いつもの量で</span>
-        </h1>
-        <div className="note">良い子は入っちゃダメだよん</div>
-      </section>
-      <section className="flex justify-between">
-        <div className="max-w-2xl bg-background">
-          <h2>h2要素だにょ</h2>
-          <p>{loremJp}</p>
-          <h3>h3要素だにょ</h3>
-          <p>{lorem}</p>
-          <p>{loremJp}</p>
-          <h2>h2要素だにょ</h2>
-          <h3>h3要素だにょ</h3>
-          <h4>h4要素だにょ</h4>
-          <h5>h5要素だにょ</h5>
-          <p>{lorem}</p>
-          <p>{loremJp}</p>
-        </div>
-        <aside className="max-w-xs bg-background">あぴえぴえ</aside>
-      </section>
+      <article className="stele">
+        <section>
+          <h1>
+            <span className="inline-block">いつものやつを、</span>
+            <span className="inline-block">いつもの量で</span>
+          </h1>
+          <div className="note">良い子は入っちゃダメだよん</div>
+        </section>
+        <section className="flex justify-between">
+          <div className="max-w-2xl bg-background">
+            <h2>h2要素だにょ</h2>
+            <p>{loremJp}</p>
+            <h3>h3要素だにょ</h3>
+            <p>{lorem}</p>
+            <p>{loremJp}</p>
+            <h2>h2要素だにょ</h2>
+            <h3>h3要素だにょ</h3>
+            <h4>h4要素だにょ</h4>
+            <h5>h5要素だにょ</h5>
+            <p>{lorem}</p>
+            <p>{loremJp}</p>
+          </div>
+          <aside className="max-w-xs bg-background">あぴえぴえ</aside>
+        </section>
+      </article>
     </div>
   );
 }

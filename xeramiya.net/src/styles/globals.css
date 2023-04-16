@@ -4,38 +4,64 @@
 
 @layer base {
   h1 {
-    @apply mt-8 font-serif text-4xl;
+    @apply font-serif text-4xl;
   }
   h2 {
-    @apply mt-8 font-serif text-3xl;
+    @apply font-serif text-3xl;
   }
   h3 {
-    @apply mt-4 font-serif text-2xl;
+    @apply font-serif text-2xl;
   }
   h4 {
-    @apply mt-4 font-serif text-xl;
+    @apply font-serif text-xl;
   }
   h5 {
-    @apply mt-4 font-serif text-lg;
+    @apply font-serif text-lg;
   }
-
-  p {
-    @apply mt-2;
+  h6 {
+    @apply font-serif text-base;
   }
 }
 
 @layer components {
   .string {
-    @apply mx-1 mb-2 inline-flex items-center justify-center rounded-xl w-12 h-12 hover:rounded-3xl;
+    @apply mx-1 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-xl hover:rounded-3xl;
   }
 
-   .note {
-    @apply text-char-note;
-   }
+  .note {
+    @apply font-sans text-char-note;
+  }
 
   .stroke-round {
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+}
+
+@layer utilities {
+  .stele {
+    & h1 {
+      @apply text-primary hover:text-error;
+    }
+    & h2 {
+      @apply mt-8;
+    }
+    & h3 {
+      @apply mt-6;
+    }
+    & h4 {
+      @apply mt-4;
+    }
+    & h5 {
+      @apply mt-2;
+    }
+    & h6 {
+      @apply mt-2;
+    }
+
+    & p {
+      @apply mt-2;
+    }
   }
 }
 
@@ -45,7 +71,7 @@
   --error: #ba160c;
   --glass: #00000047;
   --char-main: #fffaf0;
-  --char-note: #AAA59D;
+  --char-note: #aaa59d;
   --char-link: #f33968;
   --char-glass: #ffffff;
   --char-error: #ffffff;
@@ -58,7 +84,7 @@
     --error: #ba160c;
     --glass: #ffffff47;
     --char-main: #252b2c;
-    --char-note: #AAA59D;
+    --char-note: #aaa59d;
     --char-link: #f33968;
     --char-error: #ffffff;
     --char-glass: #000000;
