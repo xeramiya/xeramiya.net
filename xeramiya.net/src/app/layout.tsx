@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { M_PLUS_1p, Zen_Antique } from "next/font/google";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "components/header";
+import Footer from "components/footer";
 import "styles/globals.css";
 
 const MPlus1p = M_PLUS_1p({

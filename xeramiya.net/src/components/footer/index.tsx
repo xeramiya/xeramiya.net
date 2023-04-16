@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRive, Layout, Fit, Alignment } from "rive-react";
 
 import packageJson from "../../../package.json";
 

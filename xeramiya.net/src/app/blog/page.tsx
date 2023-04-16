@@ -6,8 +6,6 @@ import { remark } from "remark";
 import remarkHtml from "remark-html";
 import remarkGfm from "remark-gfm";
 
-import PostList from "components/PostList";
-
 export const metadata: Metadata = {
   title: "ブログ",
   description: "ブログの一覧",
