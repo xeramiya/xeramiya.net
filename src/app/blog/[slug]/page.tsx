@@ -34,6 +34,13 @@ export async function generateMetadata({
 */// <ModifiedDate date={pieceData.frontMatter.date.modified} />
 
 export default async function Piece({ params }: { params: { slug: string } }) {
+  return (
+    <div className="stand">
+      {params.slug}
+    </div>
+  )
+  
+  /*
   const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
   const pieceContent = await mdAdapter(pieceData.content);
 
@@ -60,4 +67,5 @@ export default async function Piece({ params }: { params: { slug: string } }) {
       </article>
     </div>
   );
+  */
 }
