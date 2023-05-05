@@ -34,15 +34,8 @@ export async function generateMetadata({
 */// <ModifiedDate date={pieceData.frontMatter.date.modified} />
 
 export default async function Piece({ params }: { params: { slug: string } }) {
-  return (
-    <div className="stand">
-      {params.slug}
-    </div>
-  )
-  
-  /*
   const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
-  const pieceContent = await mdAdapter(pieceData.content);
+  // const pieceContent = await mdAdapter(pieceData.content);
 
   return (
     <div className="stand">
@@ -59,13 +52,16 @@ export default async function Piece({ params }: { params: { slug: string } }) {
         </section>
         <hr className="mt-4 border-char-note mb-11" />
         <section className="piece max-w-[712px] ml-0">
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: pieceContent }}
-          />
+
         </section>
       </article>
     </div>
   );
-  */
 }
+
+/*
+          <div
+            className=""
+            dangerouslySetInnerHTML={{ __html: pieceContent }}
+          />
+*/
