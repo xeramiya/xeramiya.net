@@ -43,12 +43,12 @@ export default async function Piece({ params }: { params: { slug: string } }) {
         <section>
           <div className="mt-3 text-char-note">
             <span className="text-base">
-              <DateFormatter date={pieceData.frontMatter.date.created} />
+
             </span>
             
           </div>
-          <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
-          <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
+
+
         </section>
         <hr className="mt-4 border-char-note mb-11" />
         <section className="piece max-w-[712px] ml-0">
