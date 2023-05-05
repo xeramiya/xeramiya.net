@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { getPieceData, mdAdapter } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 
@@ -31,7 +30,7 @@ export async function generateMetadata({
 }
 
 export default async function Piece({ params }: { params: { slug: string } }) {
-  const pieceData = getPieceData(`src/piece/${pieceType}`, params.slug, true);
+  const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
   const pieceContent = await mdAdapter(pieceData.content);
 
   return (
