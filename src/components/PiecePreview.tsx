@@ -20,6 +20,7 @@ export const PiecePreview = ({ meta }: { meta: PieceMeta }) => {
   return (
     <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
       <Link href={`blog/${meta.slug}`}>
+        {meta.slug}
       <h2 className="">{meta.frontMatter.title}</h2>
         <div className="text-char-note mt-3">
           <span className="text-base">

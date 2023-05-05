@@ -7,7 +7,7 @@
     "next",
     "next/core-web-vitals",
     "prettier",
-    "next/babel",
+    // "next/babel",
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
