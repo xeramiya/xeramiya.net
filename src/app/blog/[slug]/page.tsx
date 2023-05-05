@@ -3,6 +3,7 @@ import DateFormatter from "components/DateFormatter";
 
 const pieceType = "blog";
 
+/*
 const ModifiedDate = ({ date }: { date: string | undefined }) => {
   if (date) {
     return (
@@ -15,6 +16,22 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
     return null;
   }
 };
+*/
+
+/*
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const pieceData = getPieceData(`piece/${pieceType}`, params.slug);
+
+  return {
+    title: pieceData.frontMatter.title,
+    description: pieceData.frontMatter.synopsis,
+  };
+}
+*/// <ModifiedDate date={pieceData.frontMatter.date.modified} />
 
 export default async function Piece({ params }: { params: { slug: string } }) {
   const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
@@ -28,7 +45,7 @@ export default async function Piece({ params }: { params: { slug: string } }) {
             <span className="text-base">
               <DateFormatter date={pieceData.frontMatter.date.created} />
             </span>
-            <ModifiedDate date={pieceData.frontMatter.date.modified} />
+            
           </div>
           <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
           <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
