@@ -1,8 +1,8 @@
 ---
 title: いつものやつを、いつもの量で
-synopsis: ブログを始めましたよ！
+synopsis: ブログを作った！
 date:
   created: 2023.05.05
-  modified: 
+  modified:
 tag:
 ---

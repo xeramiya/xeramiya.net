@@ -58,7 +58,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "var(--font-mplus1p)",
+          "var(--font-mplus2)",
           "Helvetica Neue",
           "Arial",
           "Hiragino Kaku Gothic ProN",

@@ -1,12 +1,11 @@
 import Header from "components/Header";
 import Footer from "components/Footer";
-import { M_PLUS_1p, Zen_Antique } from "next/font/google";
+import { M_PLUS_2, Zen_Antique } from "next/font/google";
 import "styles/globals.css";
 
-const MPlus1p = M_PLUS_1p({
-  weight: "400",
+const MPlus2 = M_PLUS_2({
   subsets: ["latin"],
-  variable: "--font-mplus1p",
+  variable: "--font-mplus2",
   display: "swap",
 });
 
@@ -75,16 +74,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("ZenAntique:", ZenAntique);
-  console.log("MPlus1p:", MPlus1p);
-
   return (
     <html
       lang="ja"
       className={
         "h-full scroll-smooth font-sans" +
         " " +
-        `${MPlus1p.variable} ${ZenAntique.variable}`
+        `${MPlus2.variable} ${ZenAntique.variable}`
       }
     >
       <body className="h-full overflow-y-scroll bg-background">
