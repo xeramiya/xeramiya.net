@@ -1,6 +1,6 @@
 {
   "name": "xeramiya.net",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "homepage": "https://www.xeramiya.net",
   "private": true,
   "scripts": {
@@ -14,14 +14,14 @@
     "jett": "npx tailwindcss -i ./src/styles_dev.css -o ./dst/styles.css"
   },
   "dependencies": {
-    "@rive-app/canvas": "^1.1.4",
-    "@rive-app/react-canvas": "^3.0.45",
-    "@types/node": "18.16.2",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.1",
+    "@rive-app/canvas": "^1.1.5",
+    "@rive-app/react-canvas": "^3.0.46",
+    "@types/node": "20.0.0",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.4",
     "gray-matter": "^4.0.3",
-    "next": "13.3.1",
-    "next-sitemap": "^4.0.7",
+    "next": "13.4.1",
+    "next-sitemap": "^4.0.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
@@ -29,17 +29,17 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-ruby": "^0.4.0",
-    "rive-react": "^3.0.45",
+    "rive-react": "^3.0.46",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.2",
     "autoprefixer": "^10.4.14",
     "eslint": "8.39.0",
-    "eslint-config-next": "13.3.1",
+    "eslint-config-next": "13.4.1",
     "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.23",
-    "prettier-plugin-tailwindcss": "^0.2.7",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "tailwindcss": "^3.3.2"
   }
 }

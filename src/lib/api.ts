@@ -4,6 +4,8 @@ import grayMatter from "gray-matter";
 
 import { PieceMeta, FrontMatter, Date } from "lib/type";
 
+import { cache } from "react";
+
 // ドキュメントデータへのパス取得
 export function getPath(dir: string) {
   return path.join(process.cwd(), dir);
