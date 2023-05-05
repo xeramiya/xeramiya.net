@@ -1,5 +1,4 @@
 import DateFormatter from "components/DateFormatter";
-import Image from "next/image";
 import Link from "next/link";
 
 import { PieceMeta } from "lib/type";

@@ -31,7 +31,7 @@ export async function generateMetadata({
 }
 
 export default async function Piece({ params }: { params: { slug: string } }) {
-  const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
+  const pieceData = getPieceData(`src/piece/${pieceType}`, params.slug, true);
   const pieceContent = await mdAdapter(pieceData.content);
 
   return (
