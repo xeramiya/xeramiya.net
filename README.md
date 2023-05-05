@@ -2,7 +2,7 @@
 Access: [xeramiya.net](https://www.xeramiya.net)
 
 ## なにこれ
-名刺・あそび場
+公園
 
 ## 詳細情報
 インターネットのみなさま、こんちゃっちゃ

@@ -3,13 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About私",
+  title: "私について",
   description: "Xeramiyaについて",
 };
 
-export default function about() {
+export default function About() {
   return (
-    <div>
+    <div className="stand">
       <article className="mx-4 mt-12">
         <section>
           <h1 className="text-5xl italic tracking-wide">

@@ -1,8 +1,8 @@
-interface attribute {
+type Attribute = {
   className?: string;
-}
+};
 
-export const XeramiyaLogo: React.FC<attribute> = (attribute) => {
+export const XeramiyaLogo = (attribute: Attribute) => {
   return (
     <>
       <svg
@@ -25,4 +25,4 @@ export const XeramiyaLogo: React.FC<attribute> = (attribute) => {
       </svg>
     </>
   );
-};
+}

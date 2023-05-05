@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   mode: "jit",
   darkMode: "media",
@@ -11,16 +12,17 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        lect: "1024px",
-        book: "700px",
-        bmark: "300px",
+        slate: "1024px",
       },
       colors: {
         background: "var(--background)",
         primary: "var(--primary)",
         error: "var(--error)",
         glass: "var(--glass)",
-        invert: "var(--invert)",
+        media: {
+          DEFAULT: "var(--media-default)",
+          invert: "var(--media-invert)",
+        },
         char: {
           main: "var(--char-main)",
           note: "var(--char-note)",
@@ -64,7 +66,7 @@ module.exports = {
           "Meiryo",
           "sans-serif",
         ],
-        serif: ["var(--font-zen-antique)", "serif"],
+        serif: ["var(--font-zenantique)", "serif"],
         mono: [
           "SF Mono",
           "Menlo",
@@ -76,6 +78,7 @@ module.exports = {
           "monospace",
         ],
       },
+      animation: {},
       keyframes: {},
     },
   },

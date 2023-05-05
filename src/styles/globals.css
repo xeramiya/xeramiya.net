@@ -21,9 +21,15 @@
   h6 {
     @apply font-serif text-base;
   }
+  p {
+  }
 }
 
 @layer components {
+  .stand {
+    @apply mx-auto max-w-screen-slate pt-11;
+  }
+
   .string {
     @apply mx-1 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-xl hover:rounded-3xl;
   }
@@ -39,38 +45,90 @@
 }
 
 @layer utilities {
-  .stele {
+  .piece {
     & h1 {
-      @apply mt-0;
+      @apply mt-10;
     }
     & h2 {
-      @apply mt-8;
+      @apply mt-10;
     }
     & h3 {
-      @apply mt-6;
+      @apply mt-8;
     }
     & h4 {
-      @apply mt-4;
+      @apply mt-6;
     }
     & h5 {
-      @apply mt-2;
+      @apply mt-5;
     }
     & h6 {
-      @apply mt-2;
+      @apply mt-4;
     }
 
-    & p {
-      @apply mt-2;
+    & div {
+      & > p {
+        @apply mt-4 leading-loose;
+      }
+    }
+    & a {
+      @apply text-char-link hover:underline hover:bg-media;
+    }
+    & em {
+      @apply pr-0.5 font-light italic;
+    }
+    & strong {
+      @apply font-bold;
+    }
+
+    & ul {
+      @apply mt-3 pl-8;
+      & > li {
+        @apply mt-3 list-disc;
+      }
+    }
+    & ol {
+      @apply mt-3 pl-8;
+      & > li {
+        @apply mt-3 list-decimal;
+      }
+    }
+
+    & code {
+      @apply font-mono text-char-main;
+    }
+    & pre {
+      @apply mt-3 rounded-lg bg-nand-dark py-2 pl-8;
+      & > code {
+        @apply my-0 text-zWhite;
+      }
+    }
+
+    & hr {
+      @apply my-11 border-char-note;
+    }
+
+    & blockquote {
+      @apply ml-4 mt-3 border-l-2 border-char-note py-0.5;
+      & > p {
+        @apply ml-2 text-char-note;
+      }
     }
   }
 }
+
+/*
+html {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+*/
 
 :root {
   --background: #16191b;
   --primary: #008899;
   --error: #ba160c;
-  --glass: #ffffff24;
-  --invert: #ffffff;
+  --glass: #00000016;
+  --media-default: #000000;
+  --media-invert: #ffffff;
   --char-main: #fffaf0;
   --char-note: #aaa59d;
   --char-link: #f33968;
@@ -83,8 +141,9 @@
     --background: #f7f6f4;
     --primary: #008899;
     --error: #ba160c;
-    --glass: #00000024;
-    --invert: #000000;
+    --glass: #ffffff16;
+    --media-default: #ffffff;
+    --media-invert: #000000;
     --char-main: #252b2c;
     --char-note: #aaa59d;
     --char-link: #f33968;

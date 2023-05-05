@@ -6,44 +6,46 @@ export const metadata: Metadata = {
   description: "アーカイブの一覧",
 };
 
-export default function archive() {
+export default function Archive() {
   return (
-    <div>
+    <div className="stand">
       <article className="mx-6 mt-12">
         <section>
-          <h1>作ったものをまとめたにょ</h1>
-          <div className="text-char-note">まとめてくれてありがとう</div>
+          <h1>制作物倉庫</h1>
+          <div className="text-char-note">ハウスダストに御用心</div>
         </section>
+        <hr className="border-char-note" />
         <section id="Application List">
           <ul>
-          <li className="mt-8 overflow-hidden border-l-2 py-1 px-2 border-nand">
-              <h2 className="hidden">Nelax2Dream</h2>
-              <Link href="/archive/C0Un+er" className="font-mono text-2xl hover:text-char-link hover:underline">
-                C0Un+er
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+              <Link href="/archive/C0Un+er" className="">
+                <h2 className="font-mono">C0Un+er</h2>
+                <div className="text-char-note">カゾエ・テアゲル</div>
+                <div className="">
+                  数えるのってだるいよねー。数える手間を省くだけで、筋トレだって楽になる(自社調べ)。
+                </div>
               </Link>
-              <div className="text-sm text-char-note">カゾエ・テアゲル</div>
-              <p>数えるのってだるいよねー。数える手間を省くだけで、筋トレだって楽になる(自社調べ)。</p>
             </li>
-            <li className="mt-8 overflow-hidden border-l-2 py-1 px-2 border-nand">
-              <h2 className="hidden">Nelax2Dream</h2>
-              <Link href="/archive/Nelax2Dream" className="font-mono text-2xl hover:text-char-link hover:underline">
-                Nelax2Dream
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+              <Link href="/archive/Nelax2Dream" className="">
+                <h2 className="font-mono">Nelax2Dream</h2>
+                <div className="text-sm text-char-note">n回聞けばスルメ曲</div>
+                <div>
+                  音源をループするためだけのサイト。一曲しか登録されていないらしい。
+                </div>
               </Link>
-              <div className="text-sm text-char-note">n回聞けばスルメ曲</div>
-              <p>音源をループするためだけのサイト。一曲しか登録されていないらしい。</p>
             </li>
-            <li className="mt-8 overflow-hidden border-l-2 py-1 px-2 border-nand">
-              <h2 className="hidden">BUCKWHEAT</h2>
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
               <Link
                 href="https://buckwheat.glitch.me/"
-                className="font-mono text-2xl hover:text-char-link hover:underline"
+                className=""
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BUCKWHEAT
+                <h2 className="font-mono">BUCKWHEAT</h2>
+                <div className="text-sm text-char-note">ミリ秒時計</div>
+                <div>ちょっとお洒落なミリ秒時計。JavaScriptの習作らしい。</div>
               </Link>
-              <div className="text-sm text-char-note">ミリ秒時計</div>
-              <p>ちょっとお洒落なミリ秒時計。JavaScriptの習作らしい。</p>
             </li>
           </ul>
         </section>

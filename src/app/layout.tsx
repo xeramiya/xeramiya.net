@@ -1,8 +1,6 @@
-import Link from "next/link";
+import Header from "components/Header";
+import Footer from "components/Footer";
 import { M_PLUS_1p, Zen_Antique } from "next/font/google";
-
-import Header from "components/header";
-import Footer from "components/footer";
 import "styles/globals.css";
 
 const MPlus1p = M_PLUS_1p({
@@ -15,17 +13,13 @@ const MPlus1p = M_PLUS_1p({
 const ZenAntique = Zen_Antique({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-zen-antique",
+  variable: "--font-zenantique",
   display: "swap",
 });
 
 export const metadata = {
-  title: {
-    default: "xeramiya.net",
-    template: "%s - xeramiya.net",
-  },
+  title: "xeramiya.net",
   description: "Xeramiyaのホームページ",
-  url: "https://www.xeramiya.net",
   applicationName: "xeramiya.net",
   keywords: ["Xeramiya", "UEBIT"],
   category: "homepage",
@@ -57,7 +51,10 @@ export const metadata = {
       url: "/favicon/favicon.png",
     },
   },
-  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#F7F6F4" }, { color: "#16191B" }],
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F7F6F4" },
+    { color: "#16191B" },
+  ],
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -73,18 +70,27 @@ export const metadata = {
   alternates: {},
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  console.log("ZenAntique:", ZenAntique);
+  console.log("MPlus1p:", MPlus1p);
+
   return (
-    <html lang="ja" className="h-full scroll-smooth">
-      <body
-        className={
-          "h-full overflow-y-scroll font-sans" +
-          " " +
-          `${"bg-[var(--background)]"} ${MPlus1p.variable} ${ZenAntique.variable}`
-        }
-      >
+    <html
+      lang="ja"
+      className={
+        "h-full scroll-smooth font-sans" +
+        " " +
+        `${MPlus1p.variable} ${ZenAntique.variable}`
+      }
+    >
+      <body className="h-full overflow-y-scroll bg-background">
+        <div className="font-sans text-9xl">くいしんぼう</div>
         <Header />
-        <main className="mx-auto max-w-screen-lect pt-11 text-char-main">{children}</main>
+        <main className="text-char-main">{children}</main>
         <Footer />
       </body>
     </html>
