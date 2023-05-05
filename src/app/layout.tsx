@@ -88,7 +88,6 @@ export default function RootLayout({
       }
     >
       <body className="h-full overflow-y-scroll bg-background">
-        <div className="font-sans text-9xl">くいしんぼう</div>
         <Header />
         <main className="text-char-main">{children}</main>
         <Footer />
