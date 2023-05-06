@@ -119,7 +119,7 @@ export const getTestData = cache(async (pieceSlug: string) => {
   };
   const frontMatter: FrontMatter = {
     title: fileContent,
-    synopsis: "ですよ",
+    synopsis: pieceDirectory,
     date: date,
     tag: undefined,
   };

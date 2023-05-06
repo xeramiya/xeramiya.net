@@ -36,7 +36,7 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   const pieceData = await getTestData(params.slug);
   //const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
   //const pieceContent = await mdAdapter(pieceData.content);
-  console.log("pieceData", pieceData)
+  console.log("pieceData", pieceData);
 
   if (pieceData) {
     return (
@@ -44,6 +44,8 @@ export default async function Piece({ params }: { params: { slug: string } }) {
         ここは「{params.slug}」です！
         <br />
         タイトルは「{pieceData.frontMatter.title}」だぜ！ //エラーの原因？
+        <br />
+        {pieceData.frontMatter.synopsis}
         {/*
       <article className="mx-6 mt-12">
         <section>
