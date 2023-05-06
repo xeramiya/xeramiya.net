@@ -30,9 +30,11 @@ export async function generateMetadata({
 }
 
 export default async function Piece({ params }: { params: { slug: string } }) {
+  const slug2: string = "the-usual-ones";
   const pieceData = await getPieceData(
     `piece/${pieceType}`,
-    await params.slug,
+    //params.slug,
+    slug2,
     true
   );
   const pieceContent = await mdAdapter(pieceData.content);
