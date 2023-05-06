@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 
-import { getBlogMeta, getPath } from "lib/api";
+import { getBlogMeta } from "lib/api";
 import PiecePreview from "components/PiecePreview";
 
 const pieceType = "blog";
@@ -13,9 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const blogMeta = await getBlogMeta(`_piece/${pieceType}`);
-  // テスト用
-  const testPathData = getPath(`_piece/${pieceType}`);
+  const blogMeta = await getBlogMeta();
 
   return (
     <div className="stand">
@@ -39,7 +37,6 @@ export default async function Blog() {
           </Suspense>
         </ul>
       </div>
-      <p>{testPathData}</p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { getPieceData, mdAdapter, getBlogMeta, getTestData } from "lib/api";
+import { getPieceData, mdAdapter } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 
 const pieceType = "blog";
@@ -32,9 +32,7 @@ export async function generateMetadata({
 */
 
 export default async function Piece({ params }: { params: { slug: string } }) {
-  //const slug2: string = "the-usual-ones";
-  //const pieceData = await getTestData(params.slug);
-  const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
+  const pieceData = await getPieceData(params.slug, true);
   const pieceContent = await mdAdapter(pieceData.content);
   console.log("pieceData", pieceData);
 

@@ -6,20 +6,23 @@ import { PieceMeta, FrontMatter, Date } from "lib/type";
 
 import { cache } from "react";
 
-// ドキュメントデータへのパス取得
+// ブログ用文書データへのパス取得
+/* なぜかENOENTエラー発生、原因不明 ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ 
 export function getPath(dir: string) {
   return path.join(process.cwd(), dir);
 }
+*/
+
+// ブログ用文書データへのパス取得(↑の代用)
+const blogDir = path.join(process.cwd(), "_piece/blog");
 
 // 全てのMarkdown文書のSlugを取得
-export function getPieceSlug(pieceDir: string) {
-  return fs
-    .readdirSync(getPath(pieceDir), { withFileTypes: true })
-    .flatMap((dirent) => {
-      if (dirent.isFile() && dirent.name.endsWith(".md")) {
-        return dirent.name.slice(0, -3);
-      }
-    });
+export function getPieceSlug() {
+  return fs.readdirSync(blogDir, { withFileTypes: true }).flatMap((dirent) => {
+    if (dirent.isFile() && dirent.name.endsWith(".md")) {
+      return dirent.name.slice(0, -3);
+    }
+  });
 }
 
 // getStaticDataの補助、PieceMetaにcontentを追加するか判断
@@ -31,23 +34,11 @@ export function addContent(content: string, withContent?: boolean) {
 }
 
 // SlugからMarkdown文書内のFlont Matterを取得、場合によってはコンテンツも取得
-export const getPieceData = (
-  pieceDir: string,
-  pieceSlug: string,
-  withContent?: boolean
-) => {
+export const getPieceData = (pieceSlug: string, withContent?: boolean) => {
   const fileContent = fs.readFileSync(
-    path.join(pieceDirectory, `${pieceSlug}.md`),
+    path.join(blogDir, `${pieceSlug}.md`),
     "utf8"
   );
-
-  console.log(
-    "DADADADADADADADA:",
-    path.join(getPath(pieceDir), `${pieceSlug}.md`)
-  );
-  console.log("fileContent:", fileContent);
-  console.log("pieceSlug:", pieceSlug);
-  console.log("pieceDir:", pieceDir);
 
   const { data, content } = grayMatter(fileContent);
 
@@ -71,11 +62,11 @@ export const getPieceData = (
 };
 
 // 全てのMarkdown文書データのSlugとFront Matterを取得
-export function getBlogMeta(pieceDir: string) {
-  const pieceSlug = getPieceSlug(pieceDir);
+export function getBlogMeta() {
+  const pieceSlug = getPieceSlug();
   const blogMeta = pieceSlug.map((pieceSlug) => {
     if (pieceSlug) {
-      return getPieceData(pieceDir, pieceSlug);
+      return getPieceData(pieceSlug);
     }
   });
 
@@ -103,31 +94,3 @@ export async function mdAdapter(markdown: string | undefined) {
   }
   return "OF COURSE I STILL LOVE YOU";
 }
-
-// テスト用
-const pieceDirectory = path.join(process.cwd(), "_piece/blog");
-
-export const getTestData = cache(async (pieceSlug: string) => {
-  const fileContent = fs.readFileSync(
-    path.join(pieceDirectory, `${pieceSlug}.md`),
-    "utf8"
-  );
-
-  const date: Date = {
-    created: "2015.10.21",
-    modified: "2077.10.21",
-  };
-  const frontMatter: FrontMatter = {
-    title: fileContent,
-    synopsis: pieceDirectory,
-    date: date,
-    tag: undefined,
-  };
-  const piece: PieceMeta = {
-    slug: "the-usual-ones",
-    frontMatter: frontMatter,
-    //content: addContent(content, withContent),
-  };
-
-  return piece;
-});
