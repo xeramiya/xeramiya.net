@@ -105,7 +105,7 @@ export async function mdAdapter(markdown: string | undefined) {
 }
 
 // テスト用
-export const gettestData = (
+export const getTestData = (
 ) => {
   const date: Date = {
     created: "2015.10.21",
@@ -118,7 +118,7 @@ export const gettestData = (
     tag: undefined,
   };
   const piece: PieceMeta = {
-    slug: "test",
+    slug: "the-usual-ones",
     frontMatter: frontMatter,
     //content: addContent(content, withContent),
   };

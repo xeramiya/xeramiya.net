@@ -42,7 +42,7 @@ export default async function Piece({ params }: { params: { slug: string } }) {
       <div className="stand">
         ここは「{params.slug}」です！
         <br />
-        タイトルは「{pieceData.frontMatter.title}」だぜ！ //エラーの原因
+        タイトルは「{pieceData.frontMatter.title}」だぜ！ //エラーの原因？
         {/*
       <article className="mx-6 mt-12">
         <section>
