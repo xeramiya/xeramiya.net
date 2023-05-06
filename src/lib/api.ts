@@ -108,7 +108,7 @@ export async function mdAdapter(markdown: string | undefined) {
 export const getTestData = cache(async (pieceSlug: string) => {
   const fileContent = fs.readFileSync(
     path.join("/vercel/path0/src/piece/blog", `${pieceSlug}.md`),
-    "utf-8"
+    "utf8"
   );
 
   const date: Date = {
