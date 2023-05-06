@@ -1,41 +1,60 @@
-import type { Metadata } from "next";
+import { getPieceData, mdAdapter, getBlogMeta } from "lib/api";
+import DateFormatter from "components/DateFormatter";
 
-export const metadata: Metadata = {
-  title: "デバッグ",
-  description: "デバッグ用ページ",
+const pieceType = "blog";
+
+const ModifiedDate = ({ date }: { date: string | undefined }) => {
+  if (date) {
+    return (
+      <span className="text-sm">
+        &nbsp;/ 最終更新
+        <DateFormatter date={date} />
+      </span>
+    );
+  } else {
+    return null;
+  }
 };
 
+export async function generateMetadata() {
+  const slug2: string = "the-usual-ones";
+  const pieceData = await getPieceData(`piece/${pieceType}`, slug2);
+
+  return {
+    title: pieceData.frontMatter.title,
+    description: pieceData.frontMatter.synopsis,
+  };
+}
+
 export default async function Debug() {
-  const lorem =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-  const loremJp =
-    "おや、変なものが鳴りました。カムパネルラが手をのばしていましたが、もうのどがつまったように青年にたずねましたので、カムパネルラもさびしそうに言いました。カムパネルラはきのどくそうに、だまっていたちにくれてやらなかったろう。女の子は、いきなり両手を顔にあててしまいました。これは三次空間の方から、あの聞きなれた三〇六番の声が、二人の手首の、水にひたったとこが、少しおずおずしながら、二人の影は、ちょうどおまえたちのように、ぎゃあぎゃあ叫びながら、いっぱいに舞いおりて来ましたので、ジョバンニは思わずカムパネルラとわらいました。そうすると、向こうの坊ちゃんがた。鶴、どうしてもこの方たちのお母さんは一昨年没くなられました。つまりその星はみな、乳のなかにめぐってあらわれるようになったので、こんどはぼくの影法師はコンパスだ。ジョバンニはもういろいろなことで胸がいっぱいで、なんにもかなしいことないのです。汽車が小さな小屋の前をはなれて、早くお母さんに牛乳を持って行ったよ。右手の低い丘の上に、眼の前がさあっと明るくなってきました。";
+  const slug2: string = "the-usual-ones";
+  const pieceData = await getPieceData(
+    `piece/${pieceType}`,
+    //params.slug,
+    slug2,
+    true
+  );
+  const pieceContent = await mdAdapter(pieceData.content);
 
   return (
     <div className="stand">
-      <article className="piece mx-6 mt-12">
+      <article className="mx-6 mt-12">
         <section>
-          <h1>
-            <span className="inline-block">いつものやつを、</span>
-            <span className="inline-block">いつもの量で</span>
-          </h1>
-          <div className="note">良い子は入っちゃダメだよん</div>
-        </section>
-        <section className="flex justify-between">
-          <div className="max-w-2xl bg-background">
-            <h2>h2要素だにょ</h2>
-            <p>{loremJp}</p>
-            <h3>h3要素だにょ</h3>
-            <p>{lorem}</p>
-            <p>{loremJp}</p>
-            <h2>h2要素だにょ</h2>
-            <h3>h3要素だにょ</h3>
-            <h4>h4要素だにょ</h4>
-            <h5>h5要素だにょ</h5>
-            <p>{lorem}</p>
-            <p>{loremJp}</p>
+          <div className="mt-3 text-char-note">
+            <span className="text-base">
+              <DateFormatter date={pieceData.frontMatter.date.created} />
+            </span>
+            <ModifiedDate date={pieceData.frontMatter.date.modified} />
           </div>
-          <aside className="max-w-xs bg-background">あぴえぴえ</aside>
+          <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
+          <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
+        </section>
+        <hr className="mb-11 mt-4 border-char-note" />
+        <section className="piece ml-0 max-w-[712px]">
+          <div
+            className=""
+            dangerouslySetInnerHTML={{ __html: pieceContent }}
+          />
         </section>
       </article>
     </div>
