@@ -7,14 +7,17 @@ import { PieceMeta, FrontMatter, Date } from "lib/type";
 import { cache } from "react";
 
 // ブログ用文書データへのパス取得
-/* なぜかENOENTエラー発生、原因不明 ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ 
+// なぜかENOENTエラー発生、原因不明 ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ
+// >> [slug]から呼び出すとvar/task/~というパスが返される
+// >> 通常は/vercel/path0~
+/* 
 export function getPath(dir: string) {
   return path.join(process.cwd(), dir);
 }
 */
 
 // ブログ用文書データへのパス取得(↑の代用)
-const blogDir = path.join(process.cwd(), "_piece/blog");
+const blogDir = path.join(process.cwd(), "piece/blog");
 
 // 全てのMarkdown文書のSlugを取得
 export function getPieceSlug() {

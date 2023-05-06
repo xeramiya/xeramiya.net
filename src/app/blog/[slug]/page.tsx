@@ -1,4 +1,4 @@
-import { getPieceData, mdAdapter } from "lib/api";
+import { getPieceData, mdAdapter, getBlogMeta } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 
 const pieceType = "blog";
@@ -16,20 +16,18 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
   }
 };
 
-/*
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
-  const pieceData = await getPieceData(`piece/${pieceType}`, params.slug);
+  const pieceData = await getPieceData(params.slug);
 
   return {
     title: pieceData.frontMatter.title,
     description: pieceData.frontMatter.synopsis,
   };
 }
-*/
 
 export default async function Piece({ params }: { params: { slug: string } }) {
   const pieceData = await getPieceData(params.slug, true);
@@ -63,9 +61,8 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   }
 }
 
-/*
 export const generateStaticParams = async () => {
-  const blogMeta = getBlogMeta(`piece/${pieceType}`);
+  const blogMeta = getBlogMeta();
   return blogMeta.map((meta) => {
     if (meta) {
       console.log("meta.slug:", meta.slug);
@@ -73,4 +70,3 @@ export const generateStaticParams = async () => {
     }
   });
 };
-*/
