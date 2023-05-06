@@ -38,7 +38,7 @@ export const getPieceData = (
 ) => {
   const fileContent = fs.readFileSync(
     path.join(getPath(pieceDir), `${pieceSlug}.md`),
-    "utf-8"
+    "utf8"
   );
   console.log(
     "DADADADADADADADA:",
