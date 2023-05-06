@@ -33,15 +33,17 @@ export async function generateMetadata({
 
 export default async function Piece({ params }: { params: { slug: string } }) {
   //const slug2: string = "the-usual-ones";
-  const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
+  const blogMeta = await getBlogMeta(`piece/${pieceType}`);
+  //const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
   // const pieceContent = await mdAdapter(pieceData.content);
 
-  return (
-    <div className="stand">
-      ここは「{params.slug}」です！
-      <br />
-      タイトルは「{pieceData.frontMatter.title}」だぜ！
-      {/*
+  if (blogMeta) {
+    return (
+      <div className="stand">
+        ここは「{params.slug}」です！
+        <br />
+        タイトルは「{blogMeta[0].frontMatter.title}」だぜ！ //エラーの原因
+        {/*
       <article className="mx-6 mt-12">
         <section>
           <div className="mt-3 text-char-note">
@@ -62,8 +64,10 @@ export default async function Piece({ params }: { params: { slug: string } }) {
         </section>
       </article>
   */}
-    </div>
-  );
+      </div>
+    );
+
+  }
 }
 
 export const generateStaticParams = async () => {
