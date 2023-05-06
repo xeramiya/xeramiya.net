@@ -16,6 +16,7 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
   }
 };
 
+/*
 export async function generateMetadata() {
   const slug2: string = "the-usual-ones";
   const pieceData = await getPieceData(`piece/${pieceType}`, slug2);
@@ -25,6 +26,7 @@ export async function generateMetadata() {
     description: pieceData.frontMatter.synopsis,
   };
 }
+*/
 
 export default async function Debug() {
   const slug2: string = "the-usual-ones";
