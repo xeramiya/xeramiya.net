@@ -103,3 +103,25 @@ export async function mdAdapter(markdown: string | undefined) {
   }
   return "OF COURSE I STILL LOVE YOU";
 }
+
+// テスト用
+export const gettestData = (
+) => {
+  const date: Date = {
+    created: "2015.10.21",
+    modified: "2077.10.21",
+  };
+  const frontMatter: FrontMatter = {
+    title: "テスト",
+    synopsis: "ですよ",
+    date: date,
+    tag: undefined,
+  };
+  const piece: PieceMeta = {
+    slug: "test",
+    frontMatter: frontMatter,
+    //content: addContent(content, withContent),
+  };
+
+  return piece;
+};
