@@ -16,7 +16,6 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
   }
 };
 
-/*
 export async function generateMetadata({
   params,
 }: {
@@ -30,7 +29,6 @@ export async function generateMetadata({
     description: pieceData.frontMatter.synopsis,
   };
 }
-*/
 
 export default async function Piece({ params }: { params: { slug: string } }) {
   //const slug2: string = "the-usual-ones";
