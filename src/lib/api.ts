@@ -105,7 +105,7 @@ export async function mdAdapter(markdown: string | undefined) {
 }
 
 // テスト用
-export const getTestData = (message: string) => {
+export const getTestData = cache(async (message: string) => {
   const date: Date = {
     created: "2015.10.21",
     modified: "2077.10.21",
@@ -123,4 +123,4 @@ export const getTestData = (message: string) => {
   };
 
   return piece;
-};
+});
