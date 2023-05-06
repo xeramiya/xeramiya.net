@@ -61,7 +61,7 @@ export const getPieceData = cache(
     const piece: PieceMeta = {
       slug: pieceSlug,
       frontMatter: frontMatter,
-      // content: addContent(content, withContent),
+      content: addContent(content, withContent),
     };
 
     return piece;

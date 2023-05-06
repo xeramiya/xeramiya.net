@@ -1,4 +1,4 @@
-import { getPieceData, mdAdapter } from "lib/api";
+import { getPieceData, mdAdapter, getBlogMeta } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 
 const pieceType = "blog";
@@ -66,3 +66,12 @@ export default async function Piece(/*{ params }: { params: { slug: string } }*/
     </div>
   );
 }
+
+export const generateStaticParams = async () => {
+  const blogMeta = getBlogMeta(`piece/${pieceType}`);
+  return blogMeta.map((meta) => {
+    if (meta) {
+      return meta.slug;
+    }
+  });
+};
