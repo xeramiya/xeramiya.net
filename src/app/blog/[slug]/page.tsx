@@ -37,12 +37,14 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   //const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
   // const pieceContent = await mdAdapter(pieceData.content);
 
-  if (blogMeta) {
+  const pieceData = await blogMeta[0];
+
+  if (pieceData) {
     return (
       <div className="stand">
         ここは「{params.slug}」です！
         <br />
-        タイトルは「{blogMeta[0].frontMatter.title}」だぜ！ //エラーの原因
+        タイトルは「{pieceData.frontMatter.title}」だぜ！ //エラーの原因
         {/*
       <article className="mx-6 mt-12">
         <section>
@@ -66,7 +68,6 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   */}
       </div>
     );
-
   }
 }
 
