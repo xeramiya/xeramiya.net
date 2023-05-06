@@ -33,9 +33,10 @@ export async function generateMetadata({
 
 export default async function Piece({ params }: { params: { slug: string } }) {
   //const slug2: string = "the-usual-ones";
-  const pieceData = getTestData();
+  const pieceData = getTestData("俺の歌を聴けぇぇぇぇ！");
   //const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
   //const pieceContent = await mdAdapter(pieceData.content);
+  console.log("pieceData", pieceData)
 
   if (pieceData) {
     return (
@@ -69,6 +70,7 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   }
 }
 
+/*
 export const generateStaticParams = async () => {
   const blogMeta = getBlogMeta(`piece/${pieceType}`);
   return blogMeta.map((meta) => {
@@ -78,3 +80,4 @@ export const generateStaticParams = async () => {
     }
   });
 };
+*/

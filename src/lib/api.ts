@@ -105,14 +105,13 @@ export async function mdAdapter(markdown: string | undefined) {
 }
 
 // テスト用
-export const getTestData = (
-) => {
+export const getTestData = (message: string) => {
   const date: Date = {
     created: "2015.10.21",
     modified: "2077.10.21",
   };
   const frontMatter: FrontMatter = {
-    title: "テスト",
+    title: message,
     synopsis: "ですよ",
     date: date,
     tag: undefined,
