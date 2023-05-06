@@ -37,14 +37,14 @@ export const getPieceData = (
   withContent?: boolean
 ) => {
   const fileContent = fs.readFileSync(
-    path.join(getPath(pieceDir), `${pieceSlug}.md`),
+    path.join(pieceDirectory, `${pieceSlug}.md`),
     "utf8"
   );
+
   console.log(
     "DADADADADADADADA:",
     path.join(getPath(pieceDir), `${pieceSlug}.md`)
   );
-
   console.log("fileContent:", fileContent);
   console.log("pieceSlug:", pieceSlug);
   console.log("pieceDir:", pieceDir);
