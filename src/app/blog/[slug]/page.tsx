@@ -21,7 +21,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const pieceData = await getPieceData(`piece/${pieceType}`, params.slug);
+  const slug2: string = "the-usual-ones";
+  const pieceData = await getPieceData(`piece/${pieceType}`, slug2);
 
   return {
     title: pieceData.frontMatter.title,
