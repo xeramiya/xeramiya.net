@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const blogMeta = await getBlogMeta(`src/piece/${pieceType}`);
+  const blogMeta = await getBlogMeta(`_piece/${pieceType}`);
   // テスト用
-  const testPathData = getPath(`src/piece/${pieceType}`);
+  const testPathData = getPath(`_piece/${pieceType}`);
 
   return (
     <div className="stand">
