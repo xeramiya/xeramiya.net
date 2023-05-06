@@ -43,7 +43,7 @@ export default async function Piece({ params }: { params: { slug: string } }) {
 
   return (
     <div className="stand">
-      ここは「{params.slug}」です！
+      ここは「{}」です！
 
       {/*
       <article className="mx-6 mt-12">
