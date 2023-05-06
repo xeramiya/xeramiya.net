@@ -2,7 +2,7 @@
 export type PieceMeta = {
   slug: string;
   frontMatter: FrontMatter;
-  content: string | undefined;
+  content?: string | undefined;
 };
 
 export type FrontMatter = {

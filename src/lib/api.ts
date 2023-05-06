@@ -31,34 +31,42 @@ export function addContent(content: string, withContent?: boolean) {
 }
 
 // SlugからMarkdown文書内のFlont Matterを取得、場合によってはコンテンツも取得
-export function getPieceData(
-  pieceDir: string,
-  pieceSlug: string,
-  withContent?: boolean
-): PieceMeta {
-  const pieceFile = pieceSlug + ".md";
-  const piecePath = path.join(getPath(pieceDir), pieceFile);
-  const fileContent = fs.readFileSync(piecePath, "utf-8");
-  const { data, content } = grayMatter(fileContent);
+export const getPieceData = cache(
+  (pieceDir: string, pieceSlug: string, withContent?: boolean) => {
+    const fileContent = fs.readFileSync(
+      path.join(getPath(pieceDir), `${pieceSlug}.md`),
+      "utf-8"
+    );
+    console.log(
+      "DADADADADADADADA:",
+      path.join(getPath(pieceDir), `${pieceSlug}.md`)
+    );
 
-  const date: Date = {
-    created: data.date.created,
-    modified: data.date.modified,
-  };
-  const frontMatter: FrontMatter = {
-    title: data.title,
-    synopsis: data.synopsis,
-    date: date,
-    tag: data.tag,
-  };
-  const piece: PieceMeta = {
-    slug: pieceSlug,
-    frontMatter: frontMatter,
-    content: addContent(content, withContent),
-  };
+    console.log("fileContent:", fileContent);
+    console.log("pieceSlug:", pieceSlug);
+    console.log("pieceDir:", pieceDir);
 
-  return piece;
-}
+    const { data, content } = grayMatter(fileContent);
+
+    const date: Date = {
+      created: data.date.created,
+      modified: data.date.modified,
+    };
+    const frontMatter: FrontMatter = {
+      title: data.title,
+      synopsis: data.synopsis,
+      date: date,
+      tag: data.tag,
+    };
+    const piece: PieceMeta = {
+      slug: pieceSlug,
+      frontMatter: frontMatter,
+      // content: addContent(content, withContent),
+    };
+
+    return piece;
+  }
+);
 
 // 全てのMarkdown文書データのSlugとFront Matterを取得
 export function getBlogMeta(pieceDir: string) {
@@ -77,8 +85,8 @@ export function getBlogMeta(pieceDir: string) {
 import { remark } from "remark";
 import remarkHtml from "remark-html";
 import remarkGfm from "remark-gfm";
-import remarkRuby from "remark-ruby"
-import remarkGemoji from "remark-gemoji"
+import remarkRuby from "remark-ruby";
+import remarkGemoji from "remark-gemoji";
 
 // Markdown文書をHTMLに変換するなど
 export async function mdAdapter(markdown: string | undefined) {

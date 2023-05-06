@@ -16,23 +16,12 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
   }
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const pieceData = getPieceData(`piece/${pieceType}`, params.slug);
-
-  return {
-    title: pieceData.frontMatter.title,
-    description: pieceData.frontMatter.synopsis,
-  };
-}
-
 export default async function Piece() {
-  const slug = "the-usual-ones";
-  const pieceData = getPieceData(`piece/${pieceType}`, slug, true);
+  const slug: string = "the-usual-ones";
+  const pieceData = await getPieceData(`piece/${pieceType}`, await slug, true);
   const pieceContent = await mdAdapter(pieceData.content);
+
+  console.log("pieceData:", pieceData);
 
   return (
     <div className="stand">

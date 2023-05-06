@@ -21,7 +21,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const pieceData = getPieceData(`piece/${pieceType}`, params.slug);
+  const pieceData = await getPieceData(`piece/${pieceType}`, params.slug);
 
   return {
     title: pieceData.frontMatter.title,
@@ -30,7 +30,11 @@ export async function generateMetadata({
 }
 
 export default async function Piece({ params }: { params: { slug: string } }) {
-  const pieceData = getPieceData(`piece/${pieceType}`, params.slug, true);
+  const pieceData = await getPieceData(
+    `piece/${pieceType}`,
+    await params.slug,
+    true
+  );
   const pieceContent = await mdAdapter(pieceData.content);
 
   return (
@@ -46,8 +50,8 @@ export default async function Piece({ params }: { params: { slug: string } }) {
           <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
           <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
         </section>
-        <hr className="mt-4 border-char-note mb-11" />
-        <section className="piece max-w-[712px] ml-0">
+        <hr className="mb-11 mt-4 border-char-note" />
+        <section className="piece ml-0 max-w-[712px]">
           <div
             className=""
             dangerouslySetInnerHTML={{ __html: pieceContent }}
