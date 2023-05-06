@@ -31,42 +31,44 @@ export function addContent(content: string, withContent?: boolean) {
 }
 
 // SlugからMarkdown文書内のFlont Matterを取得、場合によってはコンテンツも取得
-export const getPieceData = cache(
-  (pieceDir: string, pieceSlug: string, withContent?: boolean) => {
-    const fileContent = fs.readFileSync(
-      path.join(getPath(pieceDir), `${pieceSlug}.md`),
-      "utf-8"
-    );
-    console.log(
-      "DADADADADADADADA:",
-      path.join(getPath(pieceDir), `${pieceSlug}.md`)
-    );
+export const getPieceData = (
+  pieceDir: string,
+  pieceSlug: string,
+  withContent?: boolean
+) => {
+  const fileContent = fs.readFileSync(
+    path.join(getPath(pieceDir), `${pieceSlug}.md`),
+    "utf-8"
+  );
+  console.log(
+    "DADADADADADADADA:",
+    path.join(getPath(pieceDir), `${pieceSlug}.md`)
+  );
 
-    console.log("fileContent:", fileContent);
-    console.log("pieceSlug:", pieceSlug);
-    console.log("pieceDir:", pieceDir);
+  console.log("fileContent:", fileContent);
+  console.log("pieceSlug:", pieceSlug);
+  console.log("pieceDir:", pieceDir);
 
-    const { data, content } = grayMatter(fileContent);
+  const { data, content } = grayMatter(fileContent);
 
-    const date: Date = {
-      created: data.date.created,
-      modified: data.date.modified,
-    };
-    const frontMatter: FrontMatter = {
-      title: data.title,
-      synopsis: data.synopsis,
-      date: date,
-      tag: data.tag,
-    };
-    const piece: PieceMeta = {
-      slug: pieceSlug,
-      frontMatter: frontMatter,
-      content: addContent(content, withContent),
-    };
+  const date: Date = {
+    created: data.date.created,
+    modified: data.date.modified,
+  };
+  const frontMatter: FrontMatter = {
+    title: data.title,
+    synopsis: data.synopsis,
+    date: date,
+    tag: data.tag,
+  };
+  const piece: PieceMeta = {
+    slug: pieceSlug,
+    frontMatter: frontMatter,
+    content: addContent(content, withContent),
+  };
 
-    return piece;
-  }
-);
+  return piece;
+};
 
 // 全てのMarkdown文書データのSlugとFront Matterを取得
 export function getBlogMeta(pieceDir: string) {
