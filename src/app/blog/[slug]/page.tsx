@@ -35,38 +35,31 @@ export default async function Piece({ params }: { params: { slug: string } }) {
   //const slug2: string = "the-usual-ones";
   //const pieceData = await getTestData(params.slug);
   const pieceData = await getPieceData(`piece/${pieceType}`, params.slug, true);
-  //const pieceContent = await mdAdapter(pieceData.content);
+  const pieceContent = await mdAdapter(pieceData.content);
   console.log("pieceData", pieceData);
 
   if (pieceData) {
     return (
       <div className="stand">
-        ここは「{params.slug}」です！
-        <br />
-        タイトルは「{pieceData.frontMatter.title}」だぜ！ //エラーの原因？
-        <br />
-        {pieceData.frontMatter.synopsis}
-        {/*
-      <article className="mx-6 mt-12">
-        <section>
-          <div className="mt-3 text-char-note">
-            <span className="text-base">
-              <DateFormatter date={pieceData.frontMatter.date.created} />
-            </span>
-            <ModifiedDate date={pieceData.frontMatter.date.modified} />
-          </div>
-          <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
-          <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
-        </section>
-        <hr className="mb-11 mt-4 border-char-note" />
-        <section className="piece ml-0 max-w-[712px]">
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: pieceContent }}
-          />
-        </section>
-      </article>
-  */}
+        <article className="mx-6 mt-12">
+          <section>
+            <div className="mt-3 text-char-note">
+              <span className="text-base">
+                <DateFormatter date={pieceData.frontMatter.date.created} />
+              </span>
+              <ModifiedDate date={pieceData.frontMatter.date.modified} />
+            </div>
+            <h1 className="mt-2">{pieceData.frontMatter.title}</h1>
+            <div className="mt-9">{pieceData.frontMatter.synopsis}</div>
+          </section>
+          <hr className="mb-11 mt-4 border-char-note" />
+          <section className="piece ml-0 max-w-[712px]">
+            <div
+              className=""
+              dangerouslySetInnerHTML={{ __html: pieceContent }}
+            />
+          </section>
+        </article>
       </div>
     );
   }
