@@ -105,13 +105,18 @@ export async function mdAdapter(markdown: string | undefined) {
 }
 
 // テスト用
-export const getTestData = cache(async (message: string) => {
+export const getTestData = cache(async (pieceSlug: string) => {
+  const fileContent = fs.readFileSync(
+    path.join(getPath("piece/blog"), `${pieceSlug}.md`),
+    "utf-8"
+  );
+
   const date: Date = {
     created: "2015.10.21",
     modified: "2077.10.21",
   };
   const frontMatter: FrontMatter = {
-    title: message,
+    title: fileContent,
     synopsis: "ですよ",
     date: date,
     tag: undefined,
