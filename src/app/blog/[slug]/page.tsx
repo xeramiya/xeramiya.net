@@ -32,7 +32,7 @@ export async function generateMetadata({
 }
 */
 
-export default async function Piece({ params }: { params: { slug: string } }) {
+export default async function Piece(/*{ params }: { params: { slug: string } }*/) {
   const slug2: string = "the-usual-ones";
   const pieceData = await getPieceData(
     `piece/${pieceType}`,
