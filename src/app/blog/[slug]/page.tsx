@@ -32,12 +32,12 @@ export async function generateMetadata({
 }
 */
 
-export default async function Piece(/*{ params }: { params: { slug: string } }*/) {
-  const slug2: string = "the-usual-ones";
+export default async function Piece({ params }: { params: { slug: string } }) {
+  //const slug2: string = "the-usual-ones";
   const pieceData = await getPieceData(
     `piece/${pieceType}`,
-    //params.slug,
-    slug2,
+    params.slug,
+    //slug2,
     true
   );
   const pieceContent = await mdAdapter(pieceData.content);
@@ -71,6 +71,7 @@ export const generateStaticParams = async () => {
   const blogMeta = getBlogMeta(`piece/${pieceType}`);
   return blogMeta.map((meta) => {
     if (meta) {
+      console.log("meta.slug:", meta.slug);
       return meta.slug;
     }
   });
