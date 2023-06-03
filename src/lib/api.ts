@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { Buffer } from "buffer";
 import grayMatter from "gray-matter";
-
 import { PieceMeta, FrontMatter, Date } from "lib/type";
-
 import { cache } from "react";
+
+const dockUrl = "https://api.github.com/repos/xeramiya/doc-k/contents/";
 
 // ブログ用文書データへのパス取得
 // なぜかENOENTエラー発生、原因不明 ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ
@@ -20,13 +21,29 @@ export function getPath(dir: string) {
 const blogDir = path.join(process.cwd(), "piece/blog");
 
 // 全てのMarkdown文書のSlugを取得
-export function getPieceSlug() {
-  return fs.readdirSync(blogDir, { withFileTypes: true }).flatMap((dirent) => {
-    if (dirent.isFile() && dirent.name.endsWith(".md")) {
-      return dirent.name.slice(0, -3);
+export const getPieceSlugs = async () => {
+  type FetchData = {
+    name: string;
+    type: string;
+  };
+
+  const fetchDatas = await fetch(`${dockUrl}blog/`, {
+    headers: { Authorization: `token ${process.env.GITHUB_REST_API}` },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return fetchDatas.map((data: FetchData) => {
+    if (data.type == "file" && data.name.endsWith(".md")) {
+      const slug: string = data.name.slice(0, -3);
+      return slug;
     }
   });
-}
+};
 
 // getStaticDataの補助、PieceMetaにcontentを追加するか判断
 export function addContent(content: string, withContent?: boolean) {
@@ -37,13 +54,29 @@ export function addContent(content: string, withContent?: boolean) {
 }
 
 // SlugからMarkdown文書内のFlont Matterを取得、場合によってはコンテンツも取得
-export const getPieceData = (pieceSlug: string, withContent?: boolean) => {
-  const fileContent = fs.readFileSync(
-    path.join(blogDir, `${pieceSlug}.md`),
-    "utf8"
-  );
+export const getPieceData = async (
+  pieceSlug: string,
+  withContent?: boolean
+) => {
+  type FetchData = {
+    content: string;
+  };
 
-  const { data, content } = grayMatter(fileContent);
+  const fetchData: FetchData = await fetch(`${dockUrl}blog/${pieceSlug}.md`, {
+    headers: { Authorization: `token ${process.env.GITHUB_REST_API}` },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  const fetchContent = fetchData.content;
+
+  const fileDatas = Buffer.from(fetchContent, "base64").toString("utf-8");
+
+  const { data, content } = grayMatter(fileDatas);
 
   const date: Date = {
     created: data.date.created,
@@ -65,18 +98,20 @@ export const getPieceData = (pieceSlug: string, withContent?: boolean) => {
 };
 
 // 全てのMarkdown文書データのSlugとFront Matterを取得
-export function getBlogMeta() {
-  const pieceSlug = getPieceSlug();
-  const blogMeta = pieceSlug.map((pieceSlug) => {
-    if (pieceSlug) {
-      return getPieceData(pieceSlug);
-    }
-  });
-
-  // TODO: 並べ替え処理
-
+export const getBlogMeta = async () => {
+  const pieceSlugs = await getPieceSlugs();
+  const blogMeta = await Promise.all(
+    pieceSlugs.map((pieceSlug: string) => {
+      if (pieceSlug) {
+        return getPieceData(pieceSlug);
+      }
+    })
+  );
+  /**
+   * TODO: 並べ替え処理
+   */
   return blogMeta;
-}
+};
 
 import { remark } from "remark";
 import remarkHtml from "remark-html";
@@ -95,5 +130,6 @@ export async function mdAdapter(markdown: string | undefined) {
       .process(markdown);
     return result.toString();
   }
-  return "OF COURSE I STILL LOVE YOU";
+
+  return "OF COURSE I STILL LOVE YOU"; // エラー
 }

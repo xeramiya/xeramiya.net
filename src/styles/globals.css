@@ -47,19 +47,19 @@
 @layer utilities {
   .piece {
     & h1 {
-      @apply mt-10;
+      @apply mt-20;
     }
     & h2 {
-      @apply mt-10;
+      @apply mt-20;
     }
     & h3 {
-      @apply mt-8;
+      @apply mt-14;
     }
     & h4 {
-      @apply mt-6;
+      @apply mt-9;
     }
     & h5 {
-      @apply mt-5;
+      @apply mt-6;
     }
     & h6 {
       @apply mt-4;
@@ -67,29 +67,29 @@
 
     & div {
       & > p {
-        @apply mt-4 leading-loose;
+        @apply mt-2 leading-loose;
       }
     }
     & a {
       @apply text-char-link hover:underline hover:bg-media;
     }
     & em {
-      @apply pr-0.5 font-light italic;
+      @apply font-light italic;
     }
     & strong {
       @apply font-bold;
     }
 
     & ul {
-      @apply mt-3 pl-8;
+      @apply mt-2 pl-8;
       & > li {
-        @apply mt-3 list-disc;
+        @apply mt-2 list-disc;
       }
     }
     & ol {
-      @apply mt-3 pl-8;
+      @apply mt-2 pl-8;
       & > li {
-        @apply mt-3 list-decimal;
+        @apply mt-2 list-decimal;
       }
     }
 
@@ -97,7 +97,7 @@
       @apply font-mono text-char-main;
     }
     & pre {
-      @apply mt-3 rounded-lg bg-nand-dark py-2 pl-8;
+      @apply mt-2 rounded-lg bg-nand-dark py-2 pl-8;
       & > code {
         @apply my-0 text-zWhite;
       }
@@ -108,7 +108,7 @@
     }
 
     & blockquote {
-      @apply ml-4 mt-3 border-l-2 border-char-note py-0.5;
+      @apply ml-4 mt-2 border-l-2 border-char-note py-0.5;
       & > p {
         @apply ml-2 text-char-note;
       }
