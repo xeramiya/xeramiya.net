@@ -1,14 +1,12 @@
 {
   "root": true,
   "plugins": [
-    "tailwindcss"
   ],
   "extends": [
     "next",
     "next/core-web-vitals",
-    "prettier",
+    "prettier"
     // "next/babel",
-    "plugin:tailwindcss/recommended"
   ],
   "rules": {
   },

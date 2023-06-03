@@ -1,4 +1,4 @@
-import { getPieceData, mdAdapter, getBlogMeta } from "lib/api";
+import { getPieceData, mdAdapter, getBlogMetas } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 import { PieceMeta } from "lib/type";
 
@@ -62,11 +62,9 @@ export default async function Piece({ params }: { params: { slug: string } }) {
 }
 
 export const generateStaticParams = async () => {
-  const blogMeta = await getBlogMeta();
+  const blogMeta = await getBlogMetas();
   return blogMeta.map((meta: PieceMeta) => {
-    if (meta) {
-      console.log("meta.slug:", meta.slug);
-      return meta.slug;
-    }
+    console.log("meta.slug:", meta.slug);
+    return meta.slug;
   });
 };

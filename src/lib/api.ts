@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import { Buffer } from "buffer";
 import grayMatter from "gray-matter";
 import { PieceMeta, FrontMatter, Date } from "lib/type";
@@ -7,27 +5,8 @@ import { cache } from "react";
 
 const dockUrl = "https://api.github.com/repos/xeramiya/doc-k/contents/";
 
-// ブログ用文書データへのパス取得
-// なぜかENOENTエラー発生、原因不明 ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ
-// >> [slug]から呼び出すとvar/task/~というパスが返される
-// >> 通常は/vercel/path0~
-/* 
-export function getPath(dir: string) {
-  return path.join(process.cwd(), dir);
-}
-*/
-
-// ブログ用文書データへのパス取得(↑の代用)
-const blogDir = path.join(process.cwd(), "piece/blog");
-
-// 全てのMarkdown文書のSlugを取得
-export const getPieceSlugs = async () => {
-  type FetchData = {
-    name: string;
-    type: string;
-  };
-
-  const fetchDatas = await fetch(`${dockUrl}blog/`, {
+const fetcher = (url: string) => {
+  return fetch(url, {
     headers: { Authorization: `token ${process.env.GITHUB_REST_API}` },
   })
     .then((res) => {
@@ -36,6 +15,16 @@ export const getPieceSlugs = async () => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+// 全てのMarkdown文書のSlugを取得
+export const getPieceSlugs = async () => {
+  type FetchData = {
+    name: string;
+    type: string;
+  };
+
+  const fetchDatas = await fetcher(`${dockUrl}blog/`);
 
   return fetchDatas.map((data: FetchData) => {
     if (data.type == "file" && data.name.endsWith(".md")) {
@@ -62,15 +51,7 @@ export const getPieceData = async (
     content: string;
   };
 
-  const fetchData: FetchData = await fetch(`${dockUrl}blog/${pieceSlug}.md`, {
-    headers: { Authorization: `token ${process.env.GITHUB_REST_API}` },
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const fetchData: FetchData = await fetcher(`${dockUrl}blog/${pieceSlug}.md`);
 
   const fetchContent = fetchData.content;
 
@@ -97,20 +78,25 @@ export const getPieceData = async (
   return piece;
 };
 
-// 全てのMarkdown文書データのSlugとFront Matterを取得
-export const getBlogMeta = async () => {
+// 全てのMarkdown文書データのSlugとFront Matterを取得し、文書を作成日順に並べ替え
+export const getBlogMetas = async () => {
   const pieceSlugs = await getPieceSlugs();
-  const blogMeta = await Promise.all(
+  const rawBlogMetas = await Promise.all(
     pieceSlugs.map((pieceSlug: string) => {
-      if (pieceSlug) {
-        return getPieceData(pieceSlug);
-      }
+      return getPieceData(pieceSlug);
     })
   );
-  /**
-   * TODO: 並べ替え処理
-   */
-  return blogMeta;
+
+  const blogMetas = rawBlogMetas.sort((a: PieceMeta, b: PieceMeta) => {
+    if (a.frontMatter.date.created > b.frontMatter.date.created) {
+      return -1;
+    } else if (a.frontMatter.date.created < b.frontMatter.date.created) {
+      return 1;
+    }
+    return 0;
+  });
+
+  return blogMetas;
 };
 
 import { remark } from "remark";

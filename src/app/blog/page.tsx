@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { getBlogMeta } from "lib/api";
+import { getBlogMetas } from "lib/api";
 import PiecePreview from "components/PiecePreview";
 import { PieceMeta } from "lib/type";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const blogMeta = await getBlogMeta();
+  const blogMeta = await getBlogMetas();
 
   return (
     <div className="stand">
@@ -26,13 +26,11 @@ export default async function Blog() {
         <ul className="">
           <Suspense fallback={<div>データ取得中</div>}>
             {blogMeta.map((meta: PieceMeta) => {
-              if (meta) {
-                return (
-                  <div key={meta.frontMatter.title}>
-                    <PiecePreview meta={meta} />
-                  </div>
-                );
-              }
+              return (
+                <div key={meta.frontMatter.title}>
+                  <PiecePreview meta={meta} />
+                </div>
+              );
             })}
           </Suspense>
         </ul>
