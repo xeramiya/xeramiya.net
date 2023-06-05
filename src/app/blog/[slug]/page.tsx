@@ -64,7 +64,6 @@ export default async function Piece({ params }: { params: { slug: string } }) {
 export const generateStaticParams = async () => {
   const blogMeta = await getBlogMetas();
   return blogMeta.map((meta: PieceMeta) => {
-    console.log("meta.slug:", meta.slug);
     return meta.slug;
   });
 };
