@@ -8,6 +8,7 @@ const dockUrl = "https://api.github.com/repos/xeramiya/doc-k/contents/";
 const fetcher = (url: string) => {
   return fetch(url, {
     headers: { Authorization: `token ${process.env.GITHUB_REST_API}` },
+    next: { revalidate: 3600 },
   })
     .then((res) => {
       return res.json();
