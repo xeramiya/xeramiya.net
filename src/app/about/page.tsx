@@ -22,7 +22,7 @@ export default function About() {
       <article className="mx-4 mt-12">
         <section>
           <h1 className="text-5xl italic tracking-wide">
-            <Link href="./signature">Xeramiya</Link>
+            <Link href="about/signature">Xeramiya</Link>
           </h1>
           <p className="note text-lg">I&apos;m STill here!!</p>
         </section>
