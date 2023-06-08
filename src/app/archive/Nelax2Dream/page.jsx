@@ -70,7 +70,7 @@ export default function Nelax2Dream() {
         </div>
         <hr className="border-char-note" />
         <section className="pt-12">
-          <div className="flex h-12">
+          <div className="flex h-12 text-white">
             <div
               id="playbutton"
               className="bg-nand-dark hover:bg-nand float-left my-1 h-12 w-full rounded-l-lg"
@@ -83,7 +83,7 @@ export default function Nelax2Dream() {
             </div>
             <button
               id="stopbutton"
-              className="text-align float text-mono float-right my-1 h-12 rounded-r-lg bg-iRed/70 px-4 font-mono hover:bg-iRed"
+              className="text-align float text-mono float-right my-1 h-12 rounded-r-lg bg-ReD px-4 font-mono hover:bg-iRed"
             >
               EJECT
             </button>
