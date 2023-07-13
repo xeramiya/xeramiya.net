@@ -1,28 +1,22 @@
 {
   "root": true,
-  "plugins": [
-  ],
+  "plugins": [],
   "extends": [
     "next",
     "next/core-web-vitals",
     "prettier"
     // "next/babel",
   ],
-  "rules": {
-  },
+  "rules": {},
   "settings": {
     "tailwindcss": {
-       "groupByResponsive": true,
-       "whitelist": []
-     }
-   },
+      "groupByResponsive": true,
+      "whitelist": []
+    }
+  },
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js"
-      ]
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"]
     }
   ]
 }

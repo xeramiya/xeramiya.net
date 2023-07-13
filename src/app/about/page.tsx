@@ -21,13 +21,13 @@ export default function About() {
     <div className="stand">
       <article className="mx-4 mt-12">
         <section>
-          <h1 className="text-5xl italic tracking-wide">
-            <Link href="about/signature">Xeramiya</Link>
-          </h1>
-          <p className="note text-lg">I&apos;m STill here!!</p>
-        </section>
-        <section className="pt-2">
-          <ul id="string" className="flex flex-row flex-wrap">
+          <div>
+            <h1 className="text-5xl italic tracking-wide">
+              <Link href="about/signature">Xeramiya</Link>
+            </h1>
+            <p className="note text-lg">I&apos;m STill here!!</p>
+          </div>
+          <ul id="string" className="flex flex-row flex-wrap py-1">
             <li>
               <Link
                 href="https://twitter.com/xeramiya"
@@ -54,7 +54,9 @@ export default function About() {
                 className="string bg-Steam"
                 target="_blank"
                 rel="noopener noreferrer"
-              ><SteamIcon /></Link>
+              >
+                <SteamIcon />
+              </Link>
             </li>
             <li>
               <Link
@@ -97,6 +99,11 @@ export default function About() {
               </Link>
             </li>
           </ul>
+        </section>
+        <hr className="border-char-note" />
+        <section>
+          <div className="mt-8"></div>
+          自己紹介をしようとしても、短めのフレーバーテキストしか思い浮かばない。よろしくね！
         </section>
       </article>
     </div>

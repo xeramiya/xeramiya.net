@@ -2,7 +2,7 @@ type Attribute = {
   className?: string;
 };
 
-export const XeramiyaIcon = (attribute: Attribute) => {
+export const XeramiyaXIcon = (attribute: Attribute) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +20,33 @@ export const XeramiyaIcon = (attribute: Attribute) => {
       <path
         id="X-Slash"
         d="M6.816,4.472l7.507,15.056l2.861,0l-7.507,-15.056l-2.861,-0Z"
+      />
+    </svg>
+  );
+};
+
+export const XeramiyaCircleXIcon = (attribute: Attribute) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={attribute.className}
+    >
+      <path
+        id="CircleX-1"
+        d="M14.319,21.729c-0.745,0.177 -1.521,0.271 -2.319,0.271c-1.94,-0 -3.751,-0.553 -5.285,-1.511l4.662,-4.661l2.942,5.901Z"
+      />
+      <path
+        id="CircleX-2"
+        d="M20.489,6.715c0.958,1.534 1.511,3.345 1.511,5.285c0,3.098 -1.412,5.869 -3.627,7.704l-3.617,-7.255l5.733,-5.734Z"
+      />
+      <path
+        id="CircleX-3"
+        d="M9.681,2.271c0.745,-0.177 1.521,-0.271 2.319,-0.271c1.94,-0 3.751,0.553 5.285,1.511l-4.662,4.661l-2.942,-5.901Z"
+      />
+      <path
+        id="CircleX-4"
+        d="M3.511,17.285c-0.958,-1.534 -1.511,-3.345 -1.511,-5.285c-0,-3.098 1.412,-5.869 3.627,-7.704l5.75,11.532l-6.41,0l-1.456,1.457Z"
       />
     </svg>
   );

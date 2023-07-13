@@ -43,11 +43,11 @@ export const metadata = {
   },
   icons: {
     icon: "/favicon/favicon.ico",
-    shortcut: "/favicon/favicon.png",
-    apple: "/favicon/favicon.png",
+    shortcut: "/favicon/icon.png",
+    apple: "/favicon/icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/favicon/favicon.png",
+      url: "/favicon/icon.png",
     },
   },
   themeColor: [
@@ -77,11 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={
-        "h-full scroll-smooth font-sans" +
-        " " +
-        `${MPlus2.variable} ${ZenAntique.variable}`
-      }
+      className={`h-full scroll-smooth font-sans ${MPlus2.variable} ${ZenAntique.variable}`}
     >
       <body className="h-full overflow-y-scroll bg-background">
         <Header />

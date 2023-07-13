@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { XeramiyaIcon } from "components/Icon";
+import { XeramiyaXIcon } from "components/Icon";
 import Head from "next/head";
 
 export const Header = () => {
@@ -8,7 +8,7 @@ export const Header = () => {
       <nav className="mx-auto max-w-screen-slate">
         <div id="x-logo" className="float-left ml-1 p-0.5">
           <Link href="./">
-            <XeramiyaIcon className="h-10 fill-char-glass pl-4 hover:fill-media-invert" />
+            <XeramiyaXIcon className="h-10 fill-char-glass pl-4 hover:fill-media-invert" />
           </Link>
         </div>
         <ul className="mx-1 flex justify-end py-1 text-center font-mono text-base">

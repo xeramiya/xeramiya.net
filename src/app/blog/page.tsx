@@ -27,6 +27,7 @@ export default async function Blog() {
           <Suspense fallback={<div>データ取得中</div>}>
             {blogMeta.map((meta: PieceMeta) => {
               return (
+                /* このkeyをコンポーネントに移設しよう！そうしよう！ */
                 <div key={meta.frontMatter.title}>
                   <PiecePreview meta={meta} />
                 </div>
