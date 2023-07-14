@@ -9,6 +9,7 @@ import {
   SoundCloudIcon,
   SpotifyIcon,
   GitHubIcon,
+  XeramiyaXIconRainbow,
 } from "components/Icon";
 
 export const metadata: Metadata = {
@@ -27,11 +28,11 @@ export default function About() {
             </h1>
             <p className="note text-lg">I&apos;m STill here!!</p>
           </div>
-          <ul id="string" className="flex flex-row flex-wrap py-1">
+          <ul id="string" className="flex flex-row flex-wrap justify-end py-1">
             <li>
               <Link
                 href="https://twitter.com/xeramiya"
-                className="string bg-Twitter"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -41,7 +42,7 @@ export default function About() {
             <li>
               <Link
                 href="https://www.instagram.com/xeramiya"
-                className="string bg-Instagramm"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -51,7 +52,7 @@ export default function About() {
             <li>
               <Link
                 href="https://steamcommunity.com/id/xeramiya"
-                className="string bg-Steam"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -61,7 +62,7 @@ export default function About() {
             <li>
               <Link
                 href="https://www.youtube.com/channel/UCKpHbYt5VuQZ6ePTgjVvhfQ"
-                className="string bg-YouTube"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -71,7 +72,7 @@ export default function About() {
             <li>
               <Link
                 href="https://soundcloud.com/xeramiya"
-                className="string bg-SoundCloud"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,7 +82,7 @@ export default function About() {
             <li>
               <Link
                 href="https://open.spotify.com/user/fhc8jd5iv2ibh1mt1pncyn2vd"
-                className="string bg-Spotify"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -91,7 +92,7 @@ export default function About() {
             <li>
               <Link
                 href="https://github.com/xeramiya"
-                className="string bg-GitHub"
+                className="string"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -102,8 +103,7 @@ export default function About() {
         </section>
         <hr className="border-char-note" />
         <section>
-          <div className="mt-8"></div>
-          自己紹介をしようとしても、短めのフレーバーテキストしか思い浮かばない。よろしくね！
+          <div className="mt-8">沙漠の広大さと無慈悲さに憧れる日本人です。よろしく！</div>
         </section>
       </article>
     </div>

@@ -31,7 +31,11 @@
   }
 
   .string {
-    @apply mx-1 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-xl hover:rounded-3xl;
+    @apply mx-1.5 inline-flex h-9 w-9 items-center justify-center;
+  }
+
+  .string-icon {
+    @apply h-9 w-9 fill-char-note active:opacity-70;
   }
 
   .note {
@@ -41,6 +45,37 @@
   .stroke-round {
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+
+  .xeramiya-x-icon-rainbow {
+    path {
+      fill: url(#gradient);
+    }
+
+    & #stop1 {
+      animation: stop1 5s ease-in-out infinite alternate;
+    }
+    & #stop2 {
+      animation: stop2 5s ease-in-out infinite alternate;
+    }
+    @keyframes stop1 {
+      /* 紫から緑へ */
+      0% {
+        stop-color: #7a5fff;
+      }
+      100% {
+        stop-color: #01ff89;
+      }
+    }
+    @keyframes stop2 {
+      /* 緑から紫へ */
+      0% {
+        stop-color: #01ff89;
+      }
+      100% {
+        stop-color: #7a5fff;
+      }
+    }
   }
 }
 
@@ -71,7 +106,7 @@
       }
     }
     & a {
-      @apply text-char-link hover:underline hover:bg-media;
+      @apply text-char-link hover:bg-media hover:underline;
     }
     & em {
       @apply font-light italic;
