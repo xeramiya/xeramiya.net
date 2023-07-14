@@ -33,9 +33,12 @@ export const XeramiyaXIconRainbow = (attribute: Attribute) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="gradient" gradientUnits="userSpaceOnUse">
-          <stop id="stop1" offset="0%" />
-          <stop id="stop2" offset="100%" />
+        <linearGradient id="xeramiya-x-icon-rainbow" gradientUnits="userSpaceOnUse">
+          <stop className="stop1" offset="0%" />
+          <stop className="stop2" offset="20%" />
+          <stop className="stop3" offset="39%" />
+          <stop className="stop4" offset="64%" />
+          <stop className="stop5" offset="100%" />
         </linearGradient>
       </defs>
       <path
@@ -54,7 +57,7 @@ export const XeramiyaXIconRainbow = (attribute: Attribute) => {
   );
 };
 
-export const XeramiyaCircleXIcon = (attribute: Attribute) => {
+export const XeramiyaNetIcon = (attribute: Attribute) => {
   return (
     <svg
       className={attribute.className}
@@ -63,19 +66,19 @@ export const XeramiyaCircleXIcon = (attribute: Attribute) => {
     >
       <path
         id="CircleX-1"
-        d="M14.319,21.729c-0.745,0.177 -1.521,0.271 -2.319,0.271c-1.94,-0 -3.751,-0.553 -5.285,-1.511l4.662,-4.661l2.942,5.901Z"
+        d="M4.136,18.175c-1.338,-1.701 -2.136,-3.845 -2.136,-6.175c-0,-4.292 2.71,-7.956 6.511,-9.373l5.85,11.733l-6.41,0l-3.815,3.815Z"
       />
       <path
         id="CircleX-2"
-        d="M20.489,6.715c0.958,1.534 1.511,3.345 1.511,5.285c0,3.098 -1.412,5.869 -3.627,7.704l-3.617,-7.255l5.733,-5.734Z"
+        d="M17.385,20.426c-1.555,0.996 -3.403,1.574 -5.385,1.574c-1.541,-0 -3.001,-0.349 -4.306,-0.973l6.667,-6.667l3.024,6.066Z"
       />
       <path
         id="CircleX-3"
-        d="M9.681,2.271c0.745,-0.177 1.521,-0.271 2.319,-0.271c1.94,-0 3.751,0.553 5.285,1.511l-4.662,4.661l-2.942,-5.901Z"
+        d="M21.027,7.694c0.624,1.305 0.973,2.765 0.973,4.306c-0,1.79 -0.471,3.47 -1.296,4.924l-2.964,-5.943l3.287,-3.287Z"
       />
       <path
         id="CircleX-4"
-        d="M3.511,17.285c-0.958,-1.534 -1.511,-3.345 -1.511,-5.285c-0,-3.098 1.412,-5.869 3.627,-7.704l5.75,11.532l-6.41,0l-1.456,1.457Z"
+        d="M13.305,2.085c1.823,0.238 3.492,0.967 4.87,2.051l-2.567,2.568l-2.303,-4.619Z"
       />
     </svg>
   );

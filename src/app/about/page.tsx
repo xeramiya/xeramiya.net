@@ -22,13 +22,16 @@ export default function About() {
     <div className="stand">
       <article className="mx-4 mt-12">
         <section>
-          <div>
-            <h1 className="text-5xl italic tracking-wide">
-              <Link href="about/signature">Xeramiya</Link>
-            </h1>
-            <p className="note text-lg">I&apos;m STill here!!</p>
+          <div className="flex flex-row">
+            <XeramiyaXIconRainbow className="h-[4.75rem]" />
+            <div className="">
+              <h1 className="text-5xl italic tracking-wide">
+                <Link href="about/signature">Xeramiya</Link>
+              </h1>
+              <p className="note text-lg">I&apos;m STill here!!</p>
+            </div>
           </div>
-          <ul id="string" className="flex flex-row flex-wrap justify-end py-1">
+          <ul className="flex flex-row flex-wrap justify-end py-1 mt-4">
             <li>
               <Link
                 href="https://twitter.com/xeramiya"
@@ -103,7 +106,9 @@ export default function About() {
         </section>
         <hr className="border-char-note" />
         <section>
-          <div className="mt-8">沙漠の広大さと無慈悲さに憧れる日本人です。よろしく！</div>
+          <div className="mt-8">
+            好きな好きは好きです。
+          </div>
         </section>
       </article>
     </div>

@@ -42,7 +42,7 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon/favicon.ico",
+    icon: "/favicon/favicon.svg",
     shortcut: "/favicon/icon.png",
     apple: "/favicon/icon.png",
     other: {

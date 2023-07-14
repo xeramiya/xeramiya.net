@@ -31,11 +31,11 @@
   }
 
   .string {
-    @apply mx-1.5 inline-flex h-9 w-9 items-center justify-center;
+    @apply mx-1 inline-flex h-9 w-9 items-center justify-center;
   }
 
   .string-icon {
-    @apply h-9 w-9 fill-char-note active:opacity-70;
+    @apply h-8 w-8 fill-char-note active:opacity-70;
   }
 
   .note {
@@ -49,31 +49,61 @@
 
   .xeramiya-x-icon-rainbow {
     path {
-      fill: url(#gradient);
+      fill: url(#xeramiya-x-icon-rainbow);
     }
-
-    & #stop1 {
-      animation: stop1 5s ease-in-out infinite alternate;
+    .stop1 {
+      animation: stop1 2s ease-in-out infinite alternate;
     }
-    & #stop2 {
-      animation: stop2 5s ease-in-out infinite alternate;
+    .stop2 {
+      animation: stop2 2s ease-in-out infinite alternate;
+    }
+    .stop3 {
+      animation: stop3 2s ease-in-out infinite alternate;
+    }
+    .stop4 {
+      animation: stop4 2s ease-in-out infinite alternate;
+    }
+    .stop5 {
+      animation: stop5 2s ease-in-out infinite alternate;
     }
     @keyframes stop1 {
-      /* 紫から緑へ */
       0% {
-        stop-color: #7a5fff;
+        stop-color: #35c3f3;
       }
       100% {
-        stop-color: #01ff89;
+        stop-color: #8b9fe8;
       }
     }
     @keyframes stop2 {
-      /* 緑から紫へ */
       0% {
-        stop-color: #01ff89;
+        stop-color: #8b9fe8;
       }
       100% {
-        stop-color: #7a5fff;
+        stop-color: #e681d8;
+      }
+    }
+    @keyframes stop3 {
+      0% {
+        stop-color: #e681d8;
+      }
+      100% {
+        stop-color: #ffa9a4;
+      }
+    }
+    @keyframes stop4 {
+      0% {
+        stop-color: #ffa9a4;
+      }
+      100% {
+        stop-color: #fed2ce;
+      }
+    }
+    @keyframes stop5 {
+      0% {
+        stop-color: #fed2ce;
+      }
+      100% {
+        stop-color: #35c3f3;
       }
     }
   }

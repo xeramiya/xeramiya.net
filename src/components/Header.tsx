@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { XeramiyaXIcon } from "components/Icon";
+import { XeramiyaNetIcon } from "components/Icon";
 import Head from "next/head";
 
 export const Header = () => {
   return (
     <header className="fixed h-11 w-full select-none bg-glass backdrop-blur-md hover:backdrop-blur-xl">
       <nav className="mx-auto max-w-screen-slate">
-        <div id="x-logo" className="float-left ml-1 p-0.5">
+        <div id="x-logo" className="float-left ml-1 p-1">
           <Link href="./">
-            <XeramiyaXIcon className="h-10 fill-char-glass pl-4 hover:fill-media-invert" />
+            <XeramiyaNetIcon className="h-9 fill-char-glass pl-4 hover:fill-media-invert" />
           </Link>
         </div>
         <ul className="mx-1 flex justify-end py-1 text-center font-mono text-base">
