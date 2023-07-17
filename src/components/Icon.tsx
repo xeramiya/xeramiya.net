@@ -33,11 +33,14 @@ export const XeramiyaXIconRainbow = (attribute: Attribute) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="xeramiya-x-icon-rainbow" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="xeramiya-x-icon-rainbow"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop className="stop1" offset="0%" />
-          <stop className="stop2" offset="20%" />
+          <stop className="stop2" offset="19%" />
           <stop className="stop3" offset="39%" />
-          <stop className="stop4" offset="64%" />
+          <stop className="stop4" offset="74%" />
           <stop className="stop5" offset="100%" />
         </linearGradient>
       </defs>

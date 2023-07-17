@@ -31,7 +31,7 @@ export default function About() {
               <p className="note text-lg">I&apos;m STill here!!</p>
             </div>
           </div>
-          <ul className="flex flex-row flex-wrap justify-end py-1 mt-4">
+          <ul className="mt-4 flex flex-row flex-wrap justify-end py-1">
             <li>
               <Link
                 href="https://twitter.com/xeramiya"
@@ -106,9 +106,7 @@ export default function About() {
         </section>
         <hr className="border-char-note" />
         <section>
-          <div className="mt-8">
-            好きな好きは好きです。
-          </div>
+          <div className="mt-8">好きな好きは好きです。</div>
         </section>
       </article>
     </div>
