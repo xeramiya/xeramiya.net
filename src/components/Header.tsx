@@ -9,6 +9,7 @@ export const Header = () => {
         <div id="x-logo" className="float-left ml-1 p-1">
           <Link href="./">
             <XeramiyaNetIcon className="h-9 fill-char-glass pl-4 hover:fill-media-invert" />
+            xeramiya.net
           </Link>
         </div>
         <ul className="mx-1 flex justify-end py-1 text-center font-mono text-base">

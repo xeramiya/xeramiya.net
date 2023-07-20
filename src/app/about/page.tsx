@@ -40,26 +40,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <TwitterIcon />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.instagram.com/xeramiya"
-                className="string"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramIcon />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://steamcommunity.com/id/xeramiya"
-                className="string"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SteamIcon />
+                Twitter
               </Link>
             </li>
             <li>
@@ -70,6 +51,29 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <YouTubeIcon />
+                YouTube
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.instagram.com/xeramiya"
+                className="string"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon />
+                Instagram
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://steamcommunity.com/id/xeramiya"
+                className="string"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SteamIcon />
+                Steam
               </Link>
             </li>
             <li>
@@ -80,6 +84,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <SoundCloudIcon />
+                SoundCloud
               </Link>
             </li>
             <li>
@@ -90,6 +95,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <SpotifyIcon />
+                Spotify
               </Link>
             </li>
             <li>
@@ -100,6 +106,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <GitHubIcon />
+                GitHub
               </Link>
             </li>
           </ul>

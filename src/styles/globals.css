@@ -55,16 +55,16 @@
       animation: stop1 4s ease-in-out infinite alternate;
     }
     .stop2 {
-      animation: stop2 4s ease-in-out infinite alternate;
+      animation: stop2 9s ease-in-out infinite alternate;
     }
     .stop3 {
-      animation: stop3 4s ease-in-out infinite alternate;
+      animation: stop3 6s ease-in-out infinite alternate;
     }
     .stop4 {
-      animation: stop4 4s ease-in-out infinite alternate;
+      animation: stop4 5s ease-in-out infinite alternate;
     }
     .stop5 {
-      animation: stop5 4s ease-in-out infinite alternate;
+      animation: stop5 8s ease-in-out infinite alternate;
     }
     @keyframes stop1 {
       0% {

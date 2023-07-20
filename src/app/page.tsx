@@ -56,8 +56,3 @@ export default function Home() {
     </div>
   );
 }
-
-/*
-  \/ eramiya
-  /\.net
-*/

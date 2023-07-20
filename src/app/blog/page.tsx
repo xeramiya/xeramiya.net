@@ -23,18 +23,18 @@ export default async function Blog() {
           <p className="note">ネ申言舌火暴言延</p>
         </article>
         <hr className="border-char-note" />
-        <ul className="">
-          <Suspense fallback={<div>データ取得中</div>}>
+        <Suspense fallback={<div>データ取得中</div>}>
+          <ul className="">
             {blogMeta.map((meta: PieceMeta) => {
               return (
                 /* このkeyをコンポーネントに移設しよう！そうしよう！ */
-                <div key={meta.frontMatter.title}>
+                <li key={meta.frontMatter.title}>
                   <PiecePreview meta={meta} />
-                </div>
+                </li>
               );
             })}
-          </Suspense>
-        </ul>
+          </ul>
+        </Suspense>
       </div>
     </div>
   );
