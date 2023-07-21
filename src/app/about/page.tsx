@@ -26,7 +26,7 @@ export default function About() {
             <XeramiyaXIconRainbow className="h-[4.75rem]" />
             <div className="">
               <h1 className="text-5xl italic tracking-wide">
-                <Link href="about/signature">Xeramiya</Link>
+                <Link href="about/signature" className="cursor-default">Xeramiya</Link>
               </h1>
               <p className="note text-lg">I&apos;m STill here!!</p>
             </div>
@@ -38,9 +38,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitter"
               >
                 <TwitterIcon />
-                <span className="hidden">Twitter</span>
               </Link>
             </li>
             <li>
@@ -49,9 +49,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
               >
                 <YouTubeIcon />
-                <span className="hidden">YouTube</span>
               </Link>
             </li>
             <li>
@@ -60,9 +60,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <InstagramIcon />
-                <span className="hidden">Instagram</span>
               </Link>
             </li>
             <li>
@@ -71,9 +71,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Steam"
               >
                 <SteamIcon />
-                <span className="hidden">Steam</span>
               </Link>
             </li>
             <li>
@@ -82,9 +82,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="SoundCloud"
               >
                 <SoundCloudIcon />
-                <span className="hidden">SoundCloud</span>
               </Link>
             </li>
             <li>
@@ -93,9 +93,9 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Spotify"
               >
                 <SpotifyIcon />
-                <span className="hidden">Spotify</span>
               </Link>
             </li>
             <li>
@@ -104,16 +104,16 @@ export default function About() {
                 className="string"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <GitHubIcon />
-                <span className="hidden">GitHub</span>
               </Link>
             </li>
           </ul>
         </section>
         <hr className="border-char-note" />
         <section>
-          <div className="mt-8">好きな好きは好きです。</div>
+          <div className="mt-8">武蔵野新首都圏伝彩区在住の日本人、極度の散歩好きでビーチサンダルを酷使している。</div>
         </section>
       </article>
     </div>

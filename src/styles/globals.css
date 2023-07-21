@@ -35,7 +35,7 @@
   }
 
   .string-icon {
-    @apply h-8 w-8 fill-char-note active:opacity-70;
+    @apply h-8 w-8 fill-char-note duration-200 active:opacity-70;
   }
 
   .note {

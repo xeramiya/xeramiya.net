@@ -71,16 +71,16 @@ export default function Nelax2Dream() {
         <hr className="border-char-note" />
         <section className="pt-12">
           <div className="flex h-12 text-white">
-            <div
+            <button
               id="playbutton"
-              className="bg-nand-dark hover:bg-nand float-left my-1 h-12 w-full rounded-l-lg"
+              className="float-left my-1 h-12 w-full rounded-l-lg bg-nand-dark hover:bg-nand"
             >
               <div className="text-align float-left h-16 pl-4 font-mono text-lg">
                 Nelax-Tentacling
-                <div className="text-xs text-gray">Xeramiya</div>
+                <div className="text-left text-xs text-gray">Xeramiya</div>
               </div>
               <div className="pointer-events-none float-left"></div>
-            </div>
+            </button>
             <button
               id="stopbutton"
               className="text-align float text-mono float-right my-1 h-12 rounded-r-lg bg-ReD px-4 font-mono hover:bg-iRed"
