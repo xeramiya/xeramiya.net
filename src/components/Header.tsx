@@ -6,12 +6,12 @@ export const Header = () => {
   return (
     <header className="fixed h-11 w-full select-none bg-glass backdrop-blur-md hover:backdrop-blur-xl">
       <nav className="mx-auto max-w-screen-slate">
-        <div id="x-logo" className="float-left ml-1 p-1">
+        <h1 id="x-logo" className="float-left ml-1 p-1">
           <Link href="./">
             <XeramiyaNetIcon className="h-9 fill-char-glass pl-4 hover:fill-media-invert" />
-            xeramiya.net
+            <span className="hidden">xeramiya.net</span>
           </Link>
-        </div>
+        </h1>
         <ul className="mx-1 flex justify-end py-1 text-center font-mono text-base">
           <li>
             <Link

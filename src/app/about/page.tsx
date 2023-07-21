@@ -40,7 +40,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <TwitterIcon />
-                Twitter
+                <span className="hidden">Twitter</span>
               </Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <YouTubeIcon />
-                YouTube
+                <span className="hidden">YouTube</span>
               </Link>
             </li>
             <li>
@@ -62,7 +62,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <InstagramIcon />
-                Instagram
+                <span className="hidden">Instagram</span>
               </Link>
             </li>
             <li>
@@ -73,7 +73,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <SteamIcon />
-                Steam
+                <span className="hidden">Steam</span>
               </Link>
             </li>
             <li>
@@ -84,7 +84,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <SoundCloudIcon />
-                SoundCloud
+                <span className="hidden">SoundCloud</span>
               </Link>
             </li>
             <li>
@@ -95,7 +95,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <SpotifyIcon />
-                Spotify
+                <span className="hidden">Spotify</span>
               </Link>
             </li>
             <li>
@@ -106,7 +106,7 @@ export default function About() {
                 rel="noopener noreferrer"
               >
                 <GitHubIcon />
-                GitHub
+                <span className="hidden">GitHub</span>
               </Link>
             </li>
           </ul>
