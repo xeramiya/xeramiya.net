@@ -7,7 +7,7 @@ export const Header = () => {
     <header className="fixed h-11 w-full select-none bg-glass backdrop-blur-md hover:backdrop-blur-xl">
       <nav className="mx-auto max-w-screen-slate">
         <div id="x-logo" className="float-left ml-1 p-1">
-          <Link href="./" aria-label="xeramiya.net">
+          <Link href="/" aria-label="xeramiya.net">
             <XeramiyaNetIcon className="h-9 fill-char-glass px-4 duration-200 hover:fill-media-invert" />
           </Link>
         </div>
