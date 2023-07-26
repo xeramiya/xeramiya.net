@@ -1,5 +1,6 @@
 import Header from "components/Header";
 import Footer from "components/Footer";
+import type { Metadata } from "next";
 import { M_PLUS_2, Zen_Antique } from "next/font/google";
 import "styles/globals.css";
 
@@ -16,21 +17,23 @@ const ZenAntique = Zen_Antique({
   display: "swap",
 });
 
-export const metadata = {
+// Doc: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+export const metadata: Metadata = {
   title: "xeramiya.net",
-  description: "Xeramiyaのホームページ",
+  description: "Xeramiyaのとてもすごいホームページ",
+  generator: "Next.js",
   applicationName: "xeramiya.net",
+  referrer: "origin-when-cross-origin",
   keywords: ["Xeramiya", "UEBIT"],
-  category: "homepage",
   authors: [
     {
       name: "Xeramiya",
       url: "https://www.xeramiya.net",
     },
   ],
+  colorScheme: "dark light",
   creator: "Xeramiya",
   publisher: "UEBIT",
-  generator: "Next.js",
   formatDetection: {
     email: false,
     address: false,
@@ -41,31 +44,40 @@ export const metadata = {
     locale: "ja_JP",
     type: "website",
   },
-  icons: {
-    icon: "/favicon/favicon.svg",
-    shortcut: "/favicon/icon.png",
-    apple: "/favicon/icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/favicon/icon.png",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
+  },
+  icons: {
+    icon: "/favicon/icon.svg",
+    shortcut: "/favicon/apple-icon.png",
+    apple: "/favicon/apple-icon.png",
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#F7F6F4" },
     { color: "#16191B" },
   ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   twitter: {
-    title: "xeramiya.net",
     description: "Xeramiyaのホームページ",
     siteId: "4716661339",
     creator: "@xeramiya",
     creatorId: "4716661339",
   },
-  alternates: {},
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  assets: ["https://www.xeramiya.net/assets"],
+  category: "homepage",
 };
 
 export default function RootLayout({

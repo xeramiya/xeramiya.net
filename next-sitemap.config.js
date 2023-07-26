@@ -1,5 +1,6 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.xeramiya.net",
+  siteUrl: process.env.SITE_URL || "https://www.xeramiya.net",
   generateRobotsTxt: true,
   outDir: "./public",
-}
+};

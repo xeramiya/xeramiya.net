@@ -45,7 +45,7 @@ export default function Nelax2Dream() {
       if (!streamChannel.current) {
         streamControl(true);
         const disc = await fetch(
-          "/asset/audio/Nelax2Dream/Nelax-Tentacling/Nelax-Tentacling.wav"
+          "/assets/audio/Nelax2Dream/Nelax-Tentacling/Nelax-Tentacling.wav"
         );
         setDisc(disc);
         console.log("enjoy!");
