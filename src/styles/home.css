@@ -1,0 +1,50 @@
+@import url("./global.css");
+
+:root {
+  --slash1: #050d28;
+  --slash2: #04daf6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --slash1: #f9f7dc;
+    --slash2: #f3e600;
+  }
+}
+
+.hypershell {
+  background: linear-gradient(63.5deg, #ff000032 16%, #0000ff32 72%),
+    linear-gradient(-45deg, #99ff0024 47%, #0000ff24 96%);
+}
+
+.hyperstitch1,
+.hyperstitch2,
+.hyperstitch3 {
+  animation-name: tunnel-effect;
+  animation-duration: 2.4s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.hyperstitch1 {
+  animation-delay: 0s;
+}
+.hyperstitch2 {
+  animation-delay: 0.8s;
+}
+.hyperstitch3 {
+  animation-delay: 1.6s;
+}
+
+@keyframes tunnel-effect {
+  0% {
+    border: 0rem solid;
+    opacity: 100%;
+    transform: scale(0);
+  }
+  100% {
+    border: 2rem solid;
+    opacity: 0%;
+    transform: scale(1);
+  }
+}

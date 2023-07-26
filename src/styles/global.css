@@ -46,67 +46,6 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-
-  .xeramiya-x-icon-rainbow {
-    path {
-      fill: url(#xeramiya-x-icon-rainbow);
-    }
-    .stop1 {
-      animation: stop1 4s ease-in-out infinite alternate;
-    }
-    .stop2 {
-      animation: stop2 9s ease-in-out infinite alternate;
-    }
-    .stop3 {
-      animation: stop3 6s ease-in-out infinite alternate;
-    }
-    .stop4 {
-      animation: stop4 5s ease-in-out infinite alternate;
-    }
-    .stop5 {
-      animation: stop5 8s ease-in-out infinite alternate;
-    }
-    @keyframes stop1 {
-      0% {
-        stop-color: #35c3f3;
-      }
-      100% {
-        stop-color: #7bb4ff;
-      }
-    }
-    @keyframes stop2 {
-      0% {
-        stop-color: #8b9fe8;
-      }
-      100% {
-        stop-color: #d1cafe;
-      }
-    }
-    @keyframes stop3 {
-      0% {
-        stop-color: #e681d8;
-      }
-      100% {
-        stop-color: #f7cde5;
-      }
-    }
-    @keyframes stop4 {
-      0% {
-        stop-color: #ffa9a4;
-      }
-      100% {
-        stop-color: #f3f2f0;
-      }
-    }
-    @keyframes stop5 {
-      0% {
-        stop-color: #fed2ce;
-      }
-      100% {
-        stop-color: #76ebfd;
-      }
-    }
-  }
 }
 
 @layer utilities {

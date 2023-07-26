@@ -11,6 +11,7 @@ import {
   GitHubIcon,
   XeramiyaXIconRainbow,
 } from "components/Icon";
+import "styles/about.css";
 
 export const metadata: Metadata = {
   title: "私について",
@@ -28,7 +29,7 @@ export default function About() {
               <h1 className="text-5xl italic tracking-wide">
                 <Link href="about/signature" className="cursor-default">Xeramiya</Link>
               </h1>
-              <p className="note text-lg">I&apos;m STill here!!</p>
+              <p className="note text-lg">I&apos;m STill standing!!</p>
             </div>
           </div>
           <ul className="mt-4 flex flex-row flex-wrap justify-end py-1">

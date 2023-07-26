@@ -2,7 +2,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import type { Metadata } from "next";
 import { M_PLUS_2, Zen_Antique } from "next/font/google";
-import "styles/globals.css";
+import "styles/global.css";
 
 const MPlus2 = M_PLUS_2({
   subsets: ["latin"],
