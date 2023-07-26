@@ -21,7 +21,7 @@
 .hyperstitch2,
 .hyperstitch3 {
   animation-name: tunnel-effect;
-  animation-duration: 2.4s;
+  animation-duration: 3.9s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
@@ -30,16 +30,16 @@
   animation-delay: 0s;
 }
 .hyperstitch2 {
-  animation-delay: 0.8s;
+  animation-delay: 1.3s;
 }
 .hyperstitch3 {
-  animation-delay: 1.6s;
+  animation-delay: 2.6s;
 }
 
 @keyframes tunnel-effect {
   0% {
     border: 0rem solid;
-    opacity: 100%;
+    opacity: 39%;
     transform: scale(0);
   }
   100% {

@@ -10,7 +10,7 @@ export default function Home() {
     <div className="mx-auto max-w-screen-slate">
       <article>
         <div className="flex justify-center p-5 pt-16">
-          <div className="container relative h-[80vh] min-h-[20rem] rounded-xl fill-char-main text-char-main">
+          <div className="container relative h-[80vh] min-h-[20rem] rounded-xl fill-char-main text-char-mai overflow-hidden">
             <div className="hyperstitch1 absolute h-full w-full rounded-xl border-media-invert"></div>
             <div className="hyperstitch2 absolute h-full w-full rounded-xl border-media-invert"></div>
             <div className="hyperstitch3 absolute h-full w-full rounded-xl border-media-invert"></div>
