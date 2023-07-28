@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon/icon.svg",
-    shortcut: "/favicon/apple-icon.png",
+    icon: "/favicon/favicon.svg",
+    shortcut: "/favicon/favicon.svg",
     apple: "/favicon/apple-icon.png",
   },
   themeColor: [

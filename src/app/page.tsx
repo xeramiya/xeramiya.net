@@ -13,7 +13,7 @@ export default function Home() {
           <section>
             <div className="ultra-wide flex justify-center p-5 pt-16">
               <div className="slate:w-screen-slate container relative h-[80vh] min-h-[20rem] w-full overflow-hidden rounded-xl fill-char-main text-char-main slate:min-w-[61.8%]">
-                <div className="absolute h-full w-full rounded-xl bg-media-invert opacity-10"></div>
+                <div className="absolute h-full w-full rounded-xl bg-white opacity-5"></div>
                 <div className="hyper-stitch-1 absolute h-full w-full rounded-xl border-media-invert"></div>
                 <div className="hyper-stitch-2 absolute h-full w-full rounded-xl border-media-invert"></div>
                 <div className="hyper-stitch-3 absolute h-full w-full rounded-xl border-media-invert"></div>
