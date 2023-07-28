@@ -10,10 +10,23 @@ module.exports = {
     },
   },
   theme: {
+    screens: {
+      slate: "1024px",
+    },
+    fontFamily: {
+      sans: [
+        "var(--font-mplus2)",
+        "Helvetica Neue",
+        "Arial",
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Meiryo",
+        "sans-serif",
+      ],
+      serif: ["var(--font-zenantique)", "serif"],
+      mono: ["SF Mono", "Menlo", "Roboto Mono", "monospace"],
+    },
     extend: {
-      screens: {
-        slate: "1024px",
-      },
       colors: {
         background: "var(--background)",
         primary: "var(--primary)",
@@ -55,24 +68,6 @@ module.exports = {
         Spotify: "#1DB954",
         GitHub: "#424242",
         Discord: "#5865F2",
-      },
-      fontFamily: {
-        sans: [
-          "var(--font-mplus2)",
-          "Helvetica Neue",
-          "Arial",
-          "Hiragino Kaku Gothic ProN",
-          "Hiragino Sans",
-          "Meiryo",
-          "sans-serif",
-        ],
-        serif: ["var(--font-zenantique)", "serif"],
-        mono: [
-          "SF Mono",
-          "Menlo",
-          "Roboto Mono",
-          "monospace",
-        ],
       },
       animation: {},
       keyframes: {},
