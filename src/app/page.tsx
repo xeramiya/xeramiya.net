@@ -18,7 +18,7 @@ export default function Home() {
                 <div className="hyper-stitch-2 absolute h-full w-full rounded-xl border-media-invert"></div>
                 <div className="hyper-stitch-3 absolute h-full w-full rounded-xl border-media-invert"></div>
                 <div className="absolute h-full w-full rounded-xl backdrop-blur-xl"></div>
-                <XeramiyaNetIcon className="container absolute left-1/2 top-1/2 h-40 -translate-x-1/2 -translate-y-1/2" />
+                {/*<XeramiyaNetIcon className="container absolute left-1/2 top-1/2 h-40 -translate-x-1/2 -translate-y-1/2" />*/}
                 <div className="absolute bottom-0 right-0 px-4 py-6 font-serif text-3xl">
                   <span className="inline-block">ようこそ、</span>
                   <span className="inline-block">xeramiya.netへ</span>
