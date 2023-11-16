@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { XeramiyaNetIcon } from "components/Icon";
-import Head from "next/head";
 
 export const Header = () => {
   return (

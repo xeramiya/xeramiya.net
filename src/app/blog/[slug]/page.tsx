@@ -1,6 +1,7 @@
 import { getPieceData, mdAdapter, getBlogMetas } from "lib/api";
 import DateFormatter from "components/DateFormatter";
 import { PieceMeta } from "lib/type";
+import "styles/blog.css";
 
 const pieceType = "blog";
 

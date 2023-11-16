@@ -18,7 +18,7 @@ const ModifiedDate = ({ date }: { date: string | undefined }) => {
 
 export const PiecePreview = ({ meta }: { meta: PieceMeta }) => {
   return (
-    <div className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+    <div className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-background-secondary">
       <Link href={`blog/${meta.slug}`}>
       <h2 className="">{meta.frontMatter.title}</h2>
         <div className="text-char-note mt-3">

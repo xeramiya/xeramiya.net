@@ -1,6 +1,6 @@
 import Header from "components/Header";
 import Footer from "components/Footer";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { M_PLUS_2, Zen_Antique } from "next/font/google";
 import "styles/global.css";
 
@@ -19,7 +19,7 @@ const ZenAntique = Zen_Antique({
 
 // Doc: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const metadata: Metadata = {
-  title: "xeramiya.net",
+  title: "Xeramiya.net",
   description: "Xeramiyaのとてもすごいホームページ",
   generator: "Next.js",
   applicationName: "xeramiya.net",
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
       url: "https://www.xeramiya.net",
     },
   ],
-  colorScheme: "dark light",
   creator: "Xeramiya",
   publisher: "UEBIT",
   formatDetection: {
@@ -63,22 +62,19 @@ export const metadata: Metadata = {
     shortcut: "/favicon/favicon.svg",
     apple: "/favicon/apple-icon.png",
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F7F6F4" },
-    { color: "#16191B" },
-  ],
   twitter: {
     description: "Xeramiyaのホームページ",
     siteId: "4716661339",
     creator: "@xeramiya",
     creatorId: "4716661339",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   assets: ["https://www.xeramiya.net/assets"],
   category: "homepage",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#DAD8D3",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

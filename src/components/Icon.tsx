@@ -86,6 +86,14 @@ export const TwitterIcon = () => {
   );
 };
 
+export const BlueskyIcon = () => {
+  return (
+    <svg className="string-icon hover:fill-Bluesky" viewBox="0 0 24 24">
+      <path d="M2,4.857c0,-1.576 1.281,-2.857 2.857,-2.857l14.286,0c1.576,0 2.857,1.281 2.857,2.857l0,14.286c0,1.576 -1.281,2.857 -2.857,2.857l-14.286,0c-1.576,0 -2.857,-1.281 -2.857,-2.857l-0,-14.286Z" />
+    </svg>
+  );
+};
+
 export const InstagramIcon = () => {
   return (
     <svg className="string-icon hover:fill-Instagramm" viewBox="0 0 24 24">

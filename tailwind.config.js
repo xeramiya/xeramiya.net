@@ -28,20 +28,20 @@ module.exports = {
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        primary: "var(--primary)",
-        error: "var(--error)",
-        glass: "var(--glass)",
+        background: { DEFAULT: "#DAD8D3", secondary: "#B8B7B3" },
+        primary: "#008899",
+        error: "#ba160c",
+        glass: "#00000000",
         media: {
-          DEFAULT: "var(--media-default)",
-          invert: "var(--media-invert)",
+          DEFAULT: "#f7f6f4",
+          invert: "#16191b",
         },
         char: {
-          main: "var(--char-main)",
-          note: "var(--char-note)",
-          link: "var(--char-link)",
-          error: "var(--char-error)",
-          glass: "var(--char-glass)",
+          main: "#4A585A",
+          note: "#869192",
+          link: "#f33968",
+          error: "#ffffff",
+          glass: "#434343",
         },
 
         white: "#FFFFFF",
@@ -60,6 +60,7 @@ module.exports = {
         cyberRed: "#FF003C",
 
         Twitter: "#1B9DF0",
+        Bluesky: "#0560ff",
         YouTube: "#FF0000",
         Facebook: "#1877F2",
         Instagramm: "#9B6954",

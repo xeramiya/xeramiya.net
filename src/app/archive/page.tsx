@@ -17,7 +17,16 @@ export default function Archive() {
         <hr className="border-char-note" />
         <section id="Application List">
           <ul>
-            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-background-secondary">
+              <Link href="/archive/HyperGates" className="">
+                <h2 className="font-mono">HyperGates</h2>
+                <div className="text-char-note">どこまでも、いつまでも</div>
+                <div className="">
+                  かつてはトップページに配置されていたが、あまりに重かったので勇退
+                </div>
+              </Link>
+            </li>
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-background-secondary">
               <Link href="/archive/C0Un+er" className="">
                 <h2 className="font-mono">C0Un+er</h2>
                 <div className="text-char-note">カゾエ・テアゲル</div>
@@ -26,7 +35,7 @@ export default function Archive() {
                 </div>
               </Link>
             </li>
-            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-background-secondary">
               <Link href="/archive/Nelax2Dream" className="">
                 <h2 className="font-mono">Nelax2Dream</h2>
                 <div className="text-sm text-char-note">n回聞けばスルメ曲</div>
@@ -35,7 +44,7 @@ export default function Archive() {
                 </div>
               </Link>
             </li>
-            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-media">
+            <li className="mt-8 overflow-hidden border-l-2 border-char-main px-2 py-1 hover:border-char-link hover:bg-background-secondary">
               <Link
                 href="https://buckwheat.glitch.me/"
                 className=""

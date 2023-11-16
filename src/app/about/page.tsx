@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   TwitterIcon,
+  BlueskyIcon,
   InstagramIcon,
   SteamIcon,
   YouTubeIcon,
@@ -27,7 +28,9 @@ export default function About() {
             <XeramiyaXIconRainbow className="h-[4.75rem]" />
             <div className="">
               <h1 className="text-5xl italic tracking-wide">
-                <Link href="about/signature" className="cursor-default">Xeramiya</Link>
+                <Link href="about/signature" className="cursor-default">
+                  Xeramiya
+                </Link>
               </h1>
               <p className="note text-lg">I&apos;m STill standing!!</p>
             </div>
@@ -42,6 +45,17 @@ export default function About() {
                 aria-label="Twitter"
               >
                 <TwitterIcon />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://bsky.app/profile/xeramiya.net"
+                className="string"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bluesky"
+              >
+                <BlueskyIcon />
               </Link>
             </li>
             <li>
@@ -114,7 +128,9 @@ export default function About() {
         </section>
         <hr className="border-char-note" />
         <section>
-          <div className="mt-8">武蔵野新首都圏伝彩区在住の日本人、極度の散歩好きでビーチサンダルを酷使している。</div>
+          <div className="mt-8">
+            武蔵野新首都圏伝彩区在住の日本人、極度の散歩好きでビーチサンダルを酷使している。
+          </div>
         </section>
       </article>
     </div>
