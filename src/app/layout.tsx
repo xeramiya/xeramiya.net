@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.xeramiya.net"),
+  metadataBase: new URL("https://xeramiya.net/"),
   openGraph: {
     siteName: "xeramiya.net",
     locale: "ja_JP",
