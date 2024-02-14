@@ -1,0 +1,96 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatDate } from "@scripts/api";
+
+const pieces = await getCollection("blog");
+const sortedPieces = pieces.sort(
+  (a, b) => b.data.date.created.getTime() - a.data.date.created.getTime()
+);
+
+const title = "Blog";
+const description = "ブログ記事一覧";
+---
+
+<style>
+  .piece-link {
+    transition: 200ms ease-out;
+    &:hover {
+      background: var(--shadow);
+      border-color: var(--char-link);
+    }
+  }
+</style>
+
+<BaseLayout title={title} description={description}>
+  <article class="slate">
+    <section>
+      <div>
+        <h1 style={{ fontSize: "2.25rem", lineHeight: "2.5rem" }}>航海雑記</h1>
+        <p style={{ color: "var(--char-note)" }}>ネ申言舌火暴言延</p>
+      </div>
+      <hr id="navi-will-change" />
+      <ul style={{ margin: "2.5rem 0 0 ", display: "grid", gap: "1.2rem" }}>
+        {
+          sortedPieces.map((piece) => {
+            const dateModified = piece.data.date.modified;
+
+            return (
+              <li>
+                <a
+                  href={`blog/${piece.slug}`}
+                  class="piece-link"
+                  style={{
+                    borderLeftWidth: "2px",
+                    display: "block",
+                    padding: "0 0.4rem",
+                  }}
+                >
+                  <h2
+                    style={{
+                      padding: "0.75rem 0",
+                      fontSize: "1.75rem",
+                      lineHeight: "1.8rem",
+                      letterSpacing: "-0.1rem",
+                    }}
+                  >
+                    {piece.data.title}
+                  </h2>
+                  <div>
+                    <div
+                      style={{
+                        color: "var(--char-note)",
+                        lineHeight: "1.2rem",
+                        padding: "0.2rem 0 0",
+                        letterSpacing: "0.05rem",
+                      }}
+                    >
+                      <span>{formatDate(piece.data.date.created)}</span>
+                      {() => {
+                        if (dateModified) {
+                          return (
+                            <span
+                              style={{
+                                fontSize: "0.9rem",
+                                margin: "0 0 0 0.2rem",
+                              }}
+                            >
+                              {formatDate(dateModified)}
+                            </span>
+                          );
+                        }
+                      }}
+                    </div>
+                    <div style={{ padding: "0.25rem 0", lineHeight: "1.2rem" }}>
+                      {piece.data.synopsis}
+                    </div>
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </article>
+</BaseLayout>

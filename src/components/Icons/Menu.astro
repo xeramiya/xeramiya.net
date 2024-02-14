@@ -1,0 +1,33 @@
+---
+const { style } = Astro.props;
+---
+
+<style>
+  .menu-open {
+    & #MenuOpen {
+      display: inline;
+    }
+    & #MenuClose {
+      display: none;
+    }
+  }
+  .menu-close {
+    & #MenuOpen {
+      display: none;
+    }
+    & #MenuClose {
+      display: inline;
+    }
+  }
+</style>
+
+<svg viewBox="0 0 24 24" id="MenuIcon" class="menu-open" style={style}>
+  <g id="MenuOpen">
+    <path id="MenuOpen-1" d="M3.494,6.743l17.012,0"></path>
+    <path id="MenuOpen-2" d="M3.494,17.257l17.012,-0"> </path>
+  </g>
+  <g id="MenuClose">
+    <path id="MenuClose-1" d="M4.93,4.93l14.14,14.14"></path>
+    <path id="MenuClose-2" d="M4.93,19.07l14.14,-14.14"></path>
+  </g>
+</svg>

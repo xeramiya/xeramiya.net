@@ -1,0 +1,62 @@
+:root {
+  --background: #f7f6f4;
+  --background-secondary: #b8b7b3;
+  --background-glass: #f7f6f47f;
+  --primary: #008899;
+  --error: #ba160c;
+  --char-main: #4a585a;
+  --char-note: #9EA6A8;
+  --char-link: #f33968;
+  --char-error: #ffffff;
+  --shadow: #dad8d3;
+  --dark: #16191b;
+  --font-mono: "JetBrains Mono", "M PLUS 1p", mono;
+  --font-sans: "M PLUS 1p", sans;
+  --font-serif: "Zen Antique", sans-serif;
+  --domain-width: 60rem;
+}
+
+html {
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--char-main);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+hr {
+  background: var(--char-main);
+  height: 1px;
+  border: 0;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.slate {
+  margin-top: 5rem;
+}

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Archive";
+const description = "作ったものおきば";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="slate">
+    <section>
+      <div>
+        <h1 style={{ fontSize: "2.25rem", lineHeight: "2.5rem" }}>
+          制作物などなど
+        </h1>
+        <p style={{ color: "var(--char-note)" }}>ごちゃごちゃまぜまぜ</p>
+      </div>
+      <hr id="navi-will-change" />
+      <div style={{ textAlign: "center", marginTop: "30vh" }}>
+        こちらも準備中...
+        <div>
+          リニューアルまでの間は
+          <a
+            href="https://xeramiya.vercel.app/archive"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "var(--char-link)", textDecoration: "underline" }}
+          >
+            昔のxeramiya.net
+          </a>
+          をお楽しみください
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

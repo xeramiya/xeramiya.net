@@ -1,0 +1,52 @@
+---
+import "tailwindcss/lib/css/preflight.css";
+import "@styles/global.css";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/m-plus-1p/400.css";
+import "@fontsource/zen-antique";
+
+import Header from "@components/Header.astro";
+import packageJson from "@/package.json";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="xeramiya.net" />
+    <meta name="author" content={packageJson.author} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content="Xeramiya,homepage,UEBIT" />
+    <meta name="theme-color" content="#dad8d3" />
+    <meta name="color-scheme" content="light" />
+    <link rel="author" href={Astro.site} />
+    <link rel="icon" type="image/svg+xml" href="/favicon/icon.svg" />
+    <link rel="icon" href="/favicon/icon.ico" sizes="any" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link rel="sitemap" href="sitemap-index.xml" />
+    <title>{title}</title>
+  </head><body>
+    <Header title={title} />
+    <main
+      style={{
+        maxWidth: "var(--domain-width)",
+        margin: "0 auto",
+        padding: "3.6rem 1.2rem 0",
+      }}
+    >
+      <slot />
+    </main>
+  </body>
+</html>

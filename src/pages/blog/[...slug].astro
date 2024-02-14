@@ -1,0 +1,306 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatDate } from "@/src/scripts/api";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+
+type HeadingStyle = {
+  fontSize: string;
+  lineHeight: string;
+};
+const allHeadingStyles: HeadingStyle[] = [
+  {
+    fontSize: "1.2rem",
+    lineHeight: "1.4rem",
+  },
+  {
+    fontSize: "1.5rem",
+    lineHeight: "1.7rem",
+  },
+  {
+    fontSize: "1.8rem",
+    lineHeight: "2rem",
+  },
+  {
+    fontSize: "2rem",
+    lineHeight: "2.2rem",
+  },
+  {
+    fontSize: "2.2rem",
+    lineHeight: "2.4rem",
+  },
+];
+
+const maxDepth = headings.reduce((acc, curValue) => {
+  return acc < curValue.depth ? curValue.depth : acc;
+}, 2);
+const adjustedHeadings: any = {};
+for (let h = 2; h <= 6; h++) {
+  const styleIndex = Math.max(maxDepth - h, 0);
+  adjustedHeadings[`h${h}FontSize`] = allHeadingStyles[styleIndex].fontSize;
+  adjustedHeadings[`h${h}LineHeight`] = allHeadingStyles[styleIndex].lineHeight;
+}
+
+const title = entry.data.title;
+const description = entry.data.synopsis;
+---
+
+<style define:vars={{ ...adjustedHeadings }}>
+  #content {
+    h1 {
+      background: var(--error);
+      color: var(--char-error);
+      margin-top: 5rem;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+    h2 {
+      margin-top: 5rem;
+      font-size: var(--h2FontSize);
+      line-height: var(--h2LineHeight);
+    }
+    h3 {
+      margin-top: 4rem;
+      font-size: var(--h3FontSize);
+      line-height: var(--h3LineHeight);
+    }
+    h4 {
+      margin-top: 3.5rem;
+      font-size: var(--h4FontSize);
+      line-height: var(--h4LineHeight);
+    }
+    h5 {
+      margin-top: 3rem;
+      font-size: var(--h5FontSize);
+      line-height: var(--h5LineHeight);
+    }
+    h6 {
+      margin-top: 2.5rem;
+      font-size: var(--h6FontSize);
+      line-height: var(--h6LineHeight);
+    }
+    > p {
+      margin-top: 1.5rem;
+      line-height: 2rem;
+    }
+    strong {
+      font-family: var(--font-serif);
+    }
+    em {
+      font-style: italic;
+    }
+    del {
+      text-decoration-line: line-through;
+    }
+    sub {
+    }
+    sup {
+      > a {
+        font-size: 0.75rem;
+        margin: 0 0.25rem;
+      }
+    }
+    blockquote {
+      margin-left: 0rem;
+      padding-left: 0.4rem;
+      border-left: 2px solid var(--char-note);
+      color: var(--char-note);
+    }
+    code {
+      font-family: var(--font-mono);
+      background: var(--background-secondary);
+      padding: 0 0.1rem;
+      border-radius: 0.25rem;
+    }
+    .remark-code-container {
+      background: var(--char-main);
+      color: var(--background);
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      > .remark-code-title {
+        padding: 0 2rem;
+      }
+      > pre {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        > code {
+          background: none;
+        }
+      }
+    }
+    a {
+      color: var(--char-link);
+      text-decoration: underline;
+      border-radius: 0.25rem;
+      &:hover {
+        color: var(--background);
+        background: var(--char-link);
+        text-decoration: none;
+      }
+    }
+    img {
+      margin: 0 auto;
+      width: auto;
+      max-height: 40rem;
+      border-radius: 1rem;
+    }
+    ul {
+      margin-top: 1.5rem;
+      > li {
+        margin: 0.5rem 0;
+        line-height: 1.5rem;
+        margin-left: 2rem;
+        list-style-type: disc;
+        > ul {
+          margin-top: 0;
+        }
+        &.task-list-item {
+          margin-left: 1rem;
+          list-style-type: none;
+        }
+      }
+    }
+    ol {
+      margin-top: 1.5rem;
+      > li {
+        margin: 0.5rem 0;
+        line-height: 1.5rem;
+        margin-left: 2rem;
+        list-style-type: decimal;
+        > ul {
+          margin-top: 0;
+        }
+      }
+    }
+    hr {
+      background: var(--char-note);
+      justify-content: center;
+      margin: 5rem 0;
+    }
+    .footnotes {
+      color: var(--char-note);
+      margin-top: 5rem;
+      border-top: 1px solid var(--char-main);
+      .relative-depth-gauge {
+        display: none;
+      }
+    }
+
+    .relative-depth-gauge {
+      height: 0.6rem;
+      fill: var(--char-note);
+      > .current {
+        &.gauge-0 {
+          fill: #61bb46;
+        }
+        &.gauge-1 {
+          fill: #f5821f;
+        }
+        &.gauge-2 {
+          fill: #009ddc;
+        }
+        &.gauge-3 {
+          fill: #e03a3e;
+        }
+        &.gauge-4 {
+          fill: #963d97;
+        }
+      }
+    }
+  }
+  .editer-alies {
+    background: var(--char-note);
+    &:hover {
+      background: var(--char-link);
+    }
+  }
+
+  a {
+    transition: 200ms ease-out;
+  }
+</style>
+
+<BaseLayout title={title} description={description}>
+  <article class="slate">
+    <section>
+      <div>
+        {
+          () => {
+            const isDev = import.meta.env.DEV;
+            const RootPath = import.meta.env.ROOT_PATH;
+            if (isDev) {
+              return (
+                <div style={{ textAlign: "right" }}>
+                  <a
+                    href={`vscode://file:/${RootPath}/src/content/blog/${entry.slug}.md`}
+                    class="editer-alies"
+                    style={{
+                      color: "var(--background)",
+                      padding: "0 0.2rem",
+                      borderRadius: "0.25rem",
+                      fontStyle: "italic",
+                      fontFamily: "var(--font-mono)",
+                    }}
+                  >
+                    Edit with VSCode
+                  </a>
+                </div>
+              );
+            }
+          }
+        }
+        <div style={{ color: "var(--char-note)" }}>
+          <span>{formatDate(entry.data.date.created)}</span>
+          {
+            () => {
+              const dateModified = entry.data.date.modified;
+
+              if (dateModified) {
+                return (
+                  <span style={{ fontSize: "0.9rem", margin: "0 0 0 0.2rem" }}>
+                    /最終更新:{formatDate(dateModified)}
+                  </span>
+                );
+              }
+            }
+          }
+        </div>
+        <h1
+          style={{
+            padding: "0.5rem 0",
+            fontSize: "2.25rem",
+            lineHeight: "2.5rem",
+            letterSpacing: "-0.1rem",
+          }}
+        >
+          {entry.data.title}
+        </h1>
+        <div style={{ padding: "1.2rem 0 0.8rem", lineHeight: "1.4rem" }}>
+          {entry.data.synopsis}
+        </div>
+      </div>
+      <hr
+        id="navi-will-change"
+        style={{ color: "var(--char-note)", marginBottom: "5rem" }}
+      />
+      <div
+        id="content"
+        style={{
+          maxWidth: "calc(var(--domain-width) * 0.7)",
+          margin: "3rem auto 0",
+        }}
+      >
+        <Content />
+      </div>
+    </section>
+  </article>
+</BaseLayout>

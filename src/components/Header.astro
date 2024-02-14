@@ -1,0 +1,305 @@
+---
+import XeramiyaNetIcon from "@components/Icons/XeramiyaNet.astro";
+import MenuIcon from "@components/Icons/Menu.astro";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const category = null;
+---
+
+<style>
+  * {
+    --icon-size: 2.2rem;
+    --navi-height: 2.8rem;
+  }
+
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+
+  header {
+    pointer-events: none;
+    &.dynamic-navi-backdrop {
+      pointer-events: auto;
+      height: 100vh;
+      background: #0000003f;
+      transition: 200ms ease-out;
+    }
+  }
+
+  .dynamic-navi {
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .dynamic-navi > .logo {
+    fill: var(--char-main);
+    &:hover {
+      fill: var(--dark);
+    }
+  }
+  .dynamic-navi > .index-trigger {
+    stroke: var(--char-main);
+    &:hover {
+      stroke: var(--dark);
+    }
+  }
+
+  .link {
+    color: var(--char-main);
+    text-decoration-line: none;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    border-radius: inherit;
+    transition: inherit;
+    &:hover {
+      color: var(--dark);
+    }
+  }
+
+  .list-horizontal {
+    & ul {
+      grid-auto-flow: column;
+      & .link {
+        padding: 0 1.5rem;
+      }
+    }
+  }
+  .list-vertical {
+    grid-column: 1/4;
+    & ul {
+      gridautoflow: row;
+      & .link {
+        padding: 0 calc(var(--navi-height) + 0.3rem);
+      }
+    }
+  }
+</style>
+
+<header
+  class="font-mono"
+  style={{
+    width: "100%",
+    position: "fixed",
+    zIndex: "calc(infinity)",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "var(--domain-width)",
+      padding: "0.4rem",
+      margin: "0 auto",
+    }}
+  >
+    <div
+      class="dynamic-navi"
+      style={{
+        width: "100%",
+        background: "var(--background-glass)",
+        borderRadius: "calc(var(--icon-size) / 5)",
+        border: "0.5px solid var(--background-glass)",
+        pointerEvents: "auto",
+        transition: "200ms ease-out",
+        display: "grid",
+        gridTemplateColumns:
+          "var(--navi-height) 1fr minmax(var(--navi-height), auto)",
+        gridTemplateRows: "var(--navi-height) auto",
+      }}
+    >
+      <a
+        class="logo"
+        href="/"
+        style={{
+          aspectRatio: "1",
+          borderRadius: "inherit",
+          transition: "inherit",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <XeramiyaNetIcon
+          style={{
+            height: "2rem",
+          }}
+        />
+      </a>
+      <div
+        class="info"
+        style={{ flexGrow: "1", borderRadius: "inherit", display: "grid" }}
+      >
+        <div
+          class="address hide"
+          style={{
+            margin: "auto 0.3rem",
+            color: "var(--char-note)",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {category ? <span>{category}/</span> : null}{
+            title ? <span class="font-sans">{title}</span> : null
+          }
+        </div>
+      </div>
+      <button
+        class="index-trigger hide"
+        style={{
+          background: "transparent",
+          aspectRatio: "1",
+          borderRadius: "inherit",
+          border: "0",
+          transition: "inherit",
+          position: "relative",
+          cursor: "pointer",
+        }}
+      >
+        <MenuIcon
+          style={{
+            height: "1.5rem",
+            strokeWidth: "0.12rem",
+            strokeLinecap: "round",
+          }}
+        />
+      </button>
+      <nav
+        class="index list-horizontal show"
+        style={{
+          transition: "inherit",
+          borderRadius: "inherit",
+        }}
+      >
+        <ul
+          style={{
+            display: "grid",
+            margin: "0",
+            padding: "0",
+            borderRadius: "inherit",
+            transition: "inherit",
+            listStyleType: "none",
+          }}
+        >
+          <li
+            style={{
+              height: "var(--navi-height)",
+              borderRadius: "inherit",
+              transition: "inherit",
+            }}
+          >
+            <a class="link" href="/about">About</a>
+          </li>
+          <li
+            style={{
+              height: "var(--navi-height)",
+              borderRadius: "inherit",
+              transition: "inherit",
+            }}
+          >
+            <a class="link" href="/blog">Blog</a>
+          </li>
+          <li
+            style={{
+              height: "var(--navi-height)",
+              borderRadius: "inherit",
+              transition: "inherit",
+            }}
+          >
+            <a class="link" href="/archive">Archive</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const dynamicNaviTrigger = document.querySelector("#navi-will-change");
+
+  if (dynamicNaviTrigger) {
+    const toggleClass = (
+      element: HTMLElement,
+      toBeAdded: string,
+      toBeRemoved: string
+    ) => {
+      element.classList.add(toBeAdded);
+      element.classList.remove(toBeRemoved);
+      return;
+    };
+
+    const dynamicNaviIndex = document.querySelector(
+      ".dynamic-navi > .index"
+    ) as HTMLElement;
+    const dynamicNaviIndexTrigger = document.querySelector(
+      ".dynamic-navi > .index-trigger"
+    ) as HTMLElement;
+    const dynamicNaviInfoAddress = document.querySelector(
+      ".dynamic-navi > .info > .address"
+    ) as HTMLElement;
+    const menuIcon = document.querySelector("#MenuIcon") as HTMLElement;
+    const header = document.querySelector("header") as HTMLElement;
+    const headerHeight = header.offsetHeight;
+    let dynamicNaviFocusMode = false;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        let underDynamicNaviTrigger =
+          dynamicNaviTrigger.getBoundingClientRect().top < headerHeight;
+
+        if (underDynamicNaviTrigger && !dynamicNaviFocusMode) {
+          dynamicNaviFocusMode = true;
+          toggleClass(dynamicNaviIndex, "hide", "show");
+          toggleClass(dynamicNaviIndexTrigger, "show", "hide");
+          toggleClass(dynamicNaviInfoAddress, "show", "hide");
+          toggleClass(dynamicNaviIndex, "list-vertical", "list-horizontal");
+        }
+        if (!underDynamicNaviTrigger && dynamicNaviFocusMode) {
+          dynamicNaviFocusMode = false;
+          toggleClass(dynamicNaviIndex, "show", "hide");
+          toggleClass(dynamicNaviIndexTrigger, "hide", "show");
+          toggleClass(dynamicNaviInfoAddress, "hide", "show");
+          toggleClass(menuIcon, "menu-open", "menu-close");
+          toggleClass(dynamicNaviIndex, "list-horizontal", "list-vertical");
+          header.classList.remove("dynamic-navi-backdrop");
+        }
+      },
+      false
+    );
+
+    header.addEventListener(
+      "click",
+      (event) => {
+        event.stopPropagation();
+        if (dynamicNaviFocusMode) {
+          dynamicNaviIndexTrigger.click();
+        }
+      },
+      false
+    );
+
+    dynamicNaviIndexTrigger.addEventListener(
+      "click",
+      (event) => {
+        event.stopPropagation();
+        if (menuIcon.classList.contains("menu-open")) {
+          toggleClass(menuIcon, "menu-close", "menu-open");
+          toggleClass(dynamicNaviIndex, "show", "hide");
+          header.classList.add("dynamic-navi-backdrop");
+        } else {
+          toggleClass(menuIcon, "menu-open", "menu-close");
+          toggleClass(dynamicNaviIndex, "hide", "show");
+          header.classList.remove("dynamic-navi-backdrop");
+        }
+      },
+      false
+    );
+  }
+</script>

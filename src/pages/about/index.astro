@@ -1,0 +1,196 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import XeramiyaIcon from "@components/Icons/Xeramiya.astro";
+import BlueskyIcon from "@components/Icons/Social/Bluesky.astro";
+import GitHubIcon from "@components/Icons/Social/GitHub.astro";
+import InstagramIcon from "@components/Icons/Social/Instagram.astro";
+import SoundCloudIcon from "@components/Icons/Social/SoundCloud.astro";
+import SpotifyIcon from "@components/Icons/Social/Spotify.astro";
+import SteamIcon from "@components/Icons/Social/Steam.astro";
+import TwitterIcon from "@components/Icons/Social/Twitter.astro";
+import YouTubeIcon from "@components/Icons/Social/YouTube.astro";
+
+const title = "私について";
+const description = "Xeramiyaについて";
+---
+
+<style>
+  :root {
+    --bluesky: #0085ff;
+    --facebook: #1877f2;
+    --discord: #5865f2;
+    --github: #424242;
+    --instagram: #9b6954;
+    --soundcloud: #ff4400;
+    --spotify: #1db954;
+    --steam: #2a475e;
+    --twitter: #1b9df0;
+    --youtube: #ff0000;
+  }
+
+  .string {
+    fill: var(--char-note);
+    width: 2.5rem;
+    padding: 0.25rem;
+    display: block;
+    transition: 200ms ease-out;
+    &.bluesky:hover {
+      fill: var(--bluesky);
+    }
+    &.github:hover {
+      fill: var(--github);
+    }
+    &.instagram:hover {
+      fill: var(--instagram);
+    }
+    &.soundcloud:hover {
+      fill: var(--soundcloud);
+    }
+    &.spotify:hover {
+      fill: var(--spotify);
+    }
+    &.steam:hover {
+      fill: var(--steam);
+    }
+    &.twitter:hover {
+      fill: var(--twitter);
+    }
+    &.youtube:hover {
+      fill: var(--youtube);
+    }
+  }
+</style>
+
+<BaseLayout title={title} description={description}>
+  <article class="slate">
+    <section>
+      <div style={{ display: "grid", gridTemplateColumns: "5.5rem auto auto" }}>
+        <XeramiyaIcon
+          style={{
+            width: "100%",
+            fill: "var(--char-main)",
+          }}
+        />
+        <div
+          style={{
+            margin: "0 0 0 0.5rem",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "2.5rem",
+              fontStyle: "italic",
+              fontFamily: "var(--font-serif)",
+              lineHeight: "3.5rem",
+            }}
+          >
+            Xeramiya
+          </h1>
+          <p style={{ color: "var(--char-note)", lineHeight: "1.2rem" }}>
+            Oh, honey, he's teasing you. Nobody has two television sets.
+          </p>
+        </div>
+      </div>
+      <ul
+        style={{
+          listStyleType: "none",
+          margin: "1rem 0 0",
+          padding: "0",
+          display: "flex",
+          flexDirection: "row",
+          gap: "0.1rem",
+          flexWrap: "wrap",
+          justifyContent: "end",
+        }}
+      >
+        <li>
+          <a
+            href="https://bsky.app/profile/xeramiya.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string bluesky"
+          >
+            <BlueskyIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string twitter"
+          >
+            <TwitterIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/@xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string youtube"
+          >
+            <YouTubeIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string instagram"
+          >
+            <InstagramIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://steamcommunity.com/id/xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string steam"
+          >
+            <SteamIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://soundcloud.com/xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string soundcloud"
+          >
+            <SoundCloudIcon />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://open.spotify.com/user/fhc8jd5iv2ibh1mt1pncyn2vd"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string spotify"
+          >
+            <SpotifyIcon />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/xeramiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="string github"
+          >
+            <GitHubIcon />
+          </a>
+        </li>
+      </ul>
+    </section>
+    <hr id="navi-will-change" />
+    <section style={{ margin: "2rem 0 0" }}>
+      <div>
+        もうちょっとしたら、とてもいい感じの自己紹介が書かれるであろうスペース
+      </div>
+    </section>
+  </article>
+</BaseLayout>
