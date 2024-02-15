@@ -5,12 +5,12 @@
   --primary: #008899;
   --error: #ba160c;
   --char-main: #4a585a;
-  --char-note: #9EA6A8;
+  --char-note: #9ea6a8;
   --char-link: #f33968;
   --char-error: #ffffff;
   --shadow: #dad8d3;
   --dark: #16191b;
-  --font-mono: "JetBrains Mono", "M PLUS 1p", mono;
+  --font-mono: "JetBrains Mono", monospace;
   --font-sans: "M PLUS 1p", sans;
   --font-serif: "Zen Antique", sans-serif;
   --domain-width: 60rem;
