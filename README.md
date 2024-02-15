@@ -17,7 +17,7 @@ Access!: [xeramiya.net](https://xeramiya.net)
 ---
 
 <div align="right">
-<a href="https://www.xeramiya.net">
+<a href="https://xeramiya.net">
 <img src="https://raw.githubusercontent.com/xeramiya/xeramiya/main/assets/xeramiya.svg" width=8rem alt="Xeramiya Logo" />
 </a>
 </div>
