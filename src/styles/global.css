@@ -10,7 +10,7 @@
   --char-error: #ffffff;
   --shadow: #dad8d3;
   --dark: #16191b;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono Variable", "M PLUS 1p", monospace;
   --font-sans: "M PLUS 1p", sans;
   --font-serif: "Zen Antique", sans-serif;
   --domain-width: 60rem;
