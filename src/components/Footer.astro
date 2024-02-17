@@ -1,5 +1,27 @@
 ---
-
+import packageJson from "@/package.json";
 ---
 
-<footer style={{ height: "40vh" }}></footer>
+<footer
+  style={{
+    width: "100%",
+    marginTop: "20vh",
+    padding: "0.4rem",
+    position: "sticky",
+    top: "100vh",
+    textAlign: "right",
+  }}
+>
+  <a
+    href="https://github.com/xeramiya/xeramiya.net"
+    aria-label="Source Code"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: "var(--char-note)",
+      fontFamily: "var(--font-mono)",
+    }}
+  >
+    Xeramiya.net - v{packageJson.version}
+  </a>
+</footer>
