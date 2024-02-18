@@ -348,20 +348,20 @@ const category = null;
     }
 
     const links = document.querySelectorAll("a");
-    console.log(links);
-    if (links) {
-      links.forEach((link) => {
-        link.addEventListener(
-          "click",
-          () => {
-            const indicator = document.querySelector("#indicator");
-            if (indicator) {
+    const indicator = document.querySelector("#indicator");
+    if (indicator) {
+      indicator.classList.remove("blink");
+      if (links) {
+        links.forEach((link) => {
+          link.addEventListener(
+            "click",
+            () => {
               indicator.classList.add("blink");
-            }
-          },
-          false
-        );
-      });
+            },
+            false
+          );
+        });
+      }
     }
   });
 </script>
