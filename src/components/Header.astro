@@ -346,24 +346,23 @@ const category = null;
         false
       );
     }
-
-    const indicator = document.querySelector("#indicator");
-    const links = document.querySelectorAll("a");
-    if (indicator) {
-      if (links) {
-        links.forEach((link) => {
-          link.addEventListener(
-            "click",
-            () => {
-              indicator.classList.add("blink");
-              setTimeout(() => {
-                indicator.classList.remove("blink");
-              }, 3000);
-            },
-            false
-          );
-        });
-      }
-    }
   });
+</script>
+
+<script is:inline>
+  const indicator = document.querySelector("#indicator");
+  const links = document.querySelectorAll("a");
+  if (indicator) {
+    if (links) {
+      links.forEach((link) => {
+        link.addEventListener(
+          "click",
+          () => {
+            indicator.classList.add("blink");
+          },
+          false
+        );
+      });
+    }
+  }
 </script>
