@@ -154,7 +154,7 @@ const category = null;
             padding: "0.2rem",
             width: "1rem",
             fill: "#28C840",
-            opacity: "0",
+            display: "none",
           }}
         >
           <circle cx="3" cy="3" r="2"></circle>
@@ -347,23 +347,4 @@ const category = null;
       );
     }
   });
-</script>
-
-<script is:inline>
-  const indicator = document.querySelector("#indicator");
-  const links = document.querySelectorAll("a");
-  if (indicator) {
-    indicator.classList.remove("blink");
-    if (links) {
-      links.forEach((link) => {
-        link.addEventListener(
-          "click",
-          () => {
-            indicator.classList.add("blink");
-          },
-          false
-        );
-      });
-    }
-  }
 </script>
