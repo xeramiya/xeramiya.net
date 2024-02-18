@@ -353,6 +353,7 @@ const category = null;
   const indicator = document.querySelector("#indicator");
   const links = document.querySelectorAll("a");
   if (indicator) {
+    indicator.classList.remove("blink");
     if (links) {
       links.forEach((link) => {
         link.addEventListener(
