@@ -254,7 +254,10 @@ const category = null;
 </header>
 
 <script>
+  const indicator = document.querySelector("#indicator");
+
   document.addEventListener("astro:page-load", () => {
+    console.log("astro:page-load");
     const dynamicNaviTrigger = document.querySelector("#navi-will-change");
 
     if (dynamicNaviTrigger) {
@@ -348,7 +351,6 @@ const category = null;
     }
 
     const links = document.querySelectorAll("a");
-    const indicator = document.querySelector("#indicator");
     if (indicator) {
       indicator.classList.remove("blink");
       if (links) {
