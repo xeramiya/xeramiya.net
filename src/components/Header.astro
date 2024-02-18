@@ -81,6 +81,19 @@ const category = null;
       }
     }
   }
+
+  .blink {
+    animation: blinking 200ms infinite;
+  }
+
+  @keyframes blinking {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 </style>
 
 <header
@@ -123,15 +136,29 @@ const category = null;
           borderRadius: "inherit",
           transition: "inherit",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          position: "relative",
         }}
       >
         <XeramiyaNetIcon
           style={{
+            margin: "auto",
             height: "2rem",
           }}
         />
+        <svg
+          id="indicator"
+          viewBox="0 0 6 6"
+          style={{
+            position: "absolute",
+            transition: "0",
+            padding: "0.2rem",
+            width: "1rem",
+            fill: "#FF4F00",
+            opacity: "0",
+          }}
+        >
+          <circle cx="3" cy="3" r="2"></circle>
+        </svg>
       </a>
       <div
         class="info"
@@ -318,6 +345,23 @@ const category = null;
         },
         false
       );
+    }
+
+    const links = document.querySelectorAll("a");
+    console.log(links);
+    if (links) {
+      links.forEach((link) => {
+        link.addEventListener(
+          "click",
+          () => {
+            const indicator = document.querySelector("#indicator");
+            if (indicator) {
+              indicator.classList.add("blink");
+            }
+          },
+          false
+        );
+      });
     }
   });
 </script>
