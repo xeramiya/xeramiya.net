@@ -147,6 +147,7 @@ const category = null;
         />
         <svg
           id="indicator"
+          class="blink hide"
           viewBox="0 0 6 6"
           style={{
             position: "absolute",
@@ -154,7 +155,6 @@ const category = null;
             padding: "0.2rem",
             width: "1rem",
             fill: "#28C840",
-            display: "none",
           }}
         >
           <circle cx="3" cy="3" r="2"></circle>
@@ -256,17 +256,17 @@ const category = null;
 <script>
   document.addEventListener("astro:page-load", () => {
     const dynamicNaviTrigger = document.querySelector("#navi-will-change");
+    const toggleClass = (
+      element: HTMLElement,
+      toBeAdded: string,
+      toBeRemoved: string
+    ) => {
+      element.classList.add(toBeAdded);
+      element.classList.remove(toBeRemoved);
+      return;
+    };
 
     if (dynamicNaviTrigger) {
-      const toggleClass = (
-        element: HTMLElement,
-        toBeAdded: string,
-        toBeRemoved: string
-      ) => {
-        element.classList.add(toBeAdded);
-        element.classList.remove(toBeRemoved);
-        return;
-      };
       const toggleDynamicNavi = (focusMode: boolean) => {
         if (focusMode) {
           toggleClass(dynamicNaviIndex, "hide", "show");
@@ -342,6 +342,28 @@ const category = null;
             toggleClass(dynamicNaviIndex, "hide", "show");
             header.classList.remove("dynamic-navi-backdrop");
           }
+        },
+        false
+      );
+    }
+
+    const indicator = document.querySelector("#indicator") as HTMLElement;
+    if (indicator) {
+      const links = document.querySelectorAll("a");
+      
+      links.forEach((link) => {
+        link.addEventListener(
+          "click",
+          () => {
+            toggleClass(indicator, "show", "hide");
+          },
+          false
+        );
+      });
+      window.addEventListener(
+        "beforeunload",
+        () => {
+          toggleClass(indicator, "hide", "show");
         },
         false
       );
