@@ -350,7 +350,7 @@ const category = null;
     const indicator = document.querySelector("#indicator") as HTMLElement;
     if (indicator) {
       const links = document.querySelectorAll("a");
-      
+
       links.forEach((link) => {
         link.addEventListener(
           "click",
@@ -361,7 +361,7 @@ const category = null;
         );
       });
       window.addEventListener(
-        "beforeunload",
+        "pagehide",
         () => {
           toggleClass(indicator, "hide", "show");
         },
