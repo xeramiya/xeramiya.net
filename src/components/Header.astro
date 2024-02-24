@@ -263,13 +263,14 @@ const category = null;
   const fontSize = parseFloat(
     getComputedStyle(document.documentElement).fontSize
   );
-  const dynamicNavi = document.querySelector(".dynamic-navi");
 
   document.addEventListener("astro:page-load", () => {
+    const dynamicNavi = document.querySelector(".dynamic-navi");
     if (dynamicNavi) {
       window.addEventListener(
         "scroll",
         () => {
+          console.log(window.scrollY > 4 * fontSize);
           if (window.scrollY > 4 * fontSize) {
             dynamicNavi.classList.add("shadow");
           } else {
