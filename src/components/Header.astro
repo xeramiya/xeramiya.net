@@ -1,4 +1,5 @@
 ---
+import Link from "@components/Link.astro";
 import XeramiyaNetIcon from "@components/Icons/XeramiyaNet.astro";
 import MenuIcon from "@components/Icons/Menu.astro";
 
@@ -22,6 +23,10 @@ const category = null;
     display: none;
   }
 
+  .shadow {
+    box-shadow: 0 0 0.3rem var(--shadow);
+  }
+
   header {
     pointer-events: none;
     &.dynamic-navi-backdrop {
@@ -38,20 +43,19 @@ const category = null;
     user-select: none;
     -webkit-user-select: none;
   }
-  .dynamic-navi > .logo {
+  :global(.logo) {
     fill: var(--char-main);
     &:hover {
       fill: var(--dark);
     }
   }
-  .dynamic-navi > .index-trigger {
+  .index-trigger {
     stroke: var(--char-main);
     &:hover {
       stroke: var(--dark);
     }
   }
-
-  .link {
+  :global(.link) {
     color: var(--char-main);
     text-decoration-line: none;
     height: inherit;
@@ -67,7 +71,7 @@ const category = null;
   .list-horizontal {
     & ul {
       grid-auto-flow: column;
-      & .link {
+      & :global(.link) {
         padding: 0 1.5rem;
       }
     }
@@ -76,7 +80,7 @@ const category = null;
     grid-column: 1/4;
     & ul {
       gridautoflow: row;
-      & .link {
+      & :global(.link) {
         padding: 0 calc(var(--navi-height) + 0.3rem);
       }
     }
@@ -126,11 +130,11 @@ const category = null;
         gridTemplateRows: "var(--navi-height) auto",
       }}
     >
-      <a
-        class="logo"
+      <Link
         href="/"
-        data-astro-prefetch="viewport"
-        aria-label="xeramiya.net"
+        ariaLabel="xeramiya.net"
+        dataAstroPrefetch="viewport"
+        className="logo"
         style={{
           aspectRatio: "1",
           borderRadius: "inherit",
@@ -159,7 +163,7 @@ const category = null;
         >
           <circle cx="3" cy="3" r="2"></circle>
         </svg>
-      </a>
+      </Link>
       <div
         class="info"
         style={{ flexGrow: "1", borderRadius: "inherit", display: "grid" }}
@@ -223,9 +227,9 @@ const category = null;
               transition: "inherit",
             }}
           >
-            <a class="link" href="/about" data-astro-prefetch="viewport"
-              >About</a
-            >
+            <Link className="link" href="/about" dataAstroPrefetch="viewport">
+              About
+            </Link>
           </li>
           <li
             style={{
@@ -234,7 +238,9 @@ const category = null;
               transition: "inherit",
             }}
           >
-            <a class="link" href="/blog" data-astro-prefetch="viewport">Blog</a>
+            <Link className="link" href="/blog" dataAstroPrefetch="viewport">
+              Blog
+            </Link>
           </li>
           <li
             style={{
@@ -243,9 +249,9 @@ const category = null;
               transition: "inherit",
             }}
           >
-            <a class="link" href="/archive" data-astro-prefetch="viewport"
-              >Archive</a
-            >
+            <Link className="link" href="/archive" dataAstroPrefetch="viewport">
+              Archive
+            </Link>
           </li>
         </ul>
       </nav>
@@ -254,7 +260,26 @@ const category = null;
 </header>
 
 <script>
+  const fontSize = parseFloat(
+    getComputedStyle(document.documentElement).fontSize
+  );
+  const dynamicNavi = document.querySelector(".dynamic-navi");
+
   document.addEventListener("astro:page-load", () => {
+    if (dynamicNavi) {
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY > 4 * fontSize) {
+            dynamicNavi.classList.add("shadow");
+          } else {
+            dynamicNavi.classList.remove("shadow");
+          }
+        },
+        false
+      );
+    }
+
     const dynamicNaviTrigger = document.querySelector("#navi-will-change");
     const toggleClass = (
       element: HTMLElement,
@@ -283,14 +308,12 @@ const category = null;
         }
       };
 
-      const dynamicNaviIndex = document.querySelector(
-        ".dynamic-navi > .index"
-      ) as HTMLElement;
+      const dynamicNaviIndex = document.querySelector(".index") as HTMLElement;
       const dynamicNaviIndexTrigger = document.querySelector(
-        ".dynamic-navi > .index-trigger"
+        ".index-trigger"
       ) as HTMLElement;
       const dynamicNaviInfoAddress = document.querySelector(
-        ".dynamic-navi > .info > .address"
+        ".address"
       ) as HTMLElement;
       const menuIcon = document.querySelector("#MenuIcon") as HTMLElement;
       const header = document.querySelector("header") as HTMLElement;
@@ -349,16 +372,10 @@ const category = null;
 
     const indicator = document.querySelector("#indicator") as HTMLElement;
     if (indicator) {
-      const links = document.querySelectorAll("a");
-
+      const links = document.querySelectorAll(".internal-link");
+      const showIndicator = () => toggleClass(indicator, "show", "hide");
       links.forEach((link) => {
-        link.addEventListener(
-          "click",
-          () => {
-            toggleClass(indicator, "show", "hide");
-          },
-          false
-        );
+        link.addEventListener("click", showIndicator, false);
       });
       window.addEventListener(
         "pagehide",

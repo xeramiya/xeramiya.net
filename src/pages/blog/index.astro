@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
 import { formatDate } from "@scripts/api";
 
 const pieces = await getCollection("blog");
@@ -8,12 +9,12 @@ const sortedPieces = pieces.sort(
   (a, b) => b.data.date.created.getTime() - a.data.date.created.getTime()
 );
 
-const title = "Blog";
-const description = "ブログ記事一覧";
+const title = "Blog List";
+const description = "公開しているブログ記事の一覧";
 ---
 
 <style>
-  .piece-link {
+  :global(.piece-link) {
     transition: 200ms ease-out;
     &:hover {
       background: var(--shadow);
@@ -40,9 +41,9 @@ const description = "ブログ記事一覧";
 
             return (
               <li>
-                <a
+                <Link
                   href={`/blog/${piece.slug}`}
-                  class="piece-link"
+                  className="piece-link"
                   style={{
                     borderLeftWidth: "2px",
                     display: "block",
@@ -88,7 +89,7 @@ const description = "ブログ記事一覧";
                       {piece.data.synopsis}
                     </div>
                   </div>
-                </a>
+                </Link>
               </li>
             );
           })

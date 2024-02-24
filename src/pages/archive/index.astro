@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
 
-const title = "Archive";
-const description = "作ったものおきば";
+const title = "Archive Works";
+const description = "これまで作ったものの一部をとりあえず放っておく場所";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -19,14 +20,12 @@ const description = "作ったものおきば";
         こちらも準備中...
         <div>
           リニューアルまでの間は
-          <a
+          <Link
             href="https://xeramiya.vercel.app/archive"
-            target="_blank"
-            rel="noopener noreferrer"
             style={{ color: "var(--char-link)", textDecoration: "underline" }}
           >
             これまでのxeramiya.net
-          </a>
+          </Link>
           をお楽しみください
         </div>
       </div>

@@ -1,8 +1,12 @@
 ---
-const { style } = Astro.props;
+interface Props {
+  className?: string;
+  style?: astroHTML.JSX.CSSProperties;
+}
+const { className, style } = Astro.props;
 ---
 
-<svg viewBox="0 0 24 24" id="CircleX" style={style}>
+<svg viewBox="0 0 24 24" id="CircleX" class={className} style={style}>
   <path
     id="CircleX-1"
     d="M4.136,18.175c-1.338,-1.701 -2.136,-3.845 -2.136,-6.175c-0,-4.292 2.71,-7.956 6.511,-9.373l5.85,11.733l-6.41,0l-3.815,3.815Z"

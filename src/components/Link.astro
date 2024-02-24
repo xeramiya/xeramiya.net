@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  ariaLabel?: string;
+  id?: string;
+  className?: string;
+  style?: astroHTML.JSX.CSSProperties;
+  dataAstroPrefetch?: string;
+}
+const { href, ariaLabel, id, className, style, dataAstroPrefetch } = Astro.props;
+
+const isExternal = /^http(s)\:\/\/*/.test(href);
+const classNameEx = `${isExternal ? "external-link" : "internal-link"} `;
+const rel = isExternal ? "noopener" : undefined;
+const target = isExternal ? "_blank" : undefined;
+---
+
+<a
+  href={href}
+  aria-label={ariaLabel}
+  rel={rel}
+  target={target}
+  id={id}
+  class={`${classNameEx}${className ?? ""}`}
+  style={style}
+  data-astro-prefetch={dataAstroPrefetch}
+>
+  <slot />
+</a>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
 import XeramiyaIcon from "@components/Icons/Xeramiya.astro";
 import BlueskyIcon from "@components/Icons/Social/Bluesky.astro";
 import GitHubIcon from "@components/Icons/Social/GitHub.astro";
@@ -10,8 +11,8 @@ import SteamIcon from "@components/Icons/Social/Steam.astro";
 import TwitterIcon from "@components/Icons/Social/Twitter.astro";
 import YouTubeIcon from "@components/Icons/Social/YouTube.astro";
 
-const title = "私について";
-const description = "Xeramiyaについて";
+const title = "About Me";
+const description = "簡易的な自己紹介と、いくつかの仮面へのリンク";
 ---
 
 <style>
@@ -28,7 +29,7 @@ const description = "Xeramiyaについて";
     --youtube: #ff0000;
   }
 
-  .string {
+  :global(.string) {
     fill: var(--char-note);
     width: 2.5rem;
     padding: 0.25rem;
@@ -84,11 +85,13 @@ const description = "Xeramiyaについて";
               lineHeight: "3.5rem",
             }}
           >
-            <a
+            <Link
               href="/about/signature"
               style={{ cursor: "text" }}
-              data-astro-reload>Xeramiya</a
+              data-astro-reload
             >
+              Xeramiya
+            </Link>
           </h1>
           <p style={{ color: "var(--char-note)", lineHeight: "1.2rem" }}>
             Oh, honey, he's teasing you. Nobody has two television sets.
@@ -108,93 +111,76 @@ const description = "Xeramiyaについて";
         }}
       >
         <li>
-          <a
+          <Link
             href="https://bsky.app/profile/xeramiya.net"
-            aria-label="Bluesky"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string bluesky"
+            ariaLabel="Bluesky"
+            className="string bluesky"
           >
             <BlueskyIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://twitter.com/xeramiya"
-            aria-label="Twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string twitter"
+            ariaLabel="Twitter"
+            className="string twitter"
           >
             <TwitterIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://www.youtube.com/@xeramiya"
-            aria-label="YouTube"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string youtube"
+            ariaLabel="YouTube"
+            className="string youtube"
           >
             <YouTubeIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://www.instagram.com/xeramiya"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string instagram"
+            ariaLabel="Instagram"
+            className="string instagram"
           >
             <InstagramIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://steamcommunity.com/id/xeramiya"
-            aria-label="Steam"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string steam"
+            ariaLabel="Steam"
+            className="string steam"
           >
             <SteamIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://soundcloud.com/xeramiya"
-            aria-label="SoundCloud"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string soundcloud"
+            ariaLabel="SoundCloud"
+            className="string soundcloud"
           >
             <SoundCloudIcon />
-          </a>
+          </Link>
         </li>
-
         <li>
-          <a
+          <Link
             href="https://open.spotify.com/user/fhc8jd5iv2ibh1mt1pncyn2vd"
-            aria-label="Spotify"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string spotify"
+            ariaLabel="Spotify"
+            className="string spotify"
           >
             <SpotifyIcon />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://github.com/xeramiya"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="string github"
+            ariaLabel="GitHub"
+            className="string github"
           >
             <GitHubIcon />
-          </a>
+          </Link>
         </li>
       </ul>
     </section>
