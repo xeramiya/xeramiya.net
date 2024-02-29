@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Link from "@components/Link.astro";
+
+const title = "404 NOT FOUND";
+const description = "存在しないページをお探しのあなたへ";
+---
+
+<style>
+  a {
+    background: red;
+  }
+</style>
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <section>
+      <div style={{ margin: "40vh auto 0", maxWidth: "30rem" }}>
+        <h1
+          class="font-serif"
+          style={{
+            background: "var(--error)",
+            color: "var(--char-error)",
+            padding: "0 0.5rem",
+            fontSize: "2rem",
+          }}
+        >
+          404 NOT FOUND
+        </h1>
+        <p style={{ fontSize: "1rem", padding: "0 0.5rem" }}>
+          <span>
+            The page you are looking for does not exist at this time.
+          </span>
+        </p>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

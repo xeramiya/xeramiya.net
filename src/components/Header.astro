@@ -27,6 +27,10 @@ const category = null;
     box-shadow: 0 0 0.3rem var(--shadow);
   }
 
+  :global(.wait) {
+    overflow: hidden;
+  }
+
   header {
     pointer-events: none;
     &.dynamic-navi-backdrop {
@@ -189,7 +193,6 @@ const category = null;
           background: "transparent",
           aspectRatio: "1",
           borderRadius: "inherit",
-          border: "0",
           transition: "inherit",
           position: "relative",
           cursor: "pointer",
@@ -197,6 +200,7 @@ const category = null;
       >
         <MenuIcon
           style={{
+            margin: "auto",
             height: "1.5rem",
             strokeWidth: "0.12rem",
             strokeLinecap: "round",
@@ -265,21 +269,18 @@ const category = null;
   );
 
   document.addEventListener("astro:page-load", () => {
-    const dynamicNavi = document.querySelector(".dynamic-navi");
-    if (dynamicNavi) {
-      window.addEventListener(
-        "scroll",
-        () => {
-          console.log(window.scrollY > 4 * fontSize);
-          if (window.scrollY > 4 * fontSize) {
-            dynamicNavi.classList.add("shadow");
-          } else {
-            dynamicNavi.classList.remove("shadow");
-          }
-        },
-        false
-      );
-    }
+    const dynamicNavi = document.querySelector(".dynamic-navi") as HTMLElement;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 4 * fontSize) {
+          dynamicNavi.classList.add("shadow");
+        } else {
+          dynamicNavi.classList.remove("shadow");
+        }
+      },
+      false
+    );
 
     const dynamicNaviTrigger = document.querySelector("#navi-will-change");
     const toggleClass = (
@@ -306,6 +307,7 @@ const category = null;
           toggleClass(menuIcon, "menu-open", "menu-close");
           toggleClass(dynamicNaviIndex, "list-horizontal", "list-vertical");
           header.classList.remove("dynamic-navi-backdrop");
+          body.classList.remove("wait");
         }
       };
 
@@ -319,6 +321,7 @@ const category = null;
       const menuIcon = document.querySelector("#MenuIcon") as HTMLElement;
       const header = document.querySelector("header") as HTMLElement;
       const headerHeight = header.offsetHeight;
+      const body = document.querySelector("body") as HTMLElement;
       let underDynamicNaviTrigger =
         dynamicNaviTrigger.getBoundingClientRect().top < headerHeight;
       let dynamicNaviFocusMode = underDynamicNaviTrigger;
@@ -361,10 +364,12 @@ const category = null;
             toggleClass(menuIcon, "menu-close", "menu-open");
             toggleClass(dynamicNaviIndex, "show", "hide");
             header.classList.add("dynamic-navi-backdrop");
+            body.classList.add("wait");
           } else {
             toggleClass(menuIcon, "menu-open", "menu-close");
             toggleClass(dynamicNaviIndex, "hide", "show");
             header.classList.remove("dynamic-navi-backdrop");
+            body.classList.remove("wait");
           }
         },
         false

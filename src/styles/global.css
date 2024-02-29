@@ -19,6 +19,11 @@
 html {
 }
 
+::selection {
+  color: var(--background);
+  background: #ff4f00;
+}
+
 body {
   margin: 0;
   background: var(--background);
