@@ -5,6 +5,7 @@ import XeramiyaIcon from "@components/Icons/Xeramiya.astro";
 import BlueskyIcon from "@components/Icons/Social/Bluesky.astro";
 import GitHubIcon from "@components/Icons/Social/GitHub.astro";
 import InstagramIcon from "@components/Icons/Social/Instagram.astro";
+import NicoNicoIcon from "@components/Icons/Social/NicoNico.astro";
 import SoundCloudIcon from "@components/Icons/Social/SoundCloud.astro";
 import SpotifyIcon from "@components/Icons/Social/Spotify.astro";
 import SteamIcon from "@components/Icons/Social/Steam.astro";
@@ -22,6 +23,7 @@ const description = "簡易的な自己紹介と、いくつかの仮面への�
     --discord: #5865f2;
     --github: #424242;
     --instagram: #9b6954;
+    --niconico: #252525;
     --soundcloud: #ff4400;
     --spotify: #1db954;
     --steam: #2a475e;
@@ -43,6 +45,9 @@ const description = "簡易的な自己紹介と、いくつかの仮面への�
     }
     &.instagram:hover {
       fill: var(--instagram);
+    }
+    &.niconico:hover {
+      fill: var(--niconico);
     }
     &.soundcloud:hover {
       fill: var(--soundcloud);
@@ -144,6 +149,15 @@ const description = "簡易的な自己紹介と、いくつかの仮面への�
             className="string instagram"
           >
             <InstagramIcon />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="https://www.nicovideo.jp/user/74944800"
+            ariaLabel="niconico"
+            className="string niconico"
+          >
+            <NicoNicoIcon />
           </Link>
         </li>
         <li>
