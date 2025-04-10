@@ -2,8 +2,8 @@
 title: He's on cloud nine because he's an astronaut.
 synopsis: このサイトをAstroで作り直したわよ
 date:
-  created: 2024-03-01
-  published: 2025-04-11
+  truecreated: 2024-03-01
+  created: 2025-04-11
   modified:
 ---
 
